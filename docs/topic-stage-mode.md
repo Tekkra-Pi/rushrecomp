@@ -77,4 +77,3 @@ Final gameplay handler that runs the main game loop.
 
 ## References
 - re-analysis.md lines 691-770
-- HANDOFF.md lines 482-510, 711-770

@@ -1261,7 +1261,7 @@ gameplay (calls stage dispatcher 0204b470 + per-frame stage update 0204b528), wi
     options `0x022d85d0`, and touch-options `0x022d86b0`. The whole
     `0x022c7ac8`/`0x022c678c`/`0x022c8480` menu block is dead code**
     (P0 task 5).
-    - **Context**: HANDOFF §7/§7.1/§7.2 described the title menu via
+    - **Context**: The earlier title-menu analysis described it via
       `TitleMenu_Update 0x022c7ac8`, hit-test `0x022c678c` on entity `+0x5b4`,
       and constructor `0x022c8480`. That whole block lies inside the item-28
       dead region `0x022c6000..0x022c9000`; `0x022c8480` has zero callers.
@@ -1368,8 +1368,8 @@ gameplay (calls stage dispatcher 0204b470 + per-frame stage update 0204b528), wi
       and controller helpers to `0x200dxxx` (`0x200d544`, `0x200d6f0`, ...).
       Those addresses are WRONG (the `0x2037xxx` range is the entity/mode
       callback region, `0x200dxxx` is unrelated IRQ/channel code). The real
-      family is `0x2033xxx` + helpers `0x2009xxx`; this document and HANDOFF
-      have been corrected.
+      family is `0x2033xxx` + helpers `0x2009xxx`; this document
+      has been corrected.
     - **Conclusion**: the ARM7->ARM9 touch chain is now fully traced and
       statically verified end-to-end; P0 task 6 closed.
  33. [DONE] Touch field semantic mapping — Ghidra headless decompilation

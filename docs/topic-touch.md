@@ -65,6 +65,5 @@ Initializes touch subsystem.
 
 ## References
 - re-analysis.md lines 867-921
-- HANDOFF.md lines 35-37, 1015, 1047
 - p0-7-summary.md
 - touch-bit-analysis.md

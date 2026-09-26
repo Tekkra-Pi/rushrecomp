@@ -22,11 +22,6 @@
      - Per-frame history fields `+0x0c`, `+0x0e` (release/older X/Y), `+0x14` (count/enable), and `+0x16+` (coordinate-history)
      - Alternate path table `0x22b658c` (8-byte slots)
 
-4. **HANDOFF.md Updates**
-   - Marked P0 task 7 as active (executing controlled testing)
-   - Updated unresolved list to reflect active investigation
-   - Maintained framework with related work references
-
 ## Current Understanding
 
 ### Confirmed
@@ -62,12 +57,10 @@
 
 3. **Update Documentation**
    - Complete re-analysis.md item 33 with definitive findings
-   - Mark P0 task 7 as [DONE] in HANDOFF.md
    - Document final field semantics
 
 ## Files Modified/Created
 - `docs/re-analysis.md`: Added item 33
-- `docs/HANDOFF.md`: Marked P0 task 7 as executing, updated unresolved list
 - `docs/p0-7-atmospheric.md`: Created analysis framework
 - `docs/p0-7-task-summary.md`: Created task summary
 - `docs/touch-bit-analysis.md`: Created initial analysis

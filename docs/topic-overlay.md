@@ -110,5 +110,4 @@ Boot -> Overlay1_Load -> Title_Menu -> User_Selection
 - **CONFIRMED-RUNTIME**: Dead code region identified through caller analysis
 
 ## References
-- HANDOFF.md lines 633-695
 - re-analysis.md lines 552-790

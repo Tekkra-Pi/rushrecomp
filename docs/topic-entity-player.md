@@ -124,4 +124,3 @@ A separate entity type (NOT a second physics player) that wraps the player for p
 
 ## References
 - re-analysis.md lines 324-450
-- HANDOFF.md lines 283-315, 340-400, 454-479
