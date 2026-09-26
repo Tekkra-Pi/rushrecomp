@@ -1,0 +1,54 @@
+{
+  "game": "Sonic Rush",
+  "region": "USA",
+  "rom_path": "games/Sonic Rush (USA) (En,Ja,Fr,De,Es,It).nds",
+  "arm9": {
+    "load_address": "0x02000000",
+    "entry_point": "0x02000800",
+    "rom_offset": "0x4000",
+    "size": "0x86898"
+  },
+  "arm7": {
+    "load_address": "0x02380000",
+    "rom_offset": "0x188000",
+    "size": "0x26f24"
+  },
+  "overlays": [
+    {
+      "id": 0,
+      "load_address": "0x022c5c80",
+      "rom_offset": "0x8aa00",
+      "size": "0x0a3e40"
+    },
+    {
+      "id": 1,
+      "load_address": "0x022c5c80",
+      "rom_offset": "0x12e840",
+      "size": "0x0593c0"
+    }
+  ],
+  "compiler": {
+    "toolchain": "arm-none-eabi",
+    "cpu": "arm946e-s",
+    "arch": "armv5te",
+    "thumb": true,
+    "endian": "little",
+    "optimization": "O2"
+  },
+  "source_mapping": {
+    "src/main_loop.c": "0x02000800-0x02000ac4",
+    "src/main_loop.c": "0x02000ac4-0x02002000",
+    "src/display/*.c": "0x02002000-0x02007000",
+    "src/util/*.c": "0x02007000-0x0200e000",
+    "src/input/*.c": "0x0200e000-0x02012000",
+    "src/sound/*.c": "0x02012000-0x02016000",
+    "src/entity/*.c": "0x02016000-0x02020000",
+    "src/player/*.c": "0x02020000-0x02040000",
+    "src/collision/*.c": "0x02040000-0x02060000",
+    "src/gameplay/*.c": "0x02060000-0x02090000",
+    "src/object/*.c": "0x02090000-0x020a0000",
+    "src/stage/*.c": "0x020a0000-0x020c0000",
+    "src/system/*.c": "0x020c0000-0x020e0000",
+    "src/stubs.c": "0x020e0000-0x020f0000"
+  }
+}

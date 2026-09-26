@@ -1,0 +1,12 @@
+# Headless hdrv input script: title screen -> first Gameplay act.
+#
+# Script format: <frame> <k|t|h|r> <value1> [value2]
+# k = keypad mask, t = two-frame touch tap, h = held touch, r = release touch.
+# hdrv parses values as hexadecimal; use 0x prefixes for screen coordinates.
+#
+# Verified with the US ROM: this selects GAMEPLAY at bottom-screen (128, 60)
+# and reaches the Leaf Storm Zone 1 Act 1 intro.
+0 k 0
+800 k 8
+810 k 0
+1200 t 0x80 0x3c

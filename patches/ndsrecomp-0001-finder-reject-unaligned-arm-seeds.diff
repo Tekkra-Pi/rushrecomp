@@ -1,0 +1,27 @@
+diff --git a/recompiler/finder/function_finder.cpp b/recompiler/finder/function_finder.cpp
+index fc676e9..b6212b2 100644
+--- a/recompiler/finder/function_finder.cpp
++++ b/recompiler/finder/function_finder.cpp
+@@ -1730,6 +1730,22 @@ void FunctionFinder::run(std::size_t max_functions) {
+         if (!current_required && functions_.size() >= max_functions) {
+             continue;
+         }
++        // ARM roots must be word-aligned. The dispatcher masks ARM targets
++        // with ~3, so an unaligned root rounds DOWN on entry; when a walk
++        // is split at such a root the previous function's fallthrough link
++        // to it bounces back onto its own last instruction and spins
++        // forever (Sonic Rush 0x020075D6 behind 0x020075D4). The guest can
++        // never execute ARM state at a 2-mod-4 address anyway — hardware
++        // masks identically — so the aligned address is already covered by
++        // an enclosing walk or an aligned root.
++        if (s.mode == CpuMode::Arm && (s.addr & 3u) != 0) {
++            if (seed_it != seed_by_key.end()) {
++                std::fprintf(stderr,
++                    "[finder] ARM seed 0x%08X is not word-aligned; "
++                    "skipping\n", s.addr);
++            }
++            continue;
++        }
+         if (seed_it != seed_by_key.end()) {
+             if (!seed_it->second.name.empty()) {
+                 s.name = seed_it->second.name;

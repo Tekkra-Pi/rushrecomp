@@ -1,0 +1,111 @@
+# hdrv input script: minimal tap-release cycle to capture baseline touch state
+#
+# This script performs a simple tap at (128, 60) in gameplay to establish
+# baseline behavior. Focus on key frames for touch state capture.
+0 k 0
+800 k 8
+810 k 0
+1200 t 0x80 0x3c
+1300 k 8
+1310 k 0
+1400 t 0x80 0x3c
+1510 k 8
+1520 k 0
+1600 k 8
+1610 k 0
+1650 k 8
+1660 k 0
+1700 k 8
+1710 k 0
+1720 t 0x80 0x3c
+1730 t 0x80 0x3c
+1740 t 0x80 0x3c
+1750 t 0x80 0x3c
+1760 t 0x80 0x3c
+1770 k 8
+1780 k 0
+1790 k 8
+1800 k 0
+1850 k 8
+1860 k 8
+1870 k 8
+1880 k 8
+1890 k 8
+1900 k 8
+1910 k 0
+2000 k 8
+2005 k 8
+2010 k 0
+2015 k 8
+2020 k 0
+2025 t 0x80 0x3c
+2030 k 8
+2035 k 0
+2040 k 8
+2045 k 0
+2050 k 8
+2055 k 0
+2060 k 8
+2065 k 0
+2070 k 8
+2075 k 0
+2080 k 8
+2085 k 0
+2090 k 8
+2095 k 0
+2100 k 8
+2105 k 0
+2110 k 8
+2115 k 0
+2120 k 8
+2125 k 0
+2130 r 0x20 0x30
+2135 k 8
+2140 k 0
+2145 h 0x20 0x30
+2150 k 8
+2155 k 0
+2160 t 0x20 0x35
+2165 k 8
+2170 k 0
+2175 r 0x20 0x35
+2180 k 8
+2185 k 0
+2190 r 0x20 0x30
+2195 k 8
+2200 k 0
+2205 retry
+2210 k 8
+2215 k 0
+2220 k 8
+2225 k 0
+2230 retry
+2235 k 8
+2240 k 0
+2245 k 8
+2250 k 0
+2255 retry
+2260 k 8
+2265 k 0
+2270 k 8
+2275 k 0
+2280 k 8
+2285 k 0
+2290 k 8
+2295 k 0
+2300 k 8
+2305 k 0
+2310 k 8
+2315 k 0
+2320 k 8
+2325 k 0
+2330 k 8
+2335 k 0
+2340 k 8
+2345 k 0
+2350 k 8
+2355 k 0
+2350 k 8
+2355 k 0
+2350 k 8
+2355 k 0

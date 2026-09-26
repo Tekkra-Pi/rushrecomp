@@ -1,0 +1,19 @@
+# hdrv input script: enter GAMEPLAY (Leaf Storm), then press Start during
+# gameplay (frame 2000) to trigger the pause/menu, release, press again.
+#
+# 0 k 0      : clear keypad at boot
+# 800 k 8    : hold Start (title -> menu)
+# 810 k 0    : release
+# 1200 t 0x80 0x3c : tap GAMEPLAY at bottom screen
+# 2000 k 8   : hold Start (pause during gameplay)
+# 2060 k 0   : release
+# 2100 k 8   : hold Start again (unpause / resume)
+# 2160 k 0   : release
+0 k 0
+800 k 8
+810 k 0
+1200 t 0x80 0x3c
+2000 k 8
+2060 k 0
+2100 k 8
+2160 k 0

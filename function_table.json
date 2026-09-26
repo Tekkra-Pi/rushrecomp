@@ -1,0 +1,6769 @@
+[
+  {
+    "address": "0x4000",
+    "size": 0,
+    "name": "arm9_rom_offset",
+    "domain": "rom_layout",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x188000",
+    "size": 0,
+    "name": "arm7_rom_offset",
+    "domain": "rom_layout",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2000800",
+    "size": 0,
+    "name": "boot_entry",
+    "domain": "boot",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02000ac4",
+    "size": 56,
+    "name": "cp15_write_system_control",
+    "domain": "hardware",
+    "evidence": "MCR 15,0,r0,cr1,cr0,{0} writes CP15 system control register"
+  },
+  {
+    "address": "0x2000afc",
+    "size": 0,
+    "name": "init_chain_0afc",
+    "domain": "boot",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02000b24",
+    "size": 348,
+    "name": "main_per_frame_loop",
+    "domain": "main_loop"
+  },
+  {
+    "address": "0x02001000",
+    "size": 1024,
+    "name": "FUN_02001000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02001400",
+    "size": 1024,
+    "name": "FUN_02001400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02001800",
+    "size": 1024,
+    "name": "FUN_02001800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02001c00",
+    "size": 1024,
+    "name": "FUN_02001c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02002000",
+    "size": 1024,
+    "name": "FUN_02002000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02002400",
+    "size": 1024,
+    "name": "FUN_02002400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02002800",
+    "size": 1024,
+    "name": "FUN_02002800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02002c10",
+    "size": 64,
+    "name": "backlight_display_config",
+    "domain": "display"
+  },
+  {
+    "address": "0x02003000",
+    "size": 1024,
+    "name": "lcd_bg_config_sound_channel",
+    "domain": "lcd",
+    "evidence": "Configures LCD BG registers (0x04000008-0x0400000E), writes BG control values"
+  },
+  {
+    "address": "0x02003400",
+    "size": 1024,
+    "name": "lcd_bg_mode_set",
+    "domain": "lcd",
+    "evidence": "Switch/case on display mode values (0-128), sets LCD mode registers"
+  },
+  {
+    "address": "0x02003800",
+    "size": 1024,
+    "name": "lcd_bg_mode_apply",
+    "domain": "lcd",
+    "evidence": "Writes to DISPLAYCNT (0x04000000) with mode-specific bit patterns"
+  },
+  {
+    "address": "0x02003c00",
+    "size": 1024,
+    "name": "Sound_Init",
+    "domain": "sound",
+    "evidence": "SOUND register initialization, memset call"
+  },
+  {
+    "address": "0x02004000",
+    "size": 1024,
+    "name": "Sound_MasterControl",
+    "domain": "sound",
+    "evidence": "SOUNDCNT/BRIGHT register config"
+  },
+  {
+    "address": "0x02004278",
+    "size": 128,
+    "name": "Sound_SetChannelVolume",
+    "domain": "sound",
+    "evidence": "SOUND4CNT access, channel volume config"
+  },
+  {
+    "address": "0x02004398",
+    "size": 128,
+    "name": "display_init",
+    "domain": "display"
+  },
+  {
+    "address": "0x02004660",
+    "size": 64,
+    "name": "display_bg_parameter_write",
+    "domain": "display",
+    "evidence": "Stores r1 to [r7+28], [r7+32], r6 to [r7+36], r5 to [r7+40]. Writes 5 display BG parameters."
+  },
+  {
+    "address": "0x020046a0",
+    "size": 48,
+    "name": "display_bg_compose_params",
+    "domain": "display",
+    "evidence": "Computes r0=r2-r0, loads from sp+64/96/100/104, calls 0x2002150 (param_build). Composes display parameters."
+  },
+  {
+    "address": "0x020046d0",
+    "size": 88,
+    "name": "display_bg_init_state",
+    "domain": "display",
+    "evidence": "Zeros 5 words at [r6+4..+16], initializes display BG state. State initialization for display layers."
+  },
+  {
+    "address": "0x02004c94",
+    "size": 176,
+    "name": "display_dma_init_buffers",
+    "domain": "display",
+    "evidence": "Stores r0 to [r8], calls 0x20021c8 (dma_setup), stores 0 to [fp], 0x1000 to [fp+4]. Initializes DMA buffers with 4096 byte size."
+  },
+  {
+    "address": "0x02004d44",
+    "size": 220,
+    "name": "display_fixed_point_multiply",
+    "domain": "display",
+    "evidence": "Fixed-point multiplication: umull, mla chain with asr #31 for sign extension. 64-bit fixed-point math for display coordinates."
+  },
+  {
+    "address": "0x02004e20",
+    "size": 160,
+    "name": "display_clip_and_store",
+    "domain": "display",
+    "evidence": "Stores r2, negated sl, r0, r3 to [r4] sequentially. Clips and stores display values with negation."
+  },
+  {
+    "address": "0x02005020",
+    "size": 96,
+    "name": "Display_LoadBGData",
+    "domain": "display",
+    "evidence": "copy_4byte_aligned calls, BG setup"
+  },
+  {
+    "address": "0x02005080",
+    "size": 80,
+    "name": "Display_FlipBuffers",
+    "domain": "display",
+    "evidence": "copy_4byte_aligned, buffer swap"
+  },
+  {
+    "address": "0x020050d0",
+    "size": 112,
+    "name": "Display_CopyFrameBuffer",
+    "domain": "display",
+    "evidence": "copy_4byte_aligned x2"
+  },
+  {
+    "address": "0x02005200",
+    "size": 128,
+    "name": "Overlay_JumpTable",
+    "domain": "overlay",
+    "evidence": "BX jump table with 8 entries"
+  },
+  {
+    "address": "0x02005280",
+    "size": 192,
+    "name": "Overlay_CopyOverlay",
+    "domain": "overlay",
+    "evidence": "Overlay copy with multi-entry transfer"
+  },
+  {
+    "address": "0x02005340",
+    "size": 168,
+    "name": "IRQ_Disable",
+    "domain": "system",
+    "evidence": "IME(0x04000208)/IE(0x04000210) register access, interrupt bit clear"
+  },
+  {
+    "address": "0x2005520",
+    "size": 0,
+    "name": "button_key_matrix",
+    "domain": "input",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x02005594",
+    "size": 224,
+    "name": "Timer_SetCount",
+    "domain": "timer",
+    "evidence": "Timer counter write"
+  },
+  {
+    "address": "0x02005680",
+    "size": 176,
+    "name": "lcd_bg_dma_transfer",
+    "domain": "display",
+    "evidence": "Loads address 0x04000204 (DMA control), sets bit 0x80 (enable), writes to DMA registers. DMA transfer for LCD BG data."
+  },
+  {
+    "address": "0x02005894",
+    "size": 216,
+    "name": "SysTimer_GetTicks",
+    "domain": "timer",
+    "evidence": "Timer tick read, memset"
+  },
+  {
+    "address": "0x02005970",
+    "size": 264,
+    "name": "SysTimer_Delay",
+    "domain": "timer",
+    "evidence": "Delay loop with timer"
+  },
+  {
+    "address": "0x02005c00",
+    "size": 168,
+    "name": "Display_InitBG",
+    "domain": "display",
+    "evidence": "BG initialization pattern"
+  },
+  {
+    "address": "0x02005ca8",
+    "size": 232,
+    "name": "Display_SetupBG",
+    "domain": "display",
+    "evidence": "BG configuration and setup"
+  },
+  {
+    "address": "0x02005d90",
+    "size": 296,
+    "name": "Display_LoadTiles",
+    "domain": "display",
+    "evidence": "Tile data loading with memset"
+  },
+  {
+    "address": "0x02006000",
+    "size": 128,
+    "name": "EntityList_RemoveNode",
+    "domain": "entity",
+    "evidence": "Linked list node removal, offset 0x68/0x70"
+  },
+  {
+    "address": "0x02006080",
+    "size": 168,
+    "name": "EntityList_InsertSorted",
+    "domain": "entity",
+    "evidence": "Linked list sorted insertion by priority"
+  },
+  {
+    "address": "0x02006200",
+    "size": 192,
+    "name": "DisplayScroll_SetBgOffset",
+    "domain": "display",
+    "evidence": "BG scroll offset register config"
+  },
+  {
+    "address": "0x020062c0",
+    "size": 288,
+    "name": "DisplayScroll_SetParallax",
+    "domain": "display",
+    "evidence": "Parallax factor calculation"
+  },
+  {
+    "address": "0x020063e0",
+    "size": 312,
+    "name": "DisplayScroll_Update",
+    "domain": "display",
+    "evidence": "Multi-BG scroll update"
+  },
+  {
+    "address": "0x02006600",
+    "size": 168,
+    "name": "Display_SetupAffine",
+    "domain": "display",
+    "evidence": "Affine parameter initialization"
+  },
+  {
+    "address": "0x020066a8",
+    "size": 232,
+    "name": "Display_UpdateAffine",
+    "domain": "display",
+    "evidence": "Affine matrix update calculation"
+  },
+  {
+    "address": "0x02006790",
+    "size": 296,
+    "name": "Display_ApplyAffine",
+    "domain": "display",
+    "evidence": "Affine matrix apply to BG"
+  },
+  {
+    "address": "0x20067a0",
+    "size": 0,
+    "name": "middleware_pass",
+    "domain": "utility",
+    "evidence": "INFERRED",
+    "source": "src/touch/touch_dispatch.c"
+  },
+  {
+    "address": "0x20067c0",
+    "size": 0,
+    "name": "heap_validate",
+    "domain": "utility",
+    "evidence": "INFERRED",
+    "source": "src/touch/touch_dispatch.c"
+  },
+  {
+    "address": "0x02006a94",
+    "size": 216,
+    "name": "Display_SetupBlend",
+    "domain": "display",
+    "evidence": "BLDCNT/BLDALPHA blend configuration"
+  },
+  {
+    "address": "0x2006abc",
+    "size": 0,
+    "name": "list_head_get",
+    "domain": "utility",
+    "evidence": "INFERRED",
+    "source": "src/touch/touch_dispatch.c"
+  },
+  {
+    "address": "0x02006b70",
+    "size": 264,
+    "name": "Display_SetupMasterBright",
+    "domain": "display",
+    "evidence": "MASTER_BRIGHT register config"
+  },
+  {
+    "address": "0x02006e00",
+    "size": 168,
+    "name": "FUN_02006e00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02006ea8",
+    "size": 232,
+    "name": "Timer_Set",
+    "domain": "system",
+    "evidence": "TM0CNT_H(0x04000102)/TM0CNT_L(0x04000100) timer register write"
+  },
+  {
+    "address": "0x02006f80",
+    "size": 96,
+    "name": "sound_device_init",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02006f90",
+    "size": 296,
+    "name": "Timer_Get",
+    "domain": "system",
+    "evidence": "TM0 timer counter read, small function"
+  },
+  {
+    "address": "0x02007200",
+    "size": 192,
+    "name": "FUN_02007200",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020072c0",
+    "size": 288,
+    "name": "Display_ScanlineCallback",
+    "domain": "display",
+    "evidence": "Linked list walk, DISPSTAT reference"
+  },
+  {
+    "address": "0x020073e0",
+    "size": 312,
+    "name": "Display_VSyncWait",
+    "domain": "display",
+    "evidence": "VCOUNT(0x04000006) read, scanline comparison"
+  },
+  {
+    "address": "0x02007600",
+    "size": 168,
+    "name": "FUN_02007600",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020076a8",
+    "size": 232,
+    "name": "FUN_020076a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02007790",
+    "size": 296,
+    "name": "FUN_02007790",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02007c94",
+    "size": 216,
+    "name": "DMA_ChainTransfer",
+    "domain": "system",
+    "evidence": "DMA3SAD(0x040000e0) register setup, channel calc"
+  },
+  {
+    "address": "0x02007d70",
+    "size": 264,
+    "name": "DMA_SetupTransfer",
+    "domain": "system",
+    "evidence": "DMA0SAD register, busy-wait pattern"
+  },
+  {
+    "address": "0x02008000",
+    "size": 168,
+    "name": "DMA0_Transfer",
+    "domain": "dma",
+    "evidence": "DMA0 register setup pattern"
+  },
+  {
+    "address": "0x020080a8",
+    "size": 232,
+    "name": "input_update_keymatrix",
+    "domain": "input",
+    "evidence": "Reads KEY_INPUT (0x04000600), calls button_key_matrix, updates input state"
+  },
+  {
+    "address": "0x02008190",
+    "size": 296,
+    "name": "DMA0_Wait",
+    "domain": "dma",
+    "evidence": "DMA0 busy-wait polling"
+  },
+  {
+    "address": "0x020082e8",
+    "size": 24,
+    "name": "input_poll",
+    "domain": "input"
+  },
+  {
+    "address": "0x02008300",
+    "size": 16,
+    "name": "copy_2byte_aligned",
+    "domain": "utility"
+  },
+  {
+    "address": "0x0200831c",
+    "size": 68,
+    "name": "memset_memcpy_helper",
+    "domain": "utility"
+  },
+  {
+    "address": "0x02008330",
+    "size": 16,
+    "name": "copy_4byte_aligned",
+    "domain": "utility"
+  },
+  {
+    "address": "0x02008360",
+    "size": 416,
+    "name": "memory_block_copy",
+    "domain": "utility"
+  },
+  {
+    "address": "0x020083ac",
+    "size": 48,
+    "name": "copy_32byte_aligned",
+    "domain": "utility"
+  },
+  {
+    "address": "0x02008400",
+    "size": 192,
+    "name": "FUN_02008400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020084c0",
+    "size": 288,
+    "name": "FUN_020084c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02008500",
+    "size": 48,
+    "name": "copy_1byte_remainder",
+    "domain": "utility"
+  },
+  {
+    "address": "0x02008540",
+    "size": 188,
+    "name": "FUN_02008540",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020085e0",
+    "size": 312,
+    "name": "FUN_020085e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020085fc",
+    "size": 224,
+    "name": "FUN_020085fc",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020086dc",
+    "size": 156,
+    "name": "FUN_020086dc",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02008800",
+    "size": 168,
+    "name": "FUN_02008800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02008840",
+    "size": 196,
+    "name": "DMA1_Transfer",
+    "domain": "dma",
+    "evidence": "DMA1 register setup pattern"
+  },
+  {
+    "address": "0x020088a8",
+    "size": 232,
+    "name": "DMA1_Wait",
+    "domain": "dma",
+    "evidence": "DMA1 busy-wait polling"
+  },
+  {
+    "address": "0x0200890c",
+    "size": 264,
+    "name": "controller_sample_buffer_write",
+    "domain": "controller",
+    "evidence": "Calls 0x02008910 four times to write controller sample data"
+  },
+  {
+    "address": "0x02008990",
+    "size": 296,
+    "name": "controller_sample_buffer_flush",
+    "domain": "controller",
+    "evidence": "Calls 0x02008910 four times with different offsets, flushes sample buffer"
+  },
+  {
+    "address": "0x02008c94",
+    "size": 216,
+    "name": "controller_state_update",
+    "domain": "controller",
+    "evidence": "Calls 0x02008910 + 0x020097fc, updates controller state from samples"
+  },
+  {
+    "address": "0x02008d70",
+    "size": 264,
+    "name": "controller_state_commit",
+    "domain": "controller",
+    "evidence": "Calls 0x02008910 + 0x02008994, commits controller state changes"
+  },
+  {
+    "address": "0x02009000",
+    "size": 168,
+    "name": "FUN_02009000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020090a8",
+    "size": 232,
+    "name": "FUN_020090a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009178",
+    "size": 32,
+    "name": "controller_check_flag",
+    "domain": "controller"
+  },
+  {
+    "address": "0x0200918c",
+    "size": 32,
+    "name": "controller_wait_flag",
+    "domain": "controller"
+  },
+  {
+    "address": "0x02009190",
+    "size": 296,
+    "name": "FUN_02009190",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020091a4",
+    "size": 48,
+    "name": "controller_copy_sample_slot",
+    "domain": "controller"
+  },
+  {
+    "address": "0x02009400",
+    "size": 192,
+    "name": "FUN_02009400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020094c0",
+    "size": 288,
+    "name": "FUN_020094c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009544",
+    "size": 32,
+    "name": "controller_get_index",
+    "domain": "controller"
+  },
+  {
+    "address": "0x020095e0",
+    "size": 312,
+    "name": "FUN_020095e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020095f8",
+    "size": 80,
+    "name": "controller_poll_capture",
+    "domain": "controller"
+  },
+  {
+    "address": "0x02009650",
+    "size": 80,
+    "name": "controller_poll_capture2",
+    "domain": "controller"
+  },
+  {
+    "address": "0x020096f0",
+    "size": 48,
+    "name": "controller_set_callback",
+    "domain": "controller"
+  },
+  {
+    "address": "0x2009714",
+    "size": 0,
+    "name": "controller_unknown_714",
+    "domain": "controller",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02009800",
+    "size": 168,
+    "name": "FUN_02009800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200985c",
+    "size": 32,
+    "name": "controller_unknown_85c",
+    "domain": "controller"
+  },
+  {
+    "address": "0x020098a8",
+    "size": 232,
+    "name": "FUN_020098a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009900",
+    "size": 440,
+    "name": "sampler_parse_touch_sample",
+    "domain": "touch"
+  },
+  {
+    "address": "0x02009908",
+    "size": 64,
+    "name": "input_subsys_init",
+    "domain": "input"
+  },
+  {
+    "address": "0x02009990",
+    "size": 296,
+    "name": "FUN_02009990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x2009998",
+    "size": 0,
+    "name": "sampler_consume_shared_samples",
+    "domain": "touch",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02009ab4",
+    "size": 260,
+    "name": "FUN_02009ab4",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009bc8",
+    "size": 216,
+    "name": "heap_validate_chain",
+    "domain": "memory",
+    "evidence": "Calls heap_validate + 0x02008ed4, validates entire heap chain integrity"
+  },
+  {
+    "address": "0x02009c94",
+    "size": 216,
+    "name": "FUN_02009c94",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009ca8",
+    "size": 180,
+    "name": "FUN_02009ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009d60",
+    "size": 112,
+    "name": "FUN_02009d60",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02009d70",
+    "size": 264,
+    "name": "heap_validate_and_cleanup",
+    "domain": "memory",
+    "evidence": "Calls heap_validate + 0x02008ed4 in loop, validates and cleans heap blocks"
+  },
+  {
+    "address": "0x02009dd8",
+    "size": 88,
+    "name": "heap_free_chain_block",
+    "domain": "memory",
+    "evidence": "Iterates heap chain, calls heap_validate + 0x02008ed4 to free each block"
+  },
+  {
+    "address": "0x0200a000",
+    "size": 168,
+    "name": "FUN_0200a000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a0a8",
+    "size": 232,
+    "name": "FUN_0200a0a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a190",
+    "size": 296,
+    "name": "controller_input_process",
+    "domain": "controller",
+    "evidence": "Calls button_key_matrix + memory pool functions, processes raw controller input"
+  },
+  {
+    "address": "0x0200a400",
+    "size": 192,
+    "name": "FUN_0200a400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a4c0",
+    "size": 288,
+    "name": "FUN_0200a4c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a5e0",
+    "size": 312,
+    "name": "FUN_0200a5e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a800",
+    "size": 168,
+    "name": "FUN_0200a800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a8a8",
+    "size": 232,
+    "name": "FUN_0200a8a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200a990",
+    "size": 296,
+    "name": "FUN_0200a990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200ac94",
+    "size": 216,
+    "name": "FUN_0200ac94",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200ad70",
+    "size": 264,
+    "name": "FUN_0200ad70",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b000",
+    "size": 168,
+    "name": "FUN_0200b000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b0a8",
+    "size": 232,
+    "name": "FUN_0200b0a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b190",
+    "size": 296,
+    "name": "FUN_0200b190",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b400",
+    "size": 192,
+    "name": "FUN_0200b400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b4c0",
+    "size": 288,
+    "name": "FUN_0200b4c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b5e0",
+    "size": 312,
+    "name": "FUN_0200b5e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b800",
+    "size": 168,
+    "name": "FUN_0200b800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b8a8",
+    "size": 232,
+    "name": "FUN_0200b8a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200b990",
+    "size": 296,
+    "name": "FUN_0200b990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200bad8",
+    "size": 72,
+    "name": "hash_parse",
+    "domain": "utility"
+  },
+  {
+    "address": "0x0200bb20",
+    "size": 64,
+    "name": "hash_search",
+    "domain": "utility"
+  },
+  {
+    "address": "0x200bb70",
+    "size": 0,
+    "name": "middleware_validate",
+    "domain": "utility",
+    "evidence": "INFERRED",
+    "source": "src/touch/touch_dispatch.c"
+  },
+  {
+    "address": "0x0200bc94",
+    "size": 216,
+    "name": "FUN_0200bc94",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200bd70",
+    "size": 264,
+    "name": "FUN_0200bd70",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200be70",
+    "size": 48,
+    "name": "hash_init",
+    "domain": "utility"
+  },
+  {
+    "address": "0x0200c000",
+    "size": 168,
+    "name": "FUN_0200c000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200c0a8",
+    "size": 232,
+    "name": "FUN_0200c0a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200c190",
+    "size": 296,
+    "name": "overlay_schedule_load_request",
+    "domain": "overlay",
+    "evidence": "Sets up overlay load params (callback, id, flag), calls overlay scheduler"
+  },
+  {
+    "address": "0x200c1ec",
+    "size": 0,
+    "name": "overlay_unload",
+    "domain": "nitro_sdk",
+    "evidence": "INFERRED",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x200c240",
+    "size": 0,
+    "name": "overlay_load",
+    "domain": "nitro_sdk",
+    "evidence": "INFERRED",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x0200c400",
+    "size": 192,
+    "name": "FUN_0200c400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200c4c0",
+    "size": 288,
+    "name": "resource_loader",
+    "domain": "utility"
+  },
+  {
+    "address": "0x0200c5e0",
+    "size": 312,
+    "name": "overlay_schedule_entry",
+    "domain": "overlay"
+  },
+  {
+    "address": "0x0200c800",
+    "size": 168,
+    "name": "FUN_0200c800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200c8a8",
+    "size": 232,
+    "name": "FUN_0200c8a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200c990",
+    "size": 296,
+    "name": "FUN_0200c990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200cc94",
+    "size": 216,
+    "name": "FUN_0200cc94",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200cd70",
+    "size": 264,
+    "name": "FUN_0200cd70",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d000",
+    "size": 168,
+    "name": "md5_init_state",
+    "domain": "crypto",
+    "evidence": "Stores MD5 IV constants: 0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0"
+  },
+  {
+    "address": "0x0200d0a8",
+    "size": 232,
+    "name": "FUN_0200d0a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d190",
+    "size": 296,
+    "name": "FUN_0200d190",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d400",
+    "size": 192,
+    "name": "FUN_0200d400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d4c0",
+    "size": 288,
+    "name": "FUN_0200d4c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d544",
+    "size": 12,
+    "name": "FUN_0200d544",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d5e0",
+    "size": 312,
+    "name": "FUN_0200d5e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d5f8",
+    "size": 84,
+    "name": "HWI_ReadStatusAndCopy",
+    "domain": "system",
+    "evidence": "Tests bit0 of global+52. If not set, copies 4 halfwords from global+4/6/8/10 to output. push {r4,lr}."
+  },
+  {
+    "address": "0x0200d650",
+    "size": 156,
+    "name": "HWI_InitAndCallback",
+    "domain": "system",
+    "evidence": "Calls 0x200763c, tests flag at 0x3000000. Sets bit0 at global+52. Calls callback via blx r3. push {r4,lr}."
+  },
+  {
+    "address": "0x0200d6f0",
+    "size": 32,
+    "name": "HWI_SetCallback",
+    "domain": "system",
+    "evidence": "Stores r0 to global pointer, calls 0x200763c/0x2007650. 32 bytes. push {r4,lr}."
+  },
+  {
+    "address": "0x0200d714",
+    "size": 308,
+    "name": "FUN_0200d714",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d800",
+    "size": 168,
+    "name": "FUN_0200d800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d8a8",
+    "size": 232,
+    "name": "FUN_0200d8a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d990",
+    "size": 296,
+    "name": "FUN_0200d990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200d998",
+    "size": 32,
+    "name": "irq6_channel6_noop_stub",
+    "domain": "hardware"
+  },
+  {
+    "address": "0x0200dbd8",
+    "size": 56,
+    "name": "FUN_0200dbd8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200dc20",
+    "size": 128,
+    "name": "FUN_0200dc20",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200dc94",
+    "size": 216,
+    "name": "FUN_0200dc94",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200dd70",
+    "size": 264,
+    "name": "FUN_0200dd70",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200e000",
+    "size": 168,
+    "name": "HwInit_PowerOn",
+    "domain": "system",
+    "evidence": "POWERCNT(0x04000304) bit 0 enable"
+  },
+  {
+    "address": "0x0200e058",
+    "size": 140,
+    "name": "Controller_Poll",
+    "domain": "input",
+    "evidence": "Input polling pattern with branch"
+  },
+  {
+    "address": "0x0200e0a8",
+    "size": 232,
+    "name": "Input_ProcessButtons",
+    "domain": "input",
+    "evidence": "Button processing, multiple sub-calls"
+  },
+  {
+    "address": "0x0200e0e8",
+    "size": 112,
+    "name": "Input_ResetState",
+    "domain": "input",
+    "evidence": "State clear, small function"
+  },
+  {
+    "address": "0x0200e158",
+    "size": 156,
+    "name": "Input_GetPressed",
+    "domain": "input",
+    "evidence": "Returns pressed input state"
+  },
+  {
+    "address": "0x0200e190",
+    "size": 296,
+    "name": "Controller_Init",
+    "domain": "input",
+    "evidence": "Controller initialization, register setup"
+  },
+  {
+    "address": "0x0200e400",
+    "size": 192,
+    "name": "FUN_0200e400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200e4c0",
+    "size": 288,
+    "name": "FUN_0200e4c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200e5e0",
+    "size": 312,
+    "name": "FUN_0200e5e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200e800",
+    "size": 168,
+    "name": "FUN_0200e800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200e8a8",
+    "size": 232,
+    "name": "FUN_0200e8a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200e990",
+    "size": 296,
+    "name": "FUN_0200e990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200ec94",
+    "size": 216,
+    "name": "sound_dma_transfer_data",
+    "domain": "sound",
+    "evidence": "Calls 0x0200ea8c five times, DMA transfers sound sample data"
+  },
+  {
+    "address": "0x0200ed70",
+    "size": 264,
+    "name": "sound_dma_update_channels",
+    "domain": "sound",
+    "evidence": "Calls 0x0200ea8c three times, updates sound channel DMA data"
+  },
+  {
+    "address": "0x0200f000",
+    "size": 168,
+    "name": "FUN_0200f000",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f0a8",
+    "size": 232,
+    "name": "FUN_0200f0a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x200f160",
+    "size": 0,
+    "name": "audio_mixer",
+    "domain": "sound",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x0200f190",
+    "size": 296,
+    "name": "FUN_0200f190",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f400",
+    "size": 192,
+    "name": "FUN_0200f400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f4c0",
+    "size": 288,
+    "name": "FUN_0200f4c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f5e0",
+    "size": 312,
+    "name": "FUN_0200f5e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f800",
+    "size": 168,
+    "name": "FUN_0200f800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f8a8",
+    "size": 232,
+    "name": "FUN_0200f8a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0200f990",
+    "size": 296,
+    "name": "FUN_0200f990",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02010094",
+    "size": 216,
+    "name": "sound_dma_validate_and_transfer",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02010170",
+    "size": 264,
+    "name": "sound_dma_vram_block_setup",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02010400",
+    "size": 168,
+    "name": "FUN_02010400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020104a8",
+    "size": 232,
+    "name": "FUN_020104a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02010590",
+    "size": 296,
+    "name": "sound_dma_poll_sync",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02010800",
+    "size": 192,
+    "name": "sound_channel_read_config",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020108c0",
+    "size": 288,
+    "name": "input_data_process",
+    "domain": "input"
+  },
+  {
+    "address": "0x020109e0",
+    "size": 312,
+    "name": "sound_channel_validate_state",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02010c00",
+    "size": 168,
+    "name": "sound_channel_copy_data",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02010ca8",
+    "size": 232,
+    "name": "sound_channel_process_command",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02010d90",
+    "size": 296,
+    "name": "sound_channel_update_volume",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011094",
+    "size": 216,
+    "name": "sound_channel_read_status",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011170",
+    "size": 264,
+    "name": "sound_channel_mix_audio",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011400",
+    "size": 168,
+    "name": "sound_channel_get_position",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020114a8",
+    "size": 232,
+    "name": "sound_channel_copy_wave_data",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011590",
+    "size": 296,
+    "name": "sound_channel_set_loop_points",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011800",
+    "size": 192,
+    "name": "sound_channel_allocate_slot",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020118c0",
+    "size": 288,
+    "name": "sound_channel_open",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020119e0",
+    "size": 312,
+    "name": "sound_channel_close",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011c00",
+    "size": 168,
+    "name": "sound_channel_pause",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011ca8",
+    "size": 232,
+    "name": "sound_channel_read_registers",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02011d90",
+    "size": 296,
+    "name": "sound_channel_stop",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012094",
+    "size": 216,
+    "name": "sound_channel_set_pan",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012170",
+    "size": 264,
+    "name": "sound_channel_get_pitch",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012400",
+    "size": 168,
+    "name": "sound_channel_set_pitch",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020124a8",
+    "size": 232,
+    "name": "sound_channel_adjust_volume",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012590",
+    "size": 296,
+    "name": "sound_channel_apply_effects",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012800",
+    "size": 192,
+    "name": "sound_channel_check_done",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020128c0",
+    "size": 288,
+    "name": "sound_channel_copy_output",
+    "domain": "sound"
+  },
+  {
+    "address": "0x020129e0",
+    "size": 312,
+    "name": "sound_channel_fade_out",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012c00",
+    "size": 168,
+    "name": "sound_channel_get_level",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012ca8",
+    "size": 232,
+    "name": "sound_channel_set_key_off",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012d18",
+    "size": 184,
+    "name": "sound_channel_start_callback",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02012d90",
+    "size": 296,
+    "name": "sound_channel_fade_in",
+    "domain": "sound"
+  },
+  {
+    "address": "0x02013074",
+    "size": 360,
+    "name": "entity_pool_allocator_init",
+    "domain": "entity",
+    "evidence": "Calls 0x02010af8 + heap_validate + 0x02010cd4, initializes entity pool"
+  },
+  {
+    "address": "0x02013094",
+    "size": 216,
+    "name": "entity_pool_validate",
+    "domain": "entity",
+    "evidence": "Calls heap_validate + 0x02010cd4 + 0x02010b80 + 0x020156a0 + 0x020156c8, validates entity pool"
+  },
+  {
+    "address": "0x02013170",
+    "size": 264,
+    "name": "data_decompress_chunk",
+    "domain": "utility",
+    "evidence": "Calls copy_4byte_aligned + 0x0201566c + 0x0201567c, decompresses data chunk"
+  },
+  {
+    "address": "0x0201320c",
+    "size": 256,
+    "name": "data_decompress_init",
+    "domain": "utility",
+    "evidence": "Calls 0x02014854 + 0x020146f8 + copy_4byte_aligned, initializes decompression"
+  },
+  {
+    "address": "0x02013400",
+    "size": 168,
+    "name": "data_decompress_run",
+    "domain": "utility",
+    "evidence": "Calls 0x020145b0 + 0x02014854 + 0x020146f8, runs decompression"
+  },
+  {
+    "address": "0x020134a8",
+    "size": 232,
+    "name": "sound_data_decompress",
+    "domain": "sound",
+    "evidence": "Calls 0x02015520 + 0x02014288 + 0x0201566c, decompresses sound data"
+  },
+  {
+    "address": "0x02013590",
+    "size": 296,
+    "name": "FUN_02013590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02013800",
+    "size": 192,
+    "name": "data_transform_blocks",
+    "domain": "data",
+    "evidence": "Calls 0x02014530 + 0x0201541c + 0x0201566c, transforms data blocks"
+  },
+  {
+    "address": "0x020138c0",
+    "size": 288,
+    "name": "FUN_020138c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020139e0",
+    "size": 312,
+    "name": "data_copy_with_transform",
+    "domain": "memory",
+    "evidence": "Calls 0x02015520 + copy_1byte_remainder + 0x02013e7c, copies with transformation"
+  },
+  {
+    "address": "0x02013c00",
+    "size": 168,
+    "name": "FUN_02013c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02013ca8",
+    "size": 232,
+    "name": "data_copy_compressed",
+    "domain": "memory",
+    "evidence": "Calls 0x02013e7c + 0x02013f58 + copy_1byte_remainder, copies compressed data"
+  },
+  {
+    "address": "0x02013d90",
+    "size": 296,
+    "name": "data_init_compression_table",
+    "domain": "data",
+    "evidence": "Calls 0x020141d8 + 0x02014078 + 0x020141a8, initializes compression table"
+  },
+  {
+    "address": "0x02014094",
+    "size": 216,
+    "name": "FUN_02014094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020140a8",
+    "size": 248,
+    "name": "FUN_020140a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02014170",
+    "size": 264,
+    "name": "FUN_02014170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020141a0",
+    "size": 296,
+    "name": "FUN_020141a0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02014400",
+    "size": 168,
+    "name": "FUN_02014400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020144a8",
+    "size": 232,
+    "name": "FUN_020144a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02014590",
+    "size": 296,
+    "name": "FUN_02014590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02014800",
+    "size": 192,
+    "name": "lz77_decompress_block",
+    "domain": "utility",
+    "evidence": "Calls 0x0200846c + copy_1byte_remainder, LZ77 block decompression pattern"
+  },
+  {
+    "address": "0x020148c0",
+    "size": 288,
+    "name": "FUN_020148c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020149e0",
+    "size": 312,
+    "name": "FUN_020149e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02014c00",
+    "size": 168,
+    "name": "rom_load_compressed_data",
+    "domain": "io",
+    "evidence": "Calls 0x0201559c + 0x0201568c + 0x0201564c, loads compressed ROM data"
+  },
+  {
+    "address": "0x02014ca8",
+    "size": 232,
+    "name": "rom_load_decompress_to_ram",
+    "domain": "io",
+    "evidence": "Calls 0x02015530 + 0x0201557c + 0x02015640, loads and decompresses ROM data"
+  },
+  {
+    "address": "0x02014d90",
+    "size": 296,
+    "name": "rom_load_and_validate",
+    "domain": "io",
+    "evidence": "Calls 0x0201559c + 0x0201568c + 0x0201564c, loads ROM data with validation"
+  },
+  {
+    "address": "0x02015094",
+    "size": 216,
+    "name": "entity_lifecycle_update",
+    "domain": "entity",
+    "evidence": "Calls 0x020130e8 + 0x020135f8 + 0x020134b4 + 0x02014a24, updates entity lifecycle"
+  },
+  {
+    "address": "0x02015170",
+    "size": 264,
+    "name": "FUN_02015170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02015400",
+    "size": 168,
+    "name": "FUN_02015400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020154a8",
+    "size": 232,
+    "name": "FUN_020154a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02015590",
+    "size": 296,
+    "name": "FUN_02015590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02015800",
+    "size": 192,
+    "name": "overlay_load_from_table",
+    "domain": "overlay",
+    "evidence": "Calls 0x02015e28 three times, loads overlay from lookup table"
+  },
+  {
+    "address": "0x020158c0",
+    "size": 288,
+    "name": "overlay_init_and_reloc",
+    "domain": "overlay",
+    "evidence": "Calls 0x02015e28 + 0x02015c78 + 0x02015924, initializes and relocates overlay"
+  },
+  {
+    "address": "0x020159e0",
+    "size": 312,
+    "name": "sound_update_all_channels",
+    "domain": "sound",
+    "evidence": "Calls 0x02016d5c + 0x0201a8ac + 0x0201a16c, updates all sound channels"
+  },
+  {
+    "address": "0x02015c00",
+    "size": 168,
+    "name": "hash_resource_validate",
+    "domain": "utility"
+  },
+  {
+    "address": "0x02015ca8",
+    "size": 232,
+    "name": "stage_data_validate",
+    "domain": "stage",
+    "evidence": "References data tables at 0x02015e1c-0x02015e20, validates stage data"
+  },
+  {
+    "address": "0x02015d90",
+    "size": 296,
+    "name": "sound_update_mixer",
+    "domain": "sound",
+    "evidence": "Calls 0x0201a8ac + copy_1byte_remainder + 0x020179dc, updates sound mixer"
+  },
+  {
+    "address": "0x02016094",
+    "size": 216,
+    "name": "data_block_read",
+    "domain": "io",
+    "evidence": "Calls 0x02016928, reads data block from storage"
+  },
+  {
+    "address": "0x02016170",
+    "size": 264,
+    "name": "data_block_read_multi",
+    "domain": "io",
+    "evidence": "Calls 0x02016928 three times, reads multiple data blocks"
+  },
+  {
+    "address": "0x02016400",
+    "size": 168,
+    "name": "FUN_02016400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020164a8",
+    "size": 232,
+    "name": "data_block_write",
+    "domain": "io",
+    "evidence": "Calls 0x02016928 + 0x0200846c + 0x0201a934, writes data block"
+  },
+  {
+    "address": "0x02016590",
+    "size": 296,
+    "name": "data_block_verify",
+    "domain": "io",
+    "evidence": "Calls 0x02016928 + 0x02015e6c, verifies data block integrity"
+  },
+  {
+    "address": "0x02016800",
+    "size": 192,
+    "name": "memory_block_dma_transfer",
+    "domain": "memory",
+    "evidence": "Calls 0x020156d8 + memory_block_copy, DMA transfers large memory block"
+  },
+  {
+    "address": "0x020168c0",
+    "size": 288,
+    "name": "memory_pool_init_region",
+    "domain": "memory",
+    "evidence": "Calls 0x020156fc + 0x020168ec + 0x0200763c, initializes memory pool region"
+  },
+  {
+    "address": "0x020169e0",
+    "size": 312,
+    "name": "FUN_020169e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02016c00",
+    "size": 168,
+    "name": "FUN_02016c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02016ca8",
+    "size": 232,
+    "name": "FUN_02016ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02016d90",
+    "size": 296,
+    "name": "overlay_resolve_references",
+    "domain": "overlay",
+    "evidence": "Calls 0x0202fae4, resolves overlay symbol references"
+  },
+  {
+    "address": "0x02017094",
+    "size": 216,
+    "name": "FUN_02017094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02017170",
+    "size": 264,
+    "name": "FUN_02017170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02017400",
+    "size": 168,
+    "name": "lz77_decompress_stream",
+    "domain": "utility",
+    "evidence": "Calls 0x0200846c + copy_1byte_remainder, LZ77 stream decompression"
+  },
+  {
+    "address": "0x020174a8",
+    "size": 232,
+    "name": "hash_table_build",
+    "domain": "utility",
+    "evidence": "Calls hash_init + hash_parse + 0x0200bbec, builds hash table from data"
+  },
+  {
+    "address": "0x02017590",
+    "size": 296,
+    "name": "FUN_02017590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02017800",
+    "size": 192,
+    "name": "data_parse_hash_entries",
+    "domain": "data",
+    "evidence": "Calls 0x0200b930 + hash_parse + 0x02017410, parses hash table entries"
+  },
+  {
+    "address": "0x020178c0",
+    "size": 288,
+    "name": "FUN_020178c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020179e0",
+    "size": 312,
+    "name": "stage_data_init",
+    "domain": "stage",
+    "evidence": "Calls 0x020067dc + 0x020183e8 + 0x02017cc4, initializes stage data"
+  },
+  {
+    "address": "0x02017c00",
+    "size": 168,
+    "name": "data_stream_process",
+    "domain": "io",
+    "evidence": "Calls 0x02017994 + 0x02012f9c, processes data stream"
+  },
+  {
+    "address": "0x02017ca8",
+    "size": 232,
+    "name": "input_process_touch_and_keys",
+    "domain": "input",
+    "evidence": "Calls input_poll + copy_2byte_aligned, processes both touch and key input"
+  },
+  {
+    "address": "0x02017d90",
+    "size": 296,
+    "name": "data_stream_validate",
+    "domain": "io",
+    "evidence": "Calls 0x02017994 + 0x02012f9c, validates data stream integrity"
+  },
+  {
+    "address": "0x02018094",
+    "size": 216,
+    "name": "hash_table_rehash",
+    "domain": "utility",
+    "evidence": "Calls copy_2byte_aligned + hash_init, rebuilds hash table"
+  },
+  {
+    "address": "0x02018170",
+    "size": 264,
+    "name": "resource_hash_lookup",
+    "domain": "utility"
+  },
+  {
+    "address": "0x02018400",
+    "size": 168,
+    "name": "game_state_machine_step",
+    "domain": "game",
+    "evidence": "Calls 0x020184ec, advances game state machine by one step"
+  },
+  {
+    "address": "0x020184a8",
+    "size": 232,
+    "name": "FUN_020184a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02018590",
+    "size": 296,
+    "name": "FUN_02018590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02018800",
+    "size": 192,
+    "name": "FUN_02018800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020188c0",
+    "size": 288,
+    "name": "FUN_020188c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020189e0",
+    "size": 312,
+    "name": "FUN_020189e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02018c00",
+    "size": 168,
+    "name": "FUN_02018c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02018ca8",
+    "size": 232,
+    "name": "FUN_02018ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02018d90",
+    "size": 296,
+    "name": "FUN_02018d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019094",
+    "size": 216,
+    "name": "FUN_02019094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019170",
+    "size": 264,
+    "name": "FUN_02019170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019400",
+    "size": 168,
+    "name": "FUN_02019400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020194a8",
+    "size": 232,
+    "name": "FUN_020194a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019590",
+    "size": 296,
+    "name": "FUN_02019590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019800",
+    "size": 192,
+    "name": "FUN_02019800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020198c0",
+    "size": 288,
+    "name": "FUN_020198c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020199e0",
+    "size": 312,
+    "name": "FUN_020199e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019c00",
+    "size": 168,
+    "name": "FUN_02019c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019ca8",
+    "size": 232,
+    "name": "FUN_02019ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02019d90",
+    "size": 296,
+    "name": "FUN_02019d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a094",
+    "size": 216,
+    "name": "FUN_0201a094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a170",
+    "size": 264,
+    "name": "FUN_0201a170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a400",
+    "size": 168,
+    "name": "FUN_0201a400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a4a8",
+    "size": 232,
+    "name": "FUN_0201a4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a590",
+    "size": 296,
+    "name": "FUN_0201a590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a800",
+    "size": 192,
+    "name": "FUN_0201a800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a8c0",
+    "size": 288,
+    "name": "FUN_0201a8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201a9e0",
+    "size": 312,
+    "name": "FUN_0201a9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201ac00",
+    "size": 168,
+    "name": "FUN_0201ac00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201aca8",
+    "size": 232,
+    "name": "FUN_0201aca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201ad90",
+    "size": 296,
+    "name": "FUN_0201ad90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b094",
+    "size": 216,
+    "name": "FUN_0201b094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b170",
+    "size": 264,
+    "name": "touch_sample_process",
+    "domain": "touch"
+  },
+  {
+    "address": "0x0201b400",
+    "size": 168,
+    "name": "FUN_0201b400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b4a8",
+    "size": 232,
+    "name": "FUN_0201b4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b590",
+    "size": 296,
+    "name": "FUN_0201b590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b800",
+    "size": 192,
+    "name": "FUN_0201b800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b8c0",
+    "size": 288,
+    "name": "FUN_0201b8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201b9e0",
+    "size": 312,
+    "name": "FUN_0201b9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201bc00",
+    "size": 168,
+    "name": "FUN_0201bc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201bca8",
+    "size": 232,
+    "name": "FUN_0201bca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201bd90",
+    "size": 296,
+    "name": "FUN_0201bd90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c094",
+    "size": 216,
+    "name": "FUN_0201c094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c170",
+    "size": 264,
+    "name": "FUN_0201c170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c400",
+    "size": 168,
+    "name": "FUN_0201c400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c4a8",
+    "size": 232,
+    "name": "FUN_0201c4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c590",
+    "size": 296,
+    "name": "FUN_0201c590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c800",
+    "size": 192,
+    "name": "FUN_0201c800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c8c0",
+    "size": 288,
+    "name": "FUN_0201c8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201c9e0",
+    "size": 312,
+    "name": "FUN_0201c9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201cc00",
+    "size": 168,
+    "name": "FUN_0201cc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201cca8",
+    "size": 232,
+    "name": "FUN_0201cca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201cd90",
+    "size": 296,
+    "name": "FUN_0201cd90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d094",
+    "size": 216,
+    "name": "FUN_0201d094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d170",
+    "size": 264,
+    "name": "FUN_0201d170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d400",
+    "size": 168,
+    "name": "FUN_0201d400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d4a8",
+    "size": 232,
+    "name": "FUN_0201d4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d590",
+    "size": 296,
+    "name": "FUN_0201d590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d800",
+    "size": 192,
+    "name": "FUN_0201d800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d8c0",
+    "size": 288,
+    "name": "FUN_0201d8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201d9e0",
+    "size": 312,
+    "name": "FUN_0201d9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201dc00",
+    "size": 168,
+    "name": "FUN_0201dc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201dca8",
+    "size": 232,
+    "name": "FUN_0201dca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201dd90",
+    "size": 296,
+    "name": "FUN_0201dd90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e094",
+    "size": 216,
+    "name": "FUN_0201e094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e170",
+    "size": 264,
+    "name": "FUN_0201e170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e400",
+    "size": 168,
+    "name": "FUN_0201e400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e4a8",
+    "size": 232,
+    "name": "FUN_0201e4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e590",
+    "size": 296,
+    "name": "FUN_0201e590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e800",
+    "size": 192,
+    "name": "FUN_0201e800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e8c0",
+    "size": 288,
+    "name": "FUN_0201e8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201e9e0",
+    "size": 312,
+    "name": "FUN_0201e9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201ec00",
+    "size": 168,
+    "name": "FUN_0201ec00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201eca8",
+    "size": 232,
+    "name": "FUN_0201eca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201ed90",
+    "size": 296,
+    "name": "FUN_0201ed90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f094",
+    "size": 216,
+    "name": "FUN_0201f094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f170",
+    "size": 264,
+    "name": "FUN_0201f170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f400",
+    "size": 168,
+    "name": "FUN_0201f400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f4a8",
+    "size": 232,
+    "name": "FUN_0201f4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f590",
+    "size": 296,
+    "name": "FUN_0201f590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f800",
+    "size": 192,
+    "name": "FUN_0201f800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f8c0",
+    "size": 288,
+    "name": "FUN_0201f8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201f9e0",
+    "size": 312,
+    "name": "FUN_0201f9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201fc00",
+    "size": 168,
+    "name": "FUN_0201fc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201fca8",
+    "size": 232,
+    "name": "FUN_0201fca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0201fd90",
+    "size": 296,
+    "name": "FUN_0201fd90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02020094",
+    "size": 216,
+    "name": "overlay_node_per_frame_update",
+    "domain": "overlay",
+    "evidence": "Loads flags at [r5+0x10c], tests bit 0 for active, loads child at [r5+0x110], calls 0x201fbc0 (node update). Iterates 4 nodes at stride 0x15c."
+  },
+  {
+    "address": "0x02020170",
+    "size": 264,
+    "name": "overlay_node_iterate_and_update",
+    "domain": "overlay",
+    "evidence": "Calls 0x201fbc0 (node_update), increments counter r7, compares with #4, adds 348 (0x15c) to node pointer. Iterates 4 overlay nodes."
+  },
+  {
+    "address": "0x02020400",
+    "size": 168,
+    "name": "overlay_init_system",
+    "domain": "overlay"
+  },
+  {
+    "address": "0x020204a8",
+    "size": 232,
+    "name": "overlay_tree_check_system_state",
+    "domain": "overlay",
+    "evidence": "Loads global system_flags from 0x02087cb8, compares state to 1, branches on game state. Overlay system state query."
+  },
+  {
+    "address": "0x02020590",
+    "size": 296,
+    "name": "overlay_tree_lookup_by_id",
+    "domain": "overlay",
+    "evidence": "Calls 0x202f8d8 (hash search), adds offset to r4. Searches overlay tree for matching ID. Size=296 indicates full tree traversal."
+  },
+  {
+    "address": "0x02020800",
+    "size": 192,
+    "name": "overlay_node_clear",
+    "domain": "overlay"
+  },
+  {
+    "address": "0x020208c0",
+    "size": 288,
+    "name": "overlay_tree_binary_search",
+    "domain": "overlay",
+    "evidence": "Data at start (0x02084d2c), actual code at +4. Binary search through overlay tree. Size=288 indicates tree traversal."
+  },
+  {
+    "address": "0x020209e0",
+    "size": 312,
+    "name": "overlay_tree_insert_sorted",
+    "domain": "overlay",
+    "evidence": "Inserts node into overlay tree maintaining sort order. Size=312, same pattern as entity sorted insert."
+  },
+  {
+    "address": "0x02020c00",
+    "size": 168,
+    "name": "overlay_node_process_children",
+    "domain": "overlay"
+  },
+  {
+    "address": "0x02020ca8",
+    "size": 232,
+    "name": "overlay_node_cleanup",
+    "domain": "overlay",
+    "evidence": "Cleans up overlay node resources. Size=232, calls cleanup routines."
+  },
+  {
+    "address": "0x02020d90",
+    "size": 296,
+    "name": "FUN_02020d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02021094",
+    "size": 216,
+    "name": "overlay_tree_find_available_slot",
+    "domain": "overlay",
+    "evidence": "BIC alignment on r0/r1, compares range sizes, requires minimum 0x30 (48 bytes), calls 0x2021214 (slot alloc). Finds free node slot."
+  },
+  {
+    "address": "0x02021170",
+    "size": 264,
+    "name": "overlay_tree_copy_node_data",
+    "domain": "overlay",
+    "evidence": "Stores source pointer, calls memcpy_helper (0x200831c), stores destination at [r5+0x4]. Copies node configuration data."
+  },
+  {
+    "address": "0x02021400",
+    "size": 168,
+    "name": "overlay_tree_blit_region",
+    "domain": "overlay",
+    "evidence": "Computes rect dimensions from offsets, calls 0x200b0fc (blit/copy), with src/dest offsets and dimensions on stack. Region copy for overlay display."
+  },
+  {
+    "address": "0x020214a8",
+    "size": 232,
+    "name": "overlay_tree_dispatch_vtable",
+    "domain": "overlay",
+    "evidence": "Loads vtable from [r0], calls [r2+0x4] via blx. Virtual dispatch through overlay node vtable. Follows 'CRAN' signature pattern."
+  },
+  {
+    "address": "0x02021590",
+    "size": 296,
+    "name": "overlay_tree_validate_and_render",
+    "domain": "overlay",
+    "evidence": "Computes node offset, calls 0x20217e4 (validate), calls 0x2021634 (render), reads [r8+0x9] flag. Validates and renders overlay nodes."
+  },
+  {
+    "address": "0x02021800",
+    "size": 192,
+    "name": "FUN_02021800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020218c0",
+    "size": 288,
+    "name": "FUN_020218c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020219e0",
+    "size": 312,
+    "name": "FUN_020219e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02021c00",
+    "size": 168,
+    "name": "overlay_node_set_param",
+    "domain": "overlay"
+  },
+  {
+    "address": "0x02021ca8",
+    "size": 232,
+    "name": "FUN_02021ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02021d90",
+    "size": 296,
+    "name": "FUN_02021d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022094",
+    "size": 216,
+    "name": "FUN_02022094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022170",
+    "size": 264,
+    "name": "FUN_02022170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022400",
+    "size": 168,
+    "name": "FUN_02022400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020224a8",
+    "size": 232,
+    "name": "FUN_020224a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022590",
+    "size": 296,
+    "name": "FUN_02022590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022800",
+    "size": 192,
+    "name": "FUN_02022800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020228c0",
+    "size": 288,
+    "name": "FUN_020228c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020229e0",
+    "size": 312,
+    "name": "FUN_020229e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022c00",
+    "size": 168,
+    "name": "FUN_02022c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022ca8",
+    "size": 232,
+    "name": "FUN_02022ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02022d90",
+    "size": 296,
+    "name": "FUN_02022d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023094",
+    "size": 216,
+    "name": "FUN_02023094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023170",
+    "size": 264,
+    "name": "FUN_02023170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023400",
+    "size": 168,
+    "name": "FUN_02023400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020234a8",
+    "size": 232,
+    "name": "FUN_020234a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023590",
+    "size": 296,
+    "name": "FUN_02023590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023800",
+    "size": 192,
+    "name": "FUN_02023800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020238c0",
+    "size": 288,
+    "name": "FUN_020238c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020239e0",
+    "size": 312,
+    "name": "FUN_020239e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023c00",
+    "size": 168,
+    "name": "FUN_02023c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023ca8",
+    "size": 232,
+    "name": "FUN_02023ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02023d90",
+    "size": 296,
+    "name": "FUN_02023d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024094",
+    "size": 216,
+    "name": "FUN_02024094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024170",
+    "size": 264,
+    "name": "FUN_02024170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024400",
+    "size": 168,
+    "name": "OverlayNode_InstructionStep",
+    "domain": "overlay",
+    "evidence": "push {r4,r5,lr}; reads bytecode instruction, dispatches via jump table; advances instruction pointer by 2"
+  },
+  {
+    "address": "0x020244a8",
+    "size": 232,
+    "name": "FUN_020244a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024590",
+    "size": 296,
+    "name": "FUN_02024590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024800",
+    "size": 192,
+    "name": "FUN_02024800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020248c0",
+    "size": 288,
+    "name": "FUN_020248c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020249e0",
+    "size": 312,
+    "name": "FUN_020249e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024c00",
+    "size": 168,
+    "name": "FUN_02024c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024ca8",
+    "size": 232,
+    "name": "FUN_02024ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02024d90",
+    "size": 296,
+    "name": "FUN_02024d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02025094",
+    "size": 216,
+    "name": "FUN_02025094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02025170",
+    "size": 264,
+    "name": "FUN_02025170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02025400",
+    "size": 168,
+    "name": "FUN_02025400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020254a8",
+    "size": 232,
+    "name": "FUN_020254a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02025590",
+    "size": 296,
+    "name": "FUN_02025590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02025800",
+    "size": 192,
+    "name": "FUN_02025800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020258c0",
+    "size": 288,
+    "name": "FUN_020258c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020259e0",
+    "size": 312,
+    "name": "display_vram_setup",
+    "domain": "display"
+  },
+  {
+    "address": "0x02025c00",
+    "size": 168,
+    "name": "script_node_for_each",
+    "domain": "script"
+  },
+  {
+    "address": "0x02025ca8",
+    "size": 232,
+    "name": "FUN_02025ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02025d90",
+    "size": 296,
+    "name": "FUN_02025d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026094",
+    "size": 216,
+    "name": "FUN_02026094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026170",
+    "size": 264,
+    "name": "FUN_02026170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026400",
+    "size": 168,
+    "name": "FUN_02026400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020264a8",
+    "size": 232,
+    "name": "FUN_020264a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026590",
+    "size": 296,
+    "name": "FUN_02026590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026800",
+    "size": 192,
+    "name": "FUN_02026800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020268c0",
+    "size": 288,
+    "name": "FUN_020268c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020269e0",
+    "size": 312,
+    "name": "FUN_020269e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026c00",
+    "size": 168,
+    "name": "FUN_02026c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026ca8",
+    "size": 232,
+    "name": "FUN_02026ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02026d90",
+    "size": 296,
+    "name": "FUN_02026d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027094",
+    "size": 216,
+    "name": "FUN_02027094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027170",
+    "size": 264,
+    "name": "FUN_02027170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027400",
+    "size": 168,
+    "name": "FUN_02027400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020274a8",
+    "size": 232,
+    "name": "FUN_020274a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027590",
+    "size": 296,
+    "name": "FUN_02027590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027800",
+    "size": 192,
+    "name": "FUN_02027800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020278c0",
+    "size": 288,
+    "name": "FUN_020278c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020279e0",
+    "size": 312,
+    "name": "FUN_020279e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027c00",
+    "size": 168,
+    "name": "OverlayNode_Return",
+    "domain": "overlay",
+    "evidence": "bx lr only; empty return stub for overlay node processing"
+  },
+  {
+    "address": "0x02027ca8",
+    "size": 232,
+    "name": "FUN_02027ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02027d90",
+    "size": 296,
+    "name": "FUN_02027d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028094",
+    "size": 216,
+    "name": "FUN_02028094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028170",
+    "size": 264,
+    "name": "FUN_02028170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028400",
+    "size": 168,
+    "name": "FUN_02028400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020284a8",
+    "size": 232,
+    "name": "FUN_020284a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028590",
+    "size": 296,
+    "name": "FUN_02028590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028800",
+    "size": 192,
+    "name": "FUN_02028800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020288c0",
+    "size": 288,
+    "name": "FUN_020288c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020289e0",
+    "size": 312,
+    "name": "FUN_020289e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028c00",
+    "size": 168,
+    "name": "FUN_02028c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028ca8",
+    "size": 232,
+    "name": "FUN_02028ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02028d90",
+    "size": 296,
+    "name": "FUN_02028d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029094",
+    "size": 216,
+    "name": "FUN_02029094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029170",
+    "size": 264,
+    "name": "FUN_02029170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029400",
+    "size": 168,
+    "name": "FUN_02029400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020294a8",
+    "size": 232,
+    "name": "FUN_020294a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029590",
+    "size": 296,
+    "name": "FUN_02029590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029800",
+    "size": 192,
+    "name": "FUN_02029800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020298c0",
+    "size": 288,
+    "name": "FUN_020298c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020299e0",
+    "size": 312,
+    "name": "FUN_020299e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029c00",
+    "size": 168,
+    "name": "FUN_02029c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029ca8",
+    "size": 232,
+    "name": "FUN_02029ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02029d90",
+    "size": 296,
+    "name": "FUN_02029d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202a094",
+    "size": 216,
+    "name": "OverlayNode_SkipIfZero",
+    "domain": "overlay",
+    "evidence": "bx lr at start; conditional skip/return for overlay nodes"
+  },
+  {
+    "address": "0x0202a170",
+    "size": 264,
+    "name": "FUN_0202a170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202a400",
+    "size": 168,
+    "name": "FUN_0202a400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202a4a8",
+    "size": 232,
+    "name": "OverlayNode_WaitFrame",
+    "domain": "overlay",
+    "evidence": "bx lr at start; frame-wait node handler"
+  },
+  {
+    "address": "0x0202a590",
+    "size": 296,
+    "name": "OverlayNode_SetProperty",
+    "domain": "overlay",
+    "evidence": "b to handler; sets overlay node properties via indexed access"
+  },
+  {
+    "address": "0x0202a800",
+    "size": 192,
+    "name": "coroutine_context_switch",
+    "domain": "entity"
+  },
+  {
+    "address": "0x0202a8c0",
+    "size": 288,
+    "name": "FUN_0202a8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202a9e0",
+    "size": 312,
+    "name": "OverlayNode_ProcessCommand",
+    "domain": "overlay",
+    "evidence": "bl 0x0202c5f0; processes overlay commands with 8-way switch on type (0-7)"
+  },
+  {
+    "address": "0x0202ac00",
+    "size": 168,
+    "name": "FUN_0202ac00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202aca8",
+    "size": 232,
+    "name": "FUN_0202aca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202ad90",
+    "size": 296,
+    "name": "FUN_0202ad90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b094",
+    "size": 216,
+    "name": "FUN_0202b094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b170",
+    "size": 264,
+    "name": "FUN_0202b170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b400",
+    "size": 168,
+    "name": "io_stream_read_and_parse",
+    "domain": "entity"
+  },
+  {
+    "address": "0x0202b4a8",
+    "size": 232,
+    "name": "FUN_0202b4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b590",
+    "size": 296,
+    "name": "FUN_0202b590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b800",
+    "size": 192,
+    "name": "FUN_0202b800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b8c0",
+    "size": 288,
+    "name": "FUN_0202b8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202b9e0",
+    "size": 312,
+    "name": "FUN_0202b9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202bc00",
+    "size": 168,
+    "name": "FUN_0202bc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202bca8",
+    "size": 232,
+    "name": "FUN_0202bca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202bd90",
+    "size": 296,
+    "name": "OverlayNode_DispatchTable",
+    "domain": "overlay",
+    "evidence": "b forward; overlay node dispatch via table lookup"
+  },
+  {
+    "address": "0x202c000",
+    "size": 148,
+    "name": "OverlayNode_Thunk0",
+    "domain": "overlay",
+    "evidence": "b forward; overlay node thunks at regular intervals"
+  },
+  {
+    "address": "0x0202c094",
+    "size": 216,
+    "name": "FUN_0202c094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202c170",
+    "size": 264,
+    "name": "FUN_0202c170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202c400",
+    "size": 168,
+    "name": "FUN_0202c400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202c4a8",
+    "size": 232,
+    "name": "FUN_0202c4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202c590",
+    "size": 296,
+    "name": "FUN_0202c590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202c800",
+    "size": 192,
+    "name": "fixed_point_divide_clamp",
+    "domain": "math"
+  },
+  {
+    "address": "0x0202c8c0",
+    "size": 288,
+    "name": "FUN_0202c8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202c9e0",
+    "size": 312,
+    "name": "FUN_0202c9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202cc00",
+    "size": 168,
+    "name": "display_set_priority",
+    "domain": "display"
+  },
+  {
+    "address": "0x0202cca8",
+    "size": 232,
+    "name": "FUN_0202cca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202cd90",
+    "size": 296,
+    "name": "OverlayNode_DispatchIndex",
+    "domain": "overlay",
+    "evidence": "b forward; indexed overlay node dispatch"
+  },
+  {
+    "address": "0x0202d094",
+    "size": 216,
+    "name": "FUN_0202d094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202d170",
+    "size": 264,
+    "name": "FUN_0202d170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202d400",
+    "size": 168,
+    "name": "string_reverse_inplace",
+    "domain": "display"
+  },
+  {
+    "address": "0x0202d4a8",
+    "size": 232,
+    "name": "FUN_0202d4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202d590",
+    "size": 296,
+    "name": "FUN_0202d590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202d800",
+    "size": 192,
+    "name": "FUN_0202d800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202d8c0",
+    "size": 288,
+    "name": "FUN_0202d8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202d9e0",
+    "size": 312,
+    "name": "FUN_0202d9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202dc00",
+    "size": 168,
+    "name": "FUN_0202dc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202dca8",
+    "size": 232,
+    "name": "FUN_0202dca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202dd90",
+    "size": 296,
+    "name": "FUN_0202dd90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e094",
+    "size": 216,
+    "name": "FUN_0202e094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e170",
+    "size": 264,
+    "name": "FUN_0202e170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e400",
+    "size": 168,
+    "name": "FUN_0202e400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e4a8",
+    "size": 232,
+    "name": "FUN_0202e4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e590",
+    "size": 296,
+    "name": "FUN_0202e590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e800",
+    "size": 192,
+    "name": "FUN_0202e800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e8c0",
+    "size": 288,
+    "name": "FUN_0202e8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202e9e0",
+    "size": 312,
+    "name": "FUN_0202e9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202ec00",
+    "size": 168,
+    "name": "FUN_0202ec00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202eca8",
+    "size": 232,
+    "name": "FUN_0202eca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202ed90",
+    "size": 296,
+    "name": "Math_FastInvSqrt",
+    "domain": "math",
+    "evidence": "Fast inverse square root: tests exponent bits, uses LUT at pc-148. smull/smlal chain. ~100 instructions."
+  },
+  {
+    "address": "0x0202f094",
+    "size": 216,
+    "name": "FUN_0202f094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f170",
+    "size": 264,
+    "name": "FUN_0202f170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f400",
+    "size": 168,
+    "name": "FUN_0202f400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f4a8",
+    "size": 232,
+    "name": "FUN_0202f4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f590",
+    "size": 296,
+    "name": "FUN_0202f590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f800",
+    "size": 192,
+    "name": "FUN_0202f800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f8c0",
+    "size": 288,
+    "name": "FUN_0202f8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202f9e0",
+    "size": 312,
+    "name": "FUN_0202f9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202fc00",
+    "size": 168,
+    "name": "FUN_0202fc00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0202fca8",
+    "size": 232,
+    "name": "FUN_0202fca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x202fcc8",
+    "size": 0,
+    "name": "pre_init_chain",
+    "domain": "boot",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x0202fd90",
+    "size": 296,
+    "name": "Math_FastInvSqrt_Return",
+    "domain": "math",
+    "evidence": "bx lr at start; return stub near Math_FastInvSqrt"
+  },
+  {
+    "address": "0x202fd94",
+    "size": 0,
+    "name": "boot_reset_state_machine",
+    "domain": "boot",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02030094",
+    "size": 216,
+    "name": "lcd_init_display_regs",
+    "domain": "hardware",
+    "evidence": "Loads 0x04000000 (DISPCNT), bic mask 0xe000, writes to display control. LCD register initialization. Calls 0x2007da4 (Reg_Setup)."
+  },
+  {
+    "address": "0x02030170",
+    "size": 264,
+    "name": "touch_system_init",
+    "domain": "touch"
+  },
+  {
+    "address": "0x20302d8",
+    "size": 180,
+    "name": "Overlay_TransitionStep",
+    "domain": "overlay",
+    "evidence": "push {lr}; confirmed in HANDOFF.md - overlay transition scheduler called from main loop"
+  },
+  {
+    "address": "0x203039c",
+    "size": 404,
+    "name": "Overlay_Init",
+    "domain": "overlay",
+    "evidence": "push {r4-r11,lr}; initializes overlay globals: active=-1, requested=-1, callback=null, loaded=0"
+  },
+  {
+    "address": "0x02030400",
+    "size": 168,
+    "name": "entity_init_two_player_input",
+    "domain": "entity"
+  },
+  {
+    "address": "0x020304a8",
+    "size": 232,
+    "name": "overlay_transition_step",
+    "domain": "overlay"
+  },
+  {
+    "address": "0x203051c",
+    "size": 0,
+    "name": "overlay_schedule_set",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02030590",
+    "size": 296,
+    "name": "game_system_init",
+    "domain": "boot"
+  },
+  {
+    "address": "0x2030598",
+    "size": 508,
+    "name": "game_system_init",
+    "domain": "boot",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x02030800",
+    "size": 192,
+    "name": "entity_init_state_from_file",
+    "domain": "entity",
+    "evidence": "Loads global state pointer, calls 0x20382e0 (file_load), stores result to sp. Initializes entity state from level data file."
+  },
+  {
+    "address": "0x020308c0",
+    "size": 288,
+    "name": "entity_init_state_from_file_v2",
+    "domain": "entity",
+    "evidence": "Same structure as 0x02030800, calls 0x2038328 (file_load_v2). Variant entity state initializer."
+  },
+  {
+    "address": "0x020309e0",
+    "size": 312,
+    "name": "FUN_020309e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02030c00",
+    "size": 168,
+    "name": "EntityObject_PhysicsSetup",
+    "domain": "entity",
+    "evidence": "calls 0x02025268; physics/collision setup for entity objects"
+  },
+  {
+    "address": "0x02030ca8",
+    "size": 232,
+    "name": "FUN_02030ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02030d90",
+    "size": 296,
+    "name": "FUN_02030d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02031094",
+    "size": 216,
+    "name": "entity_check_spawn_bounds",
+    "domain": "entity",
+    "evidence": "Checks r0==0, uses conditional flags, shifts r4 left by 26 bits, stores to sp+0x24. Validates entity spawn position within bounds."
+  },
+  {
+    "address": "0x02031170",
+    "size": 264,
+    "name": "FUN_02031170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02031400",
+    "size": 168,
+    "name": "FUN_02031400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020314a8",
+    "size": 232,
+    "name": "FUN_020314a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02031590",
+    "size": 296,
+    "name": "FUN_02031590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02031800",
+    "size": 192,
+    "name": "entity_slot_process_and_update",
+    "domain": "entity",
+    "evidence": "Computes table index [r8+r7*4]+0xf8, calls 0x2025b38 (update), stores result, increments r7 (loop counter cmp #5). Processes 5 entity slots."
+  },
+  {
+    "address": "0x020318c0",
+    "size": 288,
+    "name": "touch_init_setup",
+    "domain": "touch"
+  },
+  {
+    "address": "0x020319e0",
+    "size": 312,
+    "name": "entity_slot_process_update_v2",
+    "domain": "entity",
+    "evidence": "Same loop structure as 0x02031800 with 312 bytes. Processes entity slots with additional cleanup."
+  },
+  {
+    "address": "0x02031c00",
+    "size": 168,
+    "name": "FUN_02031c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02031ca8",
+    "size": 232,
+    "name": "FUN_02031ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02031d90",
+    "size": 296,
+    "name": "FUN_02031d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02032094",
+    "size": 216,
+    "name": "FUN_02032094",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02032170",
+    "size": 264,
+    "name": "FUN_02032170",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02032400",
+    "size": 168,
+    "name": "FUN_02032400",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020324a8",
+    "size": 232,
+    "name": "FUN_020324a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02032590",
+    "size": 296,
+    "name": "FUN_02032590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02032800",
+    "size": 192,
+    "name": "FUN_02032800",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020328c0",
+    "size": 288,
+    "name": "FUN_020328c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020329e0",
+    "size": 312,
+    "name": "camera_space_update",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x02032c00",
+    "size": 168,
+    "name": "FUN_02032c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02032ca8",
+    "size": 232,
+    "name": "EntityObject_UpdateCallback",
+    "domain": "entity",
+    "evidence": "calls 0x02025268; entity object per-frame update callback"
+  },
+  {
+    "address": "0x02032d90",
+    "size": 296,
+    "name": "FUN_02032d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02033094",
+    "size": 216,
+    "name": "object_list_entry_init",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x02033170",
+    "size": 264,
+    "name": "entity_compute_shifted_index",
+    "domain": "entity",
+    "evidence": "Adds r0+r1, sub 1, arithmetic shift right, adds to r6 with shift. Computes shifted index into entity table."
+  },
+  {
+    "address": "0x02033400",
+    "size": 168,
+    "name": "entity_spawn_by_type",
+    "domain": "entity",
+    "evidence": "Loads entity type from table [r4, r3 lsl #2], calls vtable via blx ip, loops through 2 spawn passes. Entity factory spawn."
+  },
+  {
+    "address": "0x020334a8",
+    "size": 232,
+    "name": "entity_animate_and_advance",
+    "domain": "entity",
+    "evidence": "Loads animation frame counters at [r6+0xa]/[r6+0xc], compares current vs total, advances state machine frame pointer."
+  },
+  {
+    "address": "0x02033590",
+    "size": 296,
+    "name": "Entity_InitFull",
+    "domain": "entity",
+    "evidence": "Inits 124-byte entity struct. Sets offsets 16/42/28/50/54/5c/64/6c from stack params. push {r4-r7,lr}."
+  },
+  {
+    "address": "0x0203363c",
+    "size": 140,
+    "name": "touchstate_producer",
+    "domain": "touch"
+  },
+  {
+    "address": "0x02033800",
+    "size": 192,
+    "name": "TouchState_AlternatePoll",
+    "domain": "touch",
+    "evidence": "bl 0x0203383c; alternate touch polling path (calls touchstate_alternate_updater)"
+  },
+  {
+    "address": "0x0203383c",
+    "size": 504,
+    "name": "touchstate_alternate_updater",
+    "domain": "touch"
+  },
+  {
+    "address": "0x020338c0",
+    "size": 288,
+    "name": "FUN_020338c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020339e0",
+    "size": 312,
+    "name": "TouchState_DirectPoll",
+    "domain": "touch",
+    "evidence": "bl 0x02033a68; direct touch polling path"
+  },
+  {
+    "address": "0x02033a68",
+    "size": 188,
+    "name": "touchstate_main_updater",
+    "domain": "touch"
+  },
+  {
+    "address": "0x2033a8c",
+    "size": 456,
+    "name": "touchstate_direct_poll_sample_edge",
+    "domain": "touch",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02033b98",
+    "size": 436,
+    "name": "touchstate_dispatcher",
+    "domain": "touch"
+  },
+  {
+    "address": "0x02033c00",
+    "size": 168,
+    "name": "FUN_02033c00",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x2033c60",
+    "size": 72,
+    "name": "touchstate_dispatcher_top",
+    "domain": "touch",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02033ca8",
+    "size": 232,
+    "name": "FUN_02033ca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x2033cac",
+    "size": 140,
+    "name": "touchstate_disable",
+    "domain": "touch",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2033d40",
+    "size": 28,
+    "name": "touchstate_clear_enable",
+    "domain": "touch",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02033d58",
+    "size": 80,
+    "name": "touchstate_reset_enable_fn",
+    "domain": "touch"
+  },
+  {
+    "address": "0x02033d90",
+    "size": 296,
+    "name": "FUN_02033d90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02033ddc",
+    "size": 96,
+    "name": "touchstate_init",
+    "domain": "touch"
+  },
+  {
+    "address": "0x02034114",
+    "size": 48,
+    "name": "post_entity_walk",
+    "domain": "main_loop"
+  },
+  {
+    "address": "0x2034400",
+    "size": 148,
+    "name": "TouchState_InputGate",
+    "domain": "touch",
+    "evidence": "bl 0x020356bc; gates touch state processing based on input flags"
+  },
+  {
+    "address": "0x020349b8",
+    "size": 48,
+    "name": "Heap_Free",
+    "domain": "memory",
+    "evidence": "push {lr}; free heap block wrapper"
+  },
+  {
+    "address": "0x02034a40",
+    "size": 48,
+    "name": "Heap_Alloc",
+    "domain": "memory",
+    "evidence": "push {lr}; allocate heap block wrapper"
+  },
+  {
+    "address": "0x02034d34",
+    "size": 48,
+    "name": "subsystem_per_frame",
+    "domain": "main_loop"
+  },
+  {
+    "address": "0x02035134",
+    "size": 164,
+    "name": "input_debounce_edge_read",
+    "domain": "input"
+  },
+  {
+    "address": "0x020351d8",
+    "size": 48,
+    "name": "input_init_delay",
+    "domain": "input"
+  },
+  {
+    "address": "0x2035c00",
+    "size": 148,
+    "name": "MemoryDMA_BlitRow",
+    "domain": "memory",
+    "evidence": "bl 0x02007da4; DMA row copy with alignment handling"
+  },
+  {
+    "address": "0x02035e40",
+    "size": 260,
+    "name": "entity_apply_position_from_stack",
+    "domain": "entity",
+    "evidence": "Computes mul r1,r5,r1, loads halfword from sp+108, stores to [r4+16]/[r4+18]. Applies computed position to entity."
+  },
+  {
+    "address": "0x02035f44",
+    "size": 324,
+    "name": "entity_try_spawn_and_validate",
+    "domain": "entity",
+    "evidence": "Calls 0x2035c58 (spawn), calls 0x2006abc (list_head_get), compares result, returns early if equal. Attempts entity spawn with validation."
+  },
+  {
+    "address": "0x02036088",
+    "size": 116,
+    "name": "entity_aabb_compute_overlap",
+    "domain": "collision",
+    "evidence": "Computes r0+r1 and fp-r1 for X extents, shifts to 16-bit, handles 32-pixel threshold case. AABB overlap computation for spatial queries."
+  },
+  {
+    "address": "0x020367a8",
+    "size": 44,
+    "name": "Entity_StubZero",
+    "domain": "entity",
+    "evidence": "bx lr; stub returning zero, used as default entity callback"
+  },
+  {
+    "address": "0x020367d4",
+    "size": 232,
+    "name": "entity_set_oam_palette",
+    "domain": "entity",
+    "evidence": "Calls 0x201c070 (oam_update), calls 0x201bf1c (palette_load), calls 0x201bf34 (palette_set), calls 0x201eb98 (oam_write). Full OAM/palette setup."
+  },
+  {
+    "address": "0x20368bc",
+    "size": 148,
+    "name": "SoundSystem_Init",
+    "domain": "sound",
+    "evidence": "bl 0x0201db30 + 3x bl 0x0201bf34; initializes sound subsystem and sets volume levels"
+  },
+  {
+    "address": "0x02036a0c",
+    "size": 200,
+    "name": "object_list_per_frame_walker",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x02036aec",
+    "size": 260,
+    "name": "object_list_camera_space_lookup",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x02036bfc",
+    "size": 64,
+    "name": "object_list_insert",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x02036e04",
+    "size": 144,
+    "name": "static_entity_walker",
+    "domain": "entity"
+  },
+  {
+    "address": "0x02036e9c",
+    "size": 68,
+    "name": "container_slot_allocator",
+    "domain": "entity"
+  },
+  {
+    "address": "0x2036fdc",
+    "size": 84,
+    "name": "Entity_RemoveByMarker",
+    "domain": "entity",
+    "evidence": "push {r4-r6,lr}; walks entity list removing all entities matching marker value in r0"
+  },
+  {
+    "address": "0x020371c8",
+    "size": 32,
+    "name": "entity_free_wrapper",
+    "domain": "entity"
+  },
+  {
+    "address": "0x020372d0",
+    "size": 396,
+    "name": "entity_allocator_constructor",
+    "domain": "entity"
+  },
+  {
+    "address": "0x02037480",
+    "size": 424,
+    "name": "list_container_init",
+    "domain": "entity"
+  },
+  {
+    "address": "0x020374c0",
+    "size": 176,
+    "name": "entity_fetch_multi_pointers",
+    "domain": "entity",
+    "evidence": "Calls 0x2036e9c (pointer_get) four times, stores each result to different pc-relative addresses. Fetches 4 entity pointers."
+  },
+  {
+    "address": "0x02037570",
+    "size": 248,
+    "name": "entity_store_to_linked_chain",
+    "domain": "entity",
+    "evidence": "Stores r2 to [r7+8]/[r7+12], halfwords to [r7+22]/[r7+24]/[r7+26], follows chain via ldr lr,[lr]. Writes to entity linked list chain."
+  },
+  {
+    "address": "0x02037668",
+    "size": 88,
+    "name": "entity_spawn_position_calc",
+    "domain": "entity",
+    "evidence": "Zeros 8 bytes (spawn position), computes fixed-point division for spawn offset using smull. Calculates entity spawn positions."
+  },
+  {
+    "address": "0x0203787c",
+    "size": 516,
+    "name": "Entity_ProcessSpawnFlags",
+    "domain": "entity",
+    "evidence": "Reads entity flags (bit4,bit5), loads LUT entries (8-byte stride), stores coords. Calls 0x200d544. push {r4-r6,lr}."
+  },
+  {
+    "address": "0x02037a8c",
+    "size": 456,
+    "name": "Entity_ProcessSpawnFlagsB",
+    "domain": "entity",
+    "evidence": "Similar flag processing (bit4), calls 0x200d650/0x200d5f8. Loop on cmp r0,#0. push {r4-r5,lr}."
+  },
+  {
+    "address": "0x02037c60",
+    "size": 72,
+    "name": "Entity_FlagDispatch",
+    "domain": "entity",
+    "evidence": "Tests bit0 and bit1 of global+16. Dispatches to ProcessSpawnFlags or ProcessSpawnFlagsB."
+  },
+  {
+    "address": "0x02037cac",
+    "size": 140,
+    "name": "Entity_ClearSpawnState",
+    "domain": "entity",
+    "evidence": "Tests bit1, calls 0x200d554, 0x200d18c/0x200d178. Clears bits 0,1 at global+16. Resets byte at +20."
+  },
+  {
+    "address": "0x02037d40",
+    "size": 28,
+    "name": "entity_reset_spawn_flags",
+    "domain": "entity",
+    "evidence": "Clears bit 0 in [r0+0x10], zeros [r0+0x14] byte. Resets spawn context flags for entity recycling."
+  },
+  {
+    "address": "0x02037d60",
+    "size": 128,
+    "name": "Entity_ResetSpawnContext",
+    "domain": "entity",
+    "evidence": "Tests bit0/bit1, calls ClearSpawnState. Then memset 40 bytes twice. Sets bit0 at global+16."
+  },
+  {
+    "address": "0x02037de8",
+    "size": 116,
+    "name": "entity_slot_check",
+    "domain": "entity"
+  },
+  {
+    "address": "0x2038400",
+    "size": 148,
+    "name": "CollisionUtil_SortAndInsert",
+    "domain": "collision",
+    "evidence": "bl 0x020026f8; sorts and inserts collision entries"
+  },
+  {
+    "address": "0x0203a0bc",
+    "size": 256,
+    "name": "entity_type_dispatch_switch",
+    "domain": "entity",
+    "evidence": "Stores r2 to [r0+4], byte to [r0+40], loads from pc-relative table, stores mode #0x6800000 to [r0]. Dispatches entity type with mode switch."
+  },
+  {
+    "address": "0x0203a1bc",
+    "size": 296,
+    "name": "entity_call_callback_and_return",
+    "domain": "entity",
+    "evidence": "Stores r1 to [r0+0x8c], calls 0x2002e28 (callback), calls 0x2003178 (cleanup). Entity callback invocation."
+  },
+  {
+    "address": "0x203a800",
+    "size": 148,
+    "name": "CollisionShape_Config",
+    "domain": "collision",
+    "evidence": "b to handler; configures collision shapes with size/mode parameters (128/256/etc)"
+  },
+  {
+    "address": "0x203c400",
+    "size": 148,
+    "name": "CollisionSweep_PreloadCallback",
+    "domain": "collision",
+    "evidence": "bl 0x0200763c + blx r3; preloads collision data and invokes callback"
+  },
+  {
+    "address": "0x203e400",
+    "size": 148,
+    "name": "CollisionSweep_ResultCheck",
+    "domain": "collision",
+    "evidence": "bl 0x020405e0; checks sweep result against expected value, returns 1 on match"
+  },
+  {
+    "address": "0x203fc00",
+    "size": 148,
+    "name": "CollisionSweep_Dispatch",
+    "domain": "collision",
+    "evidence": "bl 0x0203fb9c; dispatches collision sweep based on input type"
+  },
+  {
+    "address": "0x2040000",
+    "size": 148,
+    "name": "Stage_SweepEntry",
+    "domain": "stage",
+    "evidence": "bl 0x02011dcc; stage sweep entry point, checks result == 2"
+  },
+  {
+    "address": "0x2040400",
+    "size": 148,
+    "name": "Stage_ReturnNoop",
+    "domain": "stage",
+    "evidence": "bx lr only; empty stage callback/noop return"
+  },
+  {
+    "address": "0x2041800",
+    "size": 148,
+    "name": "Stage_SoundTrigger",
+    "domain": "stage",
+    "evidence": "b to handler; triggers sound effects with DISPCNT register access"
+  },
+  {
+    "address": "0x02042100",
+    "size": 384,
+    "name": "CollisionAABB_Init",
+    "domain": "collision",
+    "evidence": "Structure init, member store"
+  },
+  {
+    "address": "0x02042280",
+    "size": 192,
+    "name": "CollisionAABB_Set",
+    "domain": "collision",
+    "evidence": "bl to known, struct set"
+  },
+  {
+    "address": "0x2042800",
+    "size": 148,
+    "name": "Stage_NoopReturn",
+    "domain": "stage",
+    "evidence": "bx lr only; empty stage return stub"
+  },
+  {
+    "address": "0x2043400",
+    "size": 148,
+    "name": "Stage_EffectCleanup",
+    "domain": "stage",
+    "evidence": "bl 0x0200831c (memset); cleans up stage effects, clears DISPCNT bits"
+  },
+  {
+    "address": "0x02043abc",
+    "size": 172,
+    "name": "mode_setup",
+    "domain": "stage"
+  },
+  {
+    "address": "0x02043b78",
+    "size": 220,
+    "name": "CollisionShape_Update",
+    "domain": "collision",
+    "evidence": "entity_free_wrapper, flag checks"
+  },
+  {
+    "address": "0x02043c7c",
+    "size": 276,
+    "name": "CollisionShape_Allocate",
+    "domain": "collision",
+    "evidence": "entity_allocator_constructor, mem alloc"
+  },
+  {
+    "address": "0x02044098",
+    "size": 584,
+    "name": "CollisionGrid_Build",
+    "domain": "collision",
+    "evidence": "Memory alloc/free, grid initialization"
+  },
+  {
+    "address": "0x020442f0",
+    "size": 448,
+    "name": "CollisionGrid_Insert",
+    "domain": "collision",
+    "evidence": "entity_allocator, insert with size calc"
+  },
+  {
+    "address": "0x020444b0",
+    "size": 336,
+    "name": "CollisionResponse_Check",
+    "domain": "collision",
+    "evidence": "Response checking with signed halfword ops"
+  },
+  {
+    "address": "0x0204490c",
+    "size": 164,
+    "name": "CollisionResponse_Apply",
+    "domain": "collision",
+    "evidence": "Response application"
+  },
+  {
+    "address": "0x020449b0",
+    "size": 108,
+    "name": "CollisionResponse_Reset",
+    "domain": "collision",
+    "evidence": "Response reset/clear"
+  },
+  {
+    "address": "0x2044c00",
+    "size": 148,
+    "name": "Stage_EmptyReturn",
+    "domain": "stage",
+    "evidence": "bx lr only; empty stage return stub"
+  },
+  {
+    "address": "0x020450b4",
+    "size": 124,
+    "name": "CollisionShape_Create",
+    "domain": "collision",
+    "evidence": "entity_allocator, 0x4000 memory alloc"
+  },
+  {
+    "address": "0x02045130",
+    "size": 156,
+    "name": "CollisionShape_SetType",
+    "domain": "collision",
+    "evidence": "Type config with bitfield operations"
+  },
+  {
+    "address": "0x020454cc",
+    "size": 348,
+    "name": "entity_zone_update",
+    "domain": "entity"
+  },
+  {
+    "address": "0x02045628",
+    "size": 176,
+    "name": "Entity_GetPosition",
+    "domain": "entity",
+    "evidence": "Position load"
+  },
+  {
+    "address": "0x02046080",
+    "size": 256,
+    "name": "FUN_02046080",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02046180",
+    "size": 176,
+    "name": "FUN_02046180",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020480bc",
+    "size": 256,
+    "name": "FUN_020480bc",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02048500",
+    "size": 168,
+    "name": "FUN_02048500",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x020485a8",
+    "size": 224,
+    "name": "FUN_020485a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02048688",
+    "size": 292,
+    "name": "FUN_02048688",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02048ad4",
+    "size": 220,
+    "name": "zone_data_cleanup",
+    "domain": "stage"
+  },
+  {
+    "address": "0x02048ba4",
+    "size": 276,
+    "name": "mode_data_key_loader",
+    "domain": "stage"
+  },
+  {
+    "address": "0x020492dc",
+    "size": 180,
+    "name": "Stage_LoadResourceA",
+    "domain": "stage",
+    "evidence": "bl 0x0202566c + bl 0x020212e0; loads stage resource type A"
+  },
+  {
+    "address": "0x02049390",
+    "size": 228,
+    "name": "FUN_02049390",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02049474",
+    "size": 164,
+    "name": "Stage_LoadResourceB",
+    "domain": "stage",
+    "evidence": "bl 0x02025268; loads stage resource type B"
+  },
+  {
+    "address": "0x02049c40",
+    "size": 72,
+    "name": "main_zone_object_loader",
+    "domain": "stage"
+  },
+  {
+    "address": "0x204a000",
+    "size": 148,
+    "name": "Stage_ReturnStub",
+    "domain": "stage",
+    "evidence": "bx lr only; empty stage return"
+  },
+  {
+    "address": "0x204a800",
+    "size": 148,
+    "name": "Stage_CollisionInit",
+    "domain": "stage",
+    "evidence": "bl 0x02011dcc; initializes stage collision data"
+  },
+  {
+    "address": "0x0204a8a8",
+    "size": 232,
+    "name": "AssetAlloc_AlignAndRegister",
+    "domain": "memory",
+    "evidence": "Aligns allocation to 32-byte boundary, stores size+canary. Calls 0x2034a40 for alloc. Registers with manager."
+  },
+  {
+    "address": "0x0204a98c",
+    "size": 244,
+    "name": "model_resource_loader",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204a990",
+    "size": 316,
+    "name": "AssetAlloc_IndexedLookup",
+    "domain": "memory",
+    "evidence": "Searches 4-entry asset table, allocates if not found. Stores aligned pointer. After AssetAlloc_AlignAndRegister."
+  },
+  {
+    "address": "0x0204afb8",
+    "size": 8,
+    "name": "FUN_0204afb8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0204afc0",
+    "size": 8,
+    "name": "FUN_0204afc0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x204b000",
+    "size": 148,
+    "name": "Stage_EmptyCallback",
+    "domain": "stage",
+    "evidence": "bx lr only; empty stage callback"
+  },
+  {
+    "address": "0x0204b0a8",
+    "size": 248,
+    "name": "ScriptVM_StepExecution",
+    "domain": "script",
+    "evidence": "Checks VM state (2=running,3/0=special). Calls callback via blx r2. Increments frame counter."
+  },
+  {
+    "address": "0x0204b1a0",
+    "size": 296,
+    "name": "ScriptVM_TickAndCallback",
+    "domain": "script",
+    "evidence": "Calls callback via blx r1. Handles state 5 with flag test. Calls 0x2033f44 for state update."
+  },
+  {
+    "address": "0x0204b2ec",
+    "size": 36,
+    "name": "stage_cleanup",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204b470",
+    "size": 80,
+    "name": "per_stage_update_dispatcher",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204b4cc",
+    "size": 84,
+    "name": "ScriptVM_InitContext",
+    "domain": "script",
+    "evidence": "92-byte stack frame. Calls 0x234dedc, 0x2021310, 0x2021264, 0x20257f8. Initializes VM context."
+  },
+  {
+    "address": "0x0204b528",
+    "size": 228,
+    "name": "per_frame_stage_update",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204b700",
+    "size": 16,
+    "name": "mode_noop_return",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204b718",
+    "size": 84,
+    "name": "ScriptVM_InitState",
+    "domain": "script",
+    "evidence": "Zeroes 96-byte struct, copies entity metadata (byte at 0x1c/0x1d). Stores pointer at +4. push {r4,lr}."
+  },
+  {
+    "address": "0x0204b95c",
+    "size": 272,
+    "name": "pause_score_camera_callback",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204ba84",
+    "size": 44,
+    "name": "hud_callback",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204bd6c",
+    "size": 40,
+    "name": "gameplay_entity_teardown",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204bd94",
+    "size": 68,
+    "name": "terminal_per_frame_handler",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204bdf8",
+    "size": 20,
+    "name": "mode_terminal_gameplay",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204be14",
+    "size": 52,
+    "name": "TaskManager_SetHookA",
+    "domain": "system",
+    "evidence": "Checks state==1, then stores function pointer at offset 8 of global struct. 52 bytes."
+  },
+  {
+    "address": "0x0204be48",
+    "size": 76,
+    "name": "TaskManager_SetHookB",
+    "domain": "system",
+    "evidence": "Tests bit1 of function pointer, stores different handler at offset 8. Push/pop {r4,lr}. 76 bytes."
+  },
+  {
+    "address": "0x0204be9c",
+    "size": 52,
+    "name": "TaskManager_SetHookC",
+    "domain": "system",
+    "evidence": "Same pattern as HookA: checks state==1, stores at offset 8. Different source table. 52 bytes."
+  },
+  {
+    "address": "0x0204bed0",
+    "size": 76,
+    "name": "mode_dispatcher",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204bf24",
+    "size": 52,
+    "name": "mode_touch_enable",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204bf88",
+    "size": 1428,
+    "name": "gameplay_hud_player_setup",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204c23c",
+    "size": 152,
+    "name": "Gameplay_CheckPauseFlags",
+    "domain": "gameplay",
+    "evidence": "Tests flag bit5 at global+0x18. If set, calls 0x232d9a4, 0x203dba4. Processes gameplay pause state."
+  },
+  {
+    "address": "0x0204c2d4",
+    "size": 200,
+    "name": "Gameplay_ProcessTimers",
+    "domain": "gameplay",
+    "evidence": "Processes gameplay timers and flag state. Calls 0x234d62c. Sets bit9 flag (0x200) on timer expiry."
+  },
+  {
+    "address": "0x0204c39c",
+    "size": 120,
+    "name": "Gameplay_SetModeFlags",
+    "domain": "gameplay",
+    "evidence": "Sets mode flags based on state. Calls 0x23376a4/0x2337688 for flag OR operations. Sets bit4 (0x10)."
+  },
+  {
+    "address": "0x204c400",
+    "size": 148,
+    "name": "Stage_SoundChannelSetup",
+    "domain": "stage",
+    "evidence": "bl 0x0206e30; sound channel setup for stage"
+  },
+  {
+    "address": "0x204c800",
+    "size": 148,
+    "name": "Stage_MusicLoad",
+    "domain": "stage",
+    "evidence": "bl 0x02048e4; loads stage music data"
+  },
+  {
+    "address": "0x0204ce50",
+    "size": 304,
+    "name": "NDS_InitSubSystem",
+    "domain": "system",
+    "evidence": "Sets 0x8000 flag at global, calls 8 initialization functions in sequence (0x2002f60..0x2002e78)."
+  },
+  {
+    "address": "0x0204cf80",
+    "size": 256,
+    "name": "NDS_ConfigureDisplay",
+    "domain": "display",
+    "evidence": "Configures display registers: AND/OR bit patterns at multiple halfword offsets. Sets 0x10/0x08/0x20 flags."
+  },
+  {
+    "address": "0x0204d388",
+    "size": 388,
+    "name": "NDS_SetupDisplayMode",
+    "domain": "display",
+    "evidence": "Configures display mode registers. Reads/writes to multiple halfword offsets with 0x43 mask. Sets priority bits."
+  },
+  {
+    "address": "0x0204d648",
+    "size": 328,
+    "name": "zone_entity_setup",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204d6d0",
+    "size": 144,
+    "name": "mode_entity_creation",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204d768",
+    "size": 60,
+    "name": "Display_ResetState",
+    "domain": "display",
+    "evidence": "Clears offsets 0x24/0x40/0x20/0x36/0x24/0x18 to 0. Calls 0x233c300 and 0x2335e70."
+  },
+  {
+    "address": "0x0204d7ac",
+    "size": 52,
+    "name": "mode_zone_entity_setup",
+    "domain": "stage"
+  },
+  {
+    "address": "0x204d800",
+    "size": 148,
+    "name": "Mode_ReturnStub",
+    "domain": "mode",
+    "evidence": "bx lr only; empty mode return stub"
+  },
+  {
+    "address": "0x0204d804",
+    "size": 52,
+    "name": "mode_zone_entity_teardown",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204d834",
+    "size": 32,
+    "name": "gameplay_callback",
+    "domain": "stage"
+  },
+  {
+    "address": "0x0204d8d8",
+    "size": 272,
+    "name": "Player_UpdatePhysicsStep",
+    "domain": "player",
+    "evidence": "Fixed-point velocity calculation (lsl #8 scale, 0xF00 clamp). Compares position vs target. Sets state on match."
+  },
+  {
+    "address": "0x0204da44",
+    "size": 348,
+    "name": "player_spawn",
+    "domain": "entity"
+  },
+  {
+    "address": "0x204dbb8",
+    "size": 252,
+    "name": "intro_countdown_cb",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x204e400",
+    "size": 148,
+    "name": "Mode_InfiniteLoop",
+    "domain": "mode",
+    "evidence": "b to self (0x0204e400); infinite loop / spin-wait"
+  },
+  {
+    "address": "0x0204ec8c",
+    "size": 104,
+    "name": "SoundBank_CompareChannels",
+    "domain": "audio",
+    "evidence": "Compares 8 channel thresholds from lookup table. Sets bits in accumulator based on comparisons. Clamps to 99."
+  },
+  {
+    "address": "0x020556a4",
+    "size": 140,
+    "name": "PauseFix_ControllerUpdate",
+    "domain": "system",
+    "evidence": "push {r4-r5,lr}; pause/fix controller update (confirmed 0x77c object)"
+  },
+  {
+    "address": "0x02055878",
+    "size": 140,
+    "name": "PauseFix_ControllerDestroy",
+    "domain": "system",
+    "evidence": "push {r4-r7,lr}; pause/fix controller destroy callback"
+  },
+  {
+    "address": "0x02055918",
+    "size": 1256,
+    "name": "PauseFix_ControllerSpawn",
+    "domain": "system",
+    "evidence": "push {r4-r11,lr}; creates 0x77c pause/fix/HUD controller entity"
+  },
+  {
+    "address": "0x2055c00",
+    "size": 148,
+    "name": "PauseFix_Thunk",
+    "domain": "system",
+    "evidence": "b to handler; pause fix thunk"
+  },
+  {
+    "address": "0x2057c00",
+    "size": 148,
+    "name": "System_SyncWait",
+    "domain": "system",
+    "evidence": "bl 0x0206e30; system synchronization wait"
+  },
+  {
+    "address": "0x2058400",
+    "size": 148,
+    "name": "System_TimerSetup",
+    "domain": "system",
+    "evidence": "bl 0x0206940; system timer setup"
+  },
+  {
+    "address": "0x2059400",
+    "size": 148,
+    "name": "System_CallbackCheck",
+    "domain": "system",
+    "evidence": "bl 0x0206e3c; checks system callback status"
+  },
+  {
+    "address": "0x205b000",
+    "size": 148,
+    "name": "System_ReturnStub",
+    "domain": "system",
+    "evidence": "bx lr only; empty system return"
+  },
+  {
+    "address": "0x205e378",
+    "size": 0,
+    "name": "entity_sub_system",
+    "domain": "entity",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "hw_funcs.txt"
+  },
+  {
+    "address": "0x205f25c",
+    "size": 0,
+    "name": "entity_sub_system_2",
+    "domain": "entity",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x020610bc",
+    "size": 272,
+    "name": "GameplayEntity_Init",
+    "domain": "gameplay",
+    "evidence": "Entity type init"
+  },
+  {
+    "address": "0x020611cc",
+    "size": 416,
+    "name": "GameplayEntity_Update",
+    "domain": "gameplay",
+    "evidence": "Entity update loop"
+  },
+  {
+    "address": "0x020620b0",
+    "size": 288,
+    "name": "GameplayEntity_Render",
+    "domain": "gameplay",
+    "evidence": "Entity render"
+  },
+  {
+    "address": "0x020621d0",
+    "size": 152,
+    "name": "GameplayEntity_Cleanup",
+    "domain": "gameplay",
+    "evidence": "Entity cleanup"
+  },
+  {
+    "address": "0x2064000",
+    "size": 148,
+    "name": "Collision_GridSetup",
+    "domain": "collision",
+    "evidence": "bl 0x0206e30; initializes collision grid"
+  },
+  {
+    "address": "0x020643b4",
+    "size": 180,
+    "name": "SpawnPoint_CheckPlayer",
+    "domain": "gameplay",
+    "evidence": "Bit test loop, entity alloc, spawn"
+  },
+  {
+    "address": "0x020644ac",
+    "size": 92,
+    "name": "SpawnPoint_InitEntity",
+    "domain": "gameplay",
+    "evidence": "Entity alloc, position setup"
+  },
+  {
+    "address": "0x02064508",
+    "size": 44,
+    "name": "SpawnPoint_GetPosition",
+    "domain": "gameplay",
+    "evidence": "Small function, offset load"
+  },
+  {
+    "address": "0x02064534",
+    "size": 32,
+    "name": "SpawnPoint_GetSpawnID",
+    "domain": "gameplay",
+    "evidence": "Tiny function, simple return"
+  },
+  {
+    "address": "0x02064554",
+    "size": 360,
+    "name": "SpawnPoint_Deallocate",
+    "domain": "gameplay",
+    "evidence": "memset+heap_free, entity cleanup"
+  },
+  {
+    "address": "0x020646bc",
+    "size": 96,
+    "name": "SpawnPoint_CheckHitboxFlags",
+    "domain": "entity",
+    "evidence": "Iterates hitbox channels 0-7, checks bitmask flags, loads hitbox dims from LUT. After SpawnPoint_GetSpawnID."
+  },
+  {
+    "address": "0x020648c4",
+    "size": 3416,
+    "name": "CollisionDispatcher_ProcessAll",
+    "domain": "collision",
+    "evidence": "3x collision_dispatcher calls, 3416 bytes"
+  },
+  {
+    "address": "0x020657dc",
+    "size": 1740,
+    "name": "movement_collision_resolution",
+    "domain": "player"
+  },
+  {
+    "address": "0x2065800",
+    "size": 148,
+    "name": "Player_MovementThunk",
+    "domain": "player",
+    "evidence": "bl 0x0206e30; player movement thunk"
+  },
+  {
+    "address": "0x02065ee0",
+    "size": 184,
+    "name": "char_controller",
+    "domain": "player"
+  },
+  {
+    "address": "0x02066010",
+    "size": 160,
+    "name": "collision_dispatcher",
+    "domain": "collision"
+  },
+  {
+    "address": "0x02066638",
+    "size": 1112,
+    "name": "tile_raycast",
+    "domain": "collision"
+  },
+  {
+    "address": "0x20670bc",
+    "size": 1084,
+    "name": "sloped_surface_response",
+    "domain": "collision",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x2067400",
+    "size": 148,
+    "name": "Player_ReturnStub",
+    "domain": "player",
+    "evidence": "bx lr only; empty player return"
+  },
+  {
+    "address": "0x02067670",
+    "size": 936,
+    "name": "entity_aabb_sweep",
+    "domain": "collision"
+  },
+  {
+    "address": "0x02067d20",
+    "size": 868,
+    "name": "collision_entity_register",
+    "domain": "collision"
+  },
+  {
+    "address": "0x02067ddc",
+    "size": 504,
+    "name": "scripted_attract_demo_controller",
+    "domain": "input"
+  },
+  {
+    "address": "0x2068000",
+    "size": 148,
+    "name": "Player_SoundTrigger",
+    "domain": "player",
+    "evidence": "bl 0x0206e30; player sound trigger"
+  },
+  {
+    "address": "0x02068094",
+    "size": 240,
+    "name": "scripted_attract_demo_spawner",
+    "domain": "input"
+  },
+  {
+    "address": "0x020680b0",
+    "size": 624,
+    "name": "player_entity_init",
+    "domain": "player"
+  },
+  {
+    "address": "0x020687b8",
+    "size": 412,
+    "name": "object_name_cache_resolver",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206919c",
+    "size": 128,
+    "name": "velocity_binding_injection",
+    "domain": "player"
+  },
+  {
+    "address": "0x020694b0",
+    "size": 856,
+    "name": "movement_accel_handler",
+    "domain": "player"
+  },
+  {
+    "address": "0x02069818",
+    "size": 164,
+    "name": "action_teardown",
+    "domain": "action"
+  },
+  {
+    "address": "0x02069934",
+    "size": 412,
+    "name": "action_object_spawner",
+    "domain": "action"
+  },
+  {
+    "address": "0x02069a34",
+    "size": 256,
+    "name": "child_linking",
+    "domain": "action"
+  },
+  {
+    "address": "0x02069b34",
+    "size": 320,
+    "name": "named_sub_entity_creation",
+    "domain": "action"
+  },
+  {
+    "address": "0x02069c74",
+    "size": 500,
+    "name": "action_state_spawner_A",
+    "domain": "action"
+  },
+  {
+    "address": "0x02069d38",
+    "size": 292,
+    "name": "hitbox_frame_from_named_object",
+    "domain": "action"
+  },
+  {
+    "address": "0x02069f1c",
+    "size": 300,
+    "name": "action_loader_hitbox_setup",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206a054",
+    "size": 88,
+    "name": "action_init",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206a094",
+    "size": 216,
+    "name": "ActionState_SetActiveFlag",
+    "domain": "action",
+    "evidence": "Stores r0 to r4+0xC0, ORs 0x10 into r4+0x108. End of action_state_processor block."
+  },
+  {
+    "address": "0x0206a0ac",
+    "size": 2344,
+    "name": "action_state_processor",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206a170",
+    "size": 264,
+    "name": "ActionState_ClearEntityFlags",
+    "domain": "action",
+    "evidence": "Clears entity flags in 5-iteration loop (byte at 0x10c). ORs 0x100 into r7+0x2C. Clears r6 bit3."
+  },
+  {
+    "address": "0x0206a4a8",
+    "size": 232,
+    "name": "ActionObject_CalcTrajectory",
+    "domain": "action",
+    "evidence": "Uses sin/cos LUT to compute 3D trajectory vector via blx 0x2000e7c. Copies result to r9+0x24. Near action_state_processor."
+  },
+  {
+    "address": "0x0206a590",
+    "size": 296,
+    "name": "ActionObject_ApplyImpulse",
+    "domain": "action",
+    "evidence": "Similar angle-based vector computation with lsl #4 scaling. Checks flag 0x200. Near action_state_processor."
+  },
+  {
+    "address": "0x0206a8c0",
+    "size": 288,
+    "name": "ActionObject_CopyState",
+    "domain": "action",
+    "evidence": "Copies pos/vel from r9 to r4 (offsets 0x18-0x20, 0x48-0x50). Calls 0x2008400 for transform, 0x20315e0 for update."
+  },
+  {
+    "address": "0x0206a9e0",
+    "size": 312,
+    "name": "action_frame_update",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206aa04",
+    "size": 52,
+    "name": "action_dispatch_wrapper",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206aa38",
+    "size": 2032,
+    "name": "tile_object_placement_builder",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x0206b0bc",
+    "size": 256,
+    "name": "tile_object_spawner",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x0206b1bc",
+    "size": 296,
+    "name": "TileSpawner_ProcessBatch",
+    "domain": "object_list",
+    "evidence": "Triple-nested loop: iterates tile groups, rows, columns. Advances tile data pointer by 8. Near tile_object_spawner."
+  },
+  {
+    "address": "0x0206b244",
+    "size": 1296,
+    "name": "secondary_tile_builder",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x0206b4a8",
+    "size": 232,
+    "name": "Player_ProbePosition",
+    "domain": "player",
+    "evidence": "complex position probing with fixed-point shifts and table lookups; collision probe"
+  },
+  {
+    "address": "0x0206b590",
+    "size": 296,
+    "name": "tile_camera_spawner",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x0206b768",
+    "size": 1444,
+    "name": "placement_dispatcher",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x0206b7a0",
+    "size": 156,
+    "name": "PlacementDispatcher_ApplyFlags",
+    "domain": "object_list",
+    "evidence": "Sets collision flags in r8+0x2C (0x4000, 0x80, 0x4). Reads r9+0xa4/0x124/0x128. Near placement_dispatcher."
+  },
+  {
+    "address": "0x0206b84c",
+    "size": 240,
+    "name": "Entity_SetPositionRelative",
+    "domain": "object_list",
+    "evidence": "Converts world pos to camera-relative screen pos via camera offset. Stores to r8+4/+6. Flags 0x2000/0x4000/0x80."
+  },
+  {
+    "address": "0x206bc00",
+    "size": 148,
+    "name": "Player_CollisionEntry",
+    "domain": "player",
+    "evidence": "bl 0x0206e30; player collision entry point"
+  },
+  {
+    "address": "0x0206bd24",
+    "size": 56,
+    "name": "hitbox_tile_placement_link",
+    "domain": "object_list"
+  },
+  {
+    "address": "0x0206bd5c",
+    "size": 408,
+    "name": "movement_iterator",
+    "domain": "player"
+  },
+  {
+    "address": "0x0206bef4",
+    "size": 64,
+    "name": "player_destroy",
+    "domain": "player"
+  },
+  {
+    "address": "0x0206c094",
+    "size": 216,
+    "name": "player_entity_cleanup",
+    "domain": "player"
+  },
+  {
+    "address": "0x0206c170",
+    "size": 264,
+    "name": "player_action_cleanup",
+    "domain": "player"
+  },
+  {
+    "address": "0x0206c3d0",
+    "size": 812,
+    "name": "player_per_frame_update",
+    "domain": "player"
+  },
+  {
+    "address": "0x0206c708",
+    "size": 124,
+    "name": "action_dispatch",
+    "domain": "action"
+  },
+  {
+    "address": "0x0206c798",
+    "size": 36,
+    "name": "ActionState_CheckInputGate",
+    "domain": "action",
+    "evidence": "Tiny 36-byte func. Checks global flag bit0 AND NOT r0 bit5, returns 1 or 0. After action_dispatch."
+  },
+  {
+    "address": "0x0206c7f0",
+    "size": 312,
+    "name": "ActionState_EventDispatch",
+    "domain": "action",
+    "evidence": "push {r4-r6,lr}; dispatches action state events"
+  },
+  {
+    "address": "0x0206cccc",
+    "size": 284,
+    "name": "ActionState_AllocSlot",
+    "domain": "action",
+    "evidence": "push {r4-r6,lr}; allocates action state slot from pool"
+  },
+  {
+    "address": "0x0206d490",
+    "size": 436,
+    "name": "AABB_SortAndMidpoint",
+    "domain": "collision",
+    "evidence": "Compares two AABBs on 4 axes, finds max-sep axis, computes fixed-point midpoint. Near entity_aabb_sweep."
+  },
+  {
+    "address": "0x0206d6b0",
+    "size": 764,
+    "name": "AABB_TestCollision",
+    "domain": "collision",
+    "evidence": "Multi-function bin: AABB point test, box-vs-box, bounds init, pair collision test. Reads flags at offset 10."
+  },
+  {
+    "address": "0x0206e094",
+    "size": 216,
+    "name": "EntityList_RegisterSlot",
+    "domain": "entity",
+    "evidence": "Registers entity into channel slot (4 channels, 192 bytes each). Reads entity byte at 0x28 as sub-index."
+  },
+  {
+    "address": "0x0206e170",
+    "size": 264,
+    "name": "Collision_LUTSwap",
+    "domain": "collision",
+    "evidence": "swaps collision LUT entries between primary/secondary buffers"
+  },
+  {
+    "address": "0x206e470",
+    "size": 0,
+    "name": "slope_table",
+    "domain": "physics",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x0206e4a8",
+    "size": 232,
+    "name": "FUN_0206e4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e590",
+    "size": 296,
+    "name": "FUN_0206e590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e730",
+    "size": 72,
+    "name": "FUN_0206e730",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e778",
+    "size": 128,
+    "name": "FUN_0206e778",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e7f8",
+    "size": 256,
+    "name": "FUN_0206e7f8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e8c0",
+    "size": 288,
+    "name": "FUN_0206e8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e8f8",
+    "size": 184,
+    "name": "FUN_0206e8f8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206e9e0",
+    "size": 312,
+    "name": "FUN_0206e9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206f0bc",
+    "size": 256,
+    "name": "FUN_0206f0bc",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206f1bc",
+    "size": 296,
+    "name": "FUN_0206f1bc",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206f4a8",
+    "size": 232,
+    "name": "FUN_0206f4a8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206f590",
+    "size": 296,
+    "name": "FUN_0206f590",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206f8c0",
+    "size": 288,
+    "name": "FUN_0206f8c0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206f9e0",
+    "size": 312,
+    "name": "FUN_0206f9e0",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206fca8",
+    "size": 232,
+    "name": "FUN_0206fca8",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206fd70",
+    "size": 408,
+    "name": "FUN_0206fd70",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206fd90",
+    "size": 296,
+    "name": "FUN_0206fd90",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x0206ff08",
+    "size": 288,
+    "name": "FUN_0206ff08",
+    "domain": "unknown"
+  },
+  {
+    "address": "0x02072794",
+    "size": 228,
+    "name": "overlay_node_validate_checksum",
+    "domain": "overlay",
+    "evidence": "Validates overlay node integrity. Size=228, calls 0x2007da4 (checksum_verify)."
+  },
+  {
+    "address": "0x02072878",
+    "size": 196,
+    "name": "overlay_node_read_header",
+    "domain": "overlay",
+    "evidence": "Reads overlay node header data. Size=196, loads from pc-relative table."
+  },
+  {
+    "address": "0x02072940",
+    "size": 140,
+    "name": "overlay_node_small_init",
+    "domain": "overlay",
+    "evidence": "Small overlay node initialization. Size=140, minimal setup function."
+  },
+  {
+    "address": "0x2072c78",
+    "size": 0,
+    "name": "object_list_base_table",
+    "domain": "object_list",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2074184",
+    "size": 0,
+    "name": "stage_object_loader_table",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x20741f0",
+    "size": 0,
+    "name": "per_stage_handler_table",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x02074650",
+    "size": 368,
+    "name": "overlay_complex_init_sequence",
+    "domain": "overlay",
+    "evidence": "Complex overlay initialization sequence. Size=368, multiple setup steps."
+  },
+  {
+    "address": "0x020747c0",
+    "size": 284,
+    "name": "overlay_state_machine_step",
+    "domain": "overlay",
+    "evidence": "Single step of overlay state machine. Size=284, state transition logic."
+  },
+  {
+    "address": "0x020750a8",
+    "size": 224,
+    "name": "overlay_quick_validate",
+    "domain": "overlay",
+    "evidence": "Quick overlay validation check. Size=224, fast path validation."
+  },
+  {
+    "address": "0x02075188",
+    "size": 292,
+    "name": "overlay_full_validate",
+    "domain": "overlay",
+    "evidence": "Full overlay validation. Size=292, complete integrity check."
+  },
+  {
+    "address": "0x020760f8",
+    "size": 364,
+    "name": "overlay_load_and_verify",
+    "domain": "overlay",
+    "evidence": "Loads overlay and verifies. Size=364, load+verify sequence."
+  },
+  {
+    "address": "0x02076270",
+    "size": 196,
+    "name": "overlay_quick_setup",
+    "domain": "overlay",
+    "evidence": "Quick overlay setup. Size=196, fast initialization."
+  },
+  {
+    "address": "0x02077190",
+    "size": 176,
+    "name": "overlay_cleanup_resources",
+    "domain": "overlay",
+    "evidence": "Cleans up overlay resources. Size=176, resource release."
+  },
+  {
+    "address": "0x02077394",
+    "size": 216,
+    "name": "overlay_validate_chain",
+    "domain": "overlay",
+    "evidence": "Validates overlay chain integrity. Size=216, chain validation."
+  },
+  {
+    "address": "0x02077470",
+    "size": 264,
+    "name": "overlay_update_chain",
+    "domain": "overlay",
+    "evidence": "Updates overlay chain state. Size=264, chain update."
+  },
+  {
+    "address": "0x2077944",
+    "size": 0,
+    "name": "drift_table",
+    "domain": "physics",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x207cf7c",
+    "size": 0,
+    "name": "accel_scale_constant",
+    "domain": "physics",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x207d01c",
+    "size": 0,
+    "name": "button_table",
+    "domain": "input",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x207f02c",
+    "size": 0,
+    "name": "controller_ring_struct",
+    "domain": "controller",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x207ffa8",
+    "size": 0,
+    "name": "shared_keycnt",
+    "domain": "shared_ram",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x207ffaa",
+    "size": 0,
+    "name": "shared_touch_x",
+    "domain": "shared_ram",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x207ffac",
+    "size": 0,
+    "name": "shared_touch_y_status",
+    "domain": "shared_ram",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2087cb0",
+    "size": 0,
+    "name": "overlay_one_shot_callback",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2087cb4",
+    "size": 0,
+    "name": "overlay_active_id",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2087cb8",
+    "size": 0,
+    "name": "global_system_flags",
+    "domain": "entity",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2087cbc",
+    "size": 0,
+    "name": "overlay_requested_id",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2087cc8",
+    "size": 0,
+    "name": "overlay_loaded_flag",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2087d04",
+    "size": 0,
+    "name": "object_list_base_secondary",
+    "domain": "object_list",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x208922c",
+    "size": 0,
+    "name": "object_list_base_primary",
+    "domain": "object_list",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x20900e0",
+    "size": 0,
+    "name": "mode3_entity_data",
+    "domain": "stage",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2090800",
+    "size": 0,
+    "name": "live_menu_entity_data",
+    "domain": "stage",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x020c0000",
+    "size": 1024,
+    "name": "FUN_020c0000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c0400",
+    "size": 1024,
+    "name": "FUN_020c0400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c0800",
+    "size": 1024,
+    "name": "FUN_020c0800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c0c00",
+    "size": 1024,
+    "name": "FUN_020c0c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c1000",
+    "size": 1024,
+    "name": "FUN_020c1000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c1400",
+    "size": 1024,
+    "name": "FUN_020c1400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c1800",
+    "size": 1024,
+    "name": "FUN_020c1800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c1c00",
+    "size": 1024,
+    "name": "FUN_020c1c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c2000",
+    "size": 1024,
+    "name": "FUN_020c2000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c2400",
+    "size": 1024,
+    "name": "FUN_020c2400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c2800",
+    "size": 1024,
+    "name": "FUN_020c2800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c2c00",
+    "size": 1024,
+    "name": "FUN_020c2c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c3000",
+    "size": 1024,
+    "name": "FUN_020c3000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c3400",
+    "size": 1024,
+    "name": "FUN_020c3400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c3800",
+    "size": 1024,
+    "name": "FUN_020c3800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c3c00",
+    "size": 1024,
+    "name": "FUN_020c3c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c4000",
+    "size": 1024,
+    "name": "FUN_020c4000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c4400",
+    "size": 1024,
+    "name": "FUN_020c4400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c4800",
+    "size": 1024,
+    "name": "FUN_020c4800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c4c00",
+    "size": 1024,
+    "name": "FUN_020c4c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c5000",
+    "size": 1024,
+    "name": "FUN_020c5000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c5400",
+    "size": 1024,
+    "name": "FUN_020c5400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c5800",
+    "size": 1024,
+    "name": "FUN_020c5800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c5c00",
+    "size": 1024,
+    "name": "FUN_020c5c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c6000",
+    "size": 1024,
+    "name": "FUN_020c6000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c6400",
+    "size": 1024,
+    "name": "FUN_020c6400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c6800",
+    "size": 1024,
+    "name": "FUN_020c6800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c6c00",
+    "size": 1024,
+    "name": "FUN_020c6c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c7000",
+    "size": 1024,
+    "name": "FUN_020c7000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c7400",
+    "size": 1024,
+    "name": "FUN_020c7400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c7800",
+    "size": 1024,
+    "name": "FUN_020c7800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c7c00",
+    "size": 1024,
+    "name": "FUN_020c7c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c8000",
+    "size": 1024,
+    "name": "FUN_020c8000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c8400",
+    "size": 1024,
+    "name": "FUN_020c8400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c8800",
+    "size": 1024,
+    "name": "FUN_020c8800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c8c00",
+    "size": 1024,
+    "name": "FUN_020c8c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c9000",
+    "size": 1024,
+    "name": "FUN_020c9000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c9400",
+    "size": 1024,
+    "name": "FUN_020c9400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c9800",
+    "size": 1024,
+    "name": "FUN_020c9800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020c9c00",
+    "size": 1024,
+    "name": "FUN_020c9c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ca000",
+    "size": 1024,
+    "name": "FUN_020ca000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ca400",
+    "size": 1024,
+    "name": "FUN_020ca400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ca800",
+    "size": 1024,
+    "name": "FUN_020ca800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cac00",
+    "size": 1024,
+    "name": "FUN_020cac00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cb000",
+    "size": 1024,
+    "name": "FUN_020cb000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cb400",
+    "size": 1024,
+    "name": "FUN_020cb400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cb800",
+    "size": 1024,
+    "name": "FUN_020cb800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cbc00",
+    "size": 1024,
+    "name": "FUN_020cbc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cc000",
+    "size": 1024,
+    "name": "FUN_020cc000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cc400",
+    "size": 1024,
+    "name": "FUN_020cc400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cc800",
+    "size": 1024,
+    "name": "FUN_020cc800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ccc00",
+    "size": 1024,
+    "name": "FUN_020ccc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cd000",
+    "size": 1024,
+    "name": "FUN_020cd000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cd400",
+    "size": 1024,
+    "name": "FUN_020cd400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cd800",
+    "size": 1024,
+    "name": "FUN_020cd800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cdc00",
+    "size": 1024,
+    "name": "FUN_020cdc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ce000",
+    "size": 1024,
+    "name": "FUN_020ce000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ce400",
+    "size": 1024,
+    "name": "FUN_020ce400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ce800",
+    "size": 1024,
+    "name": "FUN_020ce800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cec00",
+    "size": 1024,
+    "name": "FUN_020cec00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cf000",
+    "size": 1024,
+    "name": "FUN_020cf000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cf400",
+    "size": 1024,
+    "name": "FUN_020cf400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cf800",
+    "size": 1024,
+    "name": "FUN_020cf800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020cfc00",
+    "size": 1024,
+    "name": "FUN_020cfc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d0000",
+    "size": 1024,
+    "name": "FUN_020d0000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d0400",
+    "size": 1024,
+    "name": "FUN_020d0400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d0800",
+    "size": 1024,
+    "name": "FUN_020d0800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d0c00",
+    "size": 1024,
+    "name": "FUN_020d0c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d1000",
+    "size": 1024,
+    "name": "FUN_020d1000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d1400",
+    "size": 1024,
+    "name": "FUN_020d1400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d1800",
+    "size": 1024,
+    "name": "FUN_020d1800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d1c00",
+    "size": 1024,
+    "name": "FUN_020d1c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d2000",
+    "size": 1024,
+    "name": "FUN_020d2000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d2400",
+    "size": 1024,
+    "name": "FUN_020d2400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d2800",
+    "size": 1024,
+    "name": "FUN_020d2800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d2c00",
+    "size": 1024,
+    "name": "FUN_020d2c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d3000",
+    "size": 1024,
+    "name": "FUN_020d3000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d3400",
+    "size": 1024,
+    "name": "FUN_020d3400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d3800",
+    "size": 1024,
+    "name": "FUN_020d3800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d3c00",
+    "size": 1024,
+    "name": "FUN_020d3c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d4000",
+    "size": 1024,
+    "name": "FUN_020d4000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d4400",
+    "size": 1024,
+    "name": "FUN_020d4400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d4800",
+    "size": 1024,
+    "name": "FUN_020d4800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d4c00",
+    "size": 1024,
+    "name": "FUN_020d4c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d5000",
+    "size": 1024,
+    "name": "FUN_020d5000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d5400",
+    "size": 1024,
+    "name": "FUN_020d5400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d5800",
+    "size": 1024,
+    "name": "FUN_020d5800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d5c00",
+    "size": 1024,
+    "name": "FUN_020d5c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d6000",
+    "size": 1024,
+    "name": "FUN_020d6000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d6400",
+    "size": 1024,
+    "name": "FUN_020d6400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d6800",
+    "size": 1024,
+    "name": "FUN_020d6800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d6c00",
+    "size": 1024,
+    "name": "FUN_020d6c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d7000",
+    "size": 1024,
+    "name": "FUN_020d7000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d7400",
+    "size": 1024,
+    "name": "FUN_020d7400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d7800",
+    "size": 1024,
+    "name": "FUN_020d7800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d7c00",
+    "size": 1024,
+    "name": "FUN_020d7c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d8000",
+    "size": 1024,
+    "name": "FUN_020d8000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d8400",
+    "size": 1024,
+    "name": "FUN_020d8400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d8800",
+    "size": 1024,
+    "name": "FUN_020d8800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d8c00",
+    "size": 1024,
+    "name": "FUN_020d8c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d9000",
+    "size": 1024,
+    "name": "FUN_020d9000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d9400",
+    "size": 1024,
+    "name": "FUN_020d9400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d9800",
+    "size": 1024,
+    "name": "FUN_020d9800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020d9c00",
+    "size": 1024,
+    "name": "FUN_020d9c00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020da000",
+    "size": 1024,
+    "name": "FUN_020da000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020da400",
+    "size": 1024,
+    "name": "FUN_020da400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020da800",
+    "size": 1024,
+    "name": "FUN_020da800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dac00",
+    "size": 1024,
+    "name": "FUN_020dac00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020db000",
+    "size": 1024,
+    "name": "FUN_020db000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020db400",
+    "size": 1024,
+    "name": "FUN_020db400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020db800",
+    "size": 1024,
+    "name": "FUN_020db800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dbc00",
+    "size": 1024,
+    "name": "FUN_020dbc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dc000",
+    "size": 1024,
+    "name": "FUN_020dc000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dc400",
+    "size": 1024,
+    "name": "FUN_020dc400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dc800",
+    "size": 1024,
+    "name": "FUN_020dc800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dcc00",
+    "size": 1024,
+    "name": "FUN_020dcc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dd000",
+    "size": 1024,
+    "name": "FUN_020dd000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dd400",
+    "size": 1024,
+    "name": "FUN_020dd400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dd800",
+    "size": 1024,
+    "name": "FUN_020dd800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020ddc00",
+    "size": 1024,
+    "name": "FUN_020ddc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020de000",
+    "size": 1024,
+    "name": "FUN_020de000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020de400",
+    "size": 1024,
+    "name": "FUN_020de400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020de800",
+    "size": 1024,
+    "name": "FUN_020de800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dec00",
+    "size": 1024,
+    "name": "FUN_020dec00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020df000",
+    "size": 1024,
+    "name": "FUN_020df000",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020df400",
+    "size": 1024,
+    "name": "FUN_020df400",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020df800",
+    "size": 1024,
+    "name": "FUN_020df800",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x020dfc00",
+    "size": 1024,
+    "name": "FUN_020dfc00",
+    "domain": "entity_behavior",
+    "evidence": "1024-byte bin fragment from overlay entity behavior code; accesses entity struct fields (offsets 0x5c, 0x88, 0x1e0)"
+  },
+  {
+    "address": "0x22503e0",
+    "size": 0,
+    "name": "key_state_base",
+    "domain": "input",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22b4574",
+    "size": 0,
+    "name": "entity_list_root",
+    "domain": "entity",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22b658c",
+    "size": 40,
+    "name": "adjacent_sample_table",
+    "domain": "touch",
+    "evidence": "INFERRED",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22b65b4",
+    "size": 40,
+    "name": "touch_state_struct",
+    "domain": "touch",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4410",
+    "size": 0,
+    "name": "mode_transition_data",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4478",
+    "size": 0,
+    "name": "score_related_state",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4488",
+    "size": 0,
+    "name": "current_stage_object_data",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c448c",
+    "size": 0,
+    "name": "object_cache_root",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4490",
+    "size": 0,
+    "name": "game_stage_context",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4560",
+    "size": 0,
+    "name": "zone_state",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c45f0",
+    "size": 0,
+    "name": "action_data_root",
+    "domain": "action",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4ddc",
+    "size": 0,
+    "name": "collision_entity_count",
+    "domain": "collision",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4e64",
+    "size": 0,
+    "name": "collision_entity_list",
+    "domain": "collision",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c4ef0",
+    "size": 0,
+    "name": "gameplay_mode_pause_flags",
+    "domain": "stage",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c5c80",
+    "size": 0,
+    "name": "overlay1_ram_base",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c678c",
+    "size": 0,
+    "name": "title_menu_hit_test_dead",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c7ac8",
+    "size": 0,
+    "name": "title_menu_update_dead",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22c8458",
+    "size": 40,
+    "name": "title_teardown_and_schedule",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d0095",
+    "size": 0,
+    "name": "child_entity_update",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d0d34",
+    "size": 0,
+    "name": "m1_entry_trampoline",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d13f4",
+    "size": 0,
+    "name": "m0_entry_trampoline",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d1404",
+    "size": 0,
+    "name": "secondary_state_setter",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x22d2234",
+    "size": 0,
+    "name": "shared_state_setter",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/re-analysis.md"
+  },
+  {
+    "address": "0x22d224d",
+    "size": 0,
+    "name": "second_entity_update",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d2460",
+    "size": 0,
+    "name": "mode_entity_update_arm32",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d2cbd",
+    "size": 0,
+    "name": "mode_entity_destroy",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d2e3c",
+    "size": 354,
+    "name": "title_mode_entity_create",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d301c",
+    "size": 0,
+    "name": "title_mode_dispatch",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22d3044",
+    "size": 204,
+    "name": "display_vram_reset_helper_dead",
+    "domain": "overlay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x22fabbc",
+    "size": 0,
+    "name": "loaded_gameplay_dispatcher",
+    "domain": "gameplay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x231f050",
+    "size": 0,
+    "name": "mode_entity_global_ptr",
+    "domain": "stage",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x2342e28",
+    "size": 0,
+    "name": "flag_sync_handler",
+    "domain": "gameplay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x236aaa8",
+    "size": 0,
+    "name": "loaded_gameplay_root",
+    "domain": "gameplay",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x238c0c4",
+    "size": 0,
+    "name": "arm7_touch_reader",
+    "domain": "arm7",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x238c51c",
+    "size": 0,
+    "name": "arm7_touch_writer",
+    "domain": "arm7",
+    "evidence": "CONFIRMED-RUNTIME",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x4000000",
+    "size": 0,
+    "name": "dispcnt_register",
+    "domain": "hardware",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "tools/hdrv.cpp"
+  },
+  {
+    "address": "0x4000004",
+    "size": 0,
+    "name": "dispstat_register",
+    "domain": "hardware",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "tools/hdrv.cpp"
+  },
+  {
+    "address": "0x4000006",
+    "size": 0,
+    "name": "vcount_register",
+    "domain": "hardware",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "tools/hdrv.cpp"
+  },
+  {
+    "address": "0x4000130",
+    "size": 0,
+    "name": "keyinput_register",
+    "domain": "hardware",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "docs/HANDOFF.md"
+  },
+  {
+    "address": "0x4000136",
+    "size": 0,
+    "name": "keycnt_register",
+    "domain": "hardware",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "tools/hdrv.cpp"
+  },
+  {
+    "address": "0x4000304",
+    "size": 0,
+    "name": "powcnt_register",
+    "domain": "hardware",
+    "evidence": "CONFIRMED-STATIC",
+    "source": "tools/hdrv.cpp"
+  }
+]

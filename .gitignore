@@ -1,0 +1,87 @@
+# ROMs
+*.nds
+
+# Assembly / reassembly intermediates
+*.s
+*.armips
+
+# Ghidra
+*.ghidra
+*.class
+
+# Archives
+*.zip
+*.tar.gz
+*.tar.xz
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+build/
+build_pc/
+bin/
+obj/
+*.elf
+*.o
+*.a
+
+# Touch decompilation build
+src/touch/build/
+
+# hdrv tool
+tools/hdrv
+tools/hdrv.exe
+
+# ARM toolchain (vendored)
+tools/arm-gcc/
+
+# Compiled binary outputs (not disassembly/)
+*.text.bin
+*.check
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.ppm
+
+# Radare2 dumps (moved to radare2/ for organization)
+*.txt.bak
+
+# Cartridge saves & battery state
+*.sav
+*.dsv
+*.dsav
+
+# nds_runner diagnostics
+*-coverage-*.json
+performance-*.jsonl
+
+# Runtime memory dumps (derived from the ROM)
+runtime/
+
+# Extracted ROM images — regenerate from your own dump
+ndsrecomp_title/images/*.bin
+
+# Bulk RE dumps (not published — see docs/ for analysis notes)
+disassembly/
+radare2/
+*.bak
+
+# Recompiler output — regenerate with:
+#   nds_recompile --config configs/arm9.toml --bin images/arm9.bin \
+#     --out generated --bank arm9_main --shards 4
+ndsrecomp_title/generated/
+
+# Vendored tool installs
+tools/ghidra_11/
+tools/ghidra__install/

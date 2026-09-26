@@ -1,0 +1,56 @@
+# hdrv input script: controlled touch bit testing in gameplay
+#
+# Script format: <frame> <k|t|h|r> <value1> [value2]
+# k = keypad mask, t = tap, h = hold, r = release touch
+# Values are hexadecimal; use 0x prefix for screen coordinates.
+#
+# Sequence:
+# - Boot with no input
+# - Enter title menu
+# - Tap GAMEPLAY button (128, 60)
+# - Go to gameplay frame 2000
+# - At 2100: tap to start
+# - At 2150-2250: move touch (various Y positions)
+# - At 2260-2270: hold at specific position
+# - At 2280: release
+# - Capture touch state changes
+0 k 0
+800 k 8
+810 k 0
+1000 k 8
+1010 k 0
+1200 t 0x80 0x3c
+1500 k 8
+1510 k 0
+1800 k 8
+1810 k 0
+2000 t 0x80 0x3c
+2100 t 0x80 0x3c
+2150 t 0x40 0x20
+2200 t 0x40 0x30
+2250 t 0x40 0x40
+2260 h 0x40 0x45
+2270 h 0x40 0x45
+2280 r 0x40 0x45
+2300 k 8
+2310 k 8
+2320 k 8
+2330 k 8
+2340 k 8
+2350 k 8
+2360 k 8
+2370 k 8
+2380 k 8
+2390 k 8
+2400 k 8
+2410 k 8
+2420 k 8
+2430 k 8
+2440 k 8
+2450 k 8
+2460 k 8
+2470 k 8
+2480 k 8
+2490 k 8
+2500 k 8
+2550 k 0

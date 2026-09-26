@@ -1,0 +1,39 @@
+# PC (x86) Recompilation Build
+# Usage: make -f Makefile.pc [run]
+
+CC = gcc
+CFLAGS = -m32 -O2 -ffreestanding -fno-builtin -fno-common -w \
+         -Wno-implicit-function-declaration -Wno-int-conversion \
+         -Wno-incompatible-pointer-types -Wno-int-to-pointer-cast \
+         -Wno-pointer-to-int-cast -Iinclude -Isrc
+LDFLAGS = -m32 -lm -Wl,--allow-multiple-definition
+
+BUILD_DIR = build_pc
+SRC_FILES = $(shell find src -name '*.c' | sort)
+OBJ_FILES = $(patsubst src/%.c,$(BUILD_DIR)/%.o,$(SRC_FILES))
+PC_OBJS = $(BUILD_DIR)/nds_mmap.o $(BUILD_DIR)/pc_main.o
+
+TARGET = $(BUILD_DIR)/sonic_rush_pc
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ_FILES) $(PC_OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+$(BUILD_DIR)/%.o: src/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(BUILD_DIR)/nds_mmap.o: pc/nds_mmap.c
+	$(CC) -m32 -O2 -c -o $@ $<
+
+$(BUILD_DIR)/pc_main.o: pc/pc_main.c
+	$(CC) -m32 -O2 -c -o $@ $<
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -rf $(BUILD_DIR)
+
+.PHONY: all run clean

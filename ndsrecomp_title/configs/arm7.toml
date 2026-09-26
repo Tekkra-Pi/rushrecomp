@@ -1,0 +1,3557 @@
+# Sonic Rush ARM7 recompile config
+
+[program]
+name         = "Sonic Rush ARM7"
+id           = "sonicrush_arm7"
+cpu          = "arm7"
+isa          = "armv4t"
+load_address = 0x02380000
+size         = 0x00026f24
+entry_pc     = 0x02380000
+
+[identity]
+sha1 = "f2d795fb08500539b331b67686efcb7e44dc933a"
+
+# --- auto seed round 1 (arm7): 702 entry_points, 5 jump_tables ---
+[[entry_point]]
+addr = 0x02380170
+mode = "arm"
+name = "auto_arm7_00000170"
+
+[[entry_point]]
+addr = 0x023806a0
+mode = "arm"
+name = "auto_arm7_000006A0"
+
+[[entry_point]]
+addr = 0x02380820
+mode = "arm"
+name = "auto_arm7_00000820"
+
+[[entry_point]]
+addr = 0x02380898
+mode = "arm"
+name = "auto_arm7_00000898"
+
+[[entry_point]]
+addr = 0x023808dc
+mode = "arm"
+name = "auto_arm7_000008DC"
+
+[[entry_point]]
+addr = 0x0238091c
+mode = "arm"
+name = "auto_arm7_0000091C"
+
+[[entry_point]]
+addr = 0x02380994
+mode = "arm"
+name = "auto_arm7_00000994"
+
+[[entry_point]]
+addr = 0x02380b20
+mode = "arm"
+name = "auto_arm7_00000B20"
+
+[[entry_point]]
+addr = 0x02380ba4
+mode = "arm"
+name = "auto_arm7_00000BA4"
+
+[[entry_point]]
+addr = 0x02380cb4
+mode = "arm"
+name = "auto_arm7_00000CB4"
+
+[[entry_point]]
+addr = 0x02380fc4
+mode = "arm"
+name = "auto_arm7_00000FC4"
+
+[[entry_point]]
+addr = 0x02381054
+mode = "arm"
+name = "auto_arm7_00001054"
+
+[[entry_point]]
+addr = 0x02381518
+mode = "arm"
+name = "auto_arm7_00001518"
+
+[[entry_point]]
+addr = 0x023815d0
+mode = "arm"
+name = "auto_arm7_000015D0"
+
+[[entry_point]]
+addr = 0x0238166c
+mode = "arm"
+name = "auto_arm7_0000166C"
+
+[[entry_point]]
+addr = 0x02381750
+mode = "arm"
+name = "auto_arm7_00001750"
+
+[[entry_point]]
+addr = 0x023817dc
+mode = "arm"
+name = "auto_arm7_000017DC"
+
+[[entry_point]]
+addr = 0x02381ad8
+mode = "arm"
+name = "auto_arm7_00001AD8"
+
+[[entry_point]]
+addr = 0x02381b54
+mode = "arm"
+name = "auto_arm7_00001B54"
+
+[[entry_point]]
+addr = 0x02381b90
+mode = "arm"
+name = "auto_arm7_00001B90"
+
+[[entry_point]]
+addr = 0x02381cb4
+mode = "arm"
+name = "auto_arm7_00001CB4"
+
+[[entry_point]]
+addr = 0x02381e70
+mode = "arm"
+name = "auto_arm7_00001E70"
+
+[[entry_point]]
+addr = 0x02382098
+mode = "arm"
+name = "auto_arm7_00002098"
+
+[[entry_point]]
+addr = 0x0238216c
+mode = "thumb"
+name = "auto_arm7_0000216C"
+
+[[entry_point]]
+addr = 0x02382324
+mode = "arm"
+name = "auto_arm7_00002324"
+
+[[entry_point]]
+addr = 0x0238242c
+mode = "arm"
+name = "auto_arm7_0000242C"
+
+[[entry_point]]
+addr = 0x023824e0
+mode = "arm"
+name = "auto_arm7_000024E0"
+
+[[entry_point]]
+addr = 0x0238273c
+mode = "arm"
+name = "auto_arm7_0000273C"
+
+[[entry_point]]
+addr = 0x023827dc
+mode = "arm"
+name = "auto_arm7_000027DC"
+
+[[entry_point]]
+addr = 0x02382848
+mode = "arm"
+name = "auto_arm7_00002848"
+
+[[entry_point]]
+addr = 0x02382870
+mode = "arm"
+name = "auto_arm7_00002870"
+
+[[entry_point]]
+addr = 0x023828b4
+mode = "arm"
+name = "auto_arm7_000028B4"
+
+[[entry_point]]
+addr = 0x02382908
+mode = "arm"
+name = "auto_arm7_00002908"
+
+[[entry_point]]
+addr = 0x02382b08
+mode = "arm"
+name = "auto_arm7_00002B08"
+
+[[entry_point]]
+addr = 0x02382ecc
+mode = "arm"
+name = "auto_arm7_00002ECC"
+
+[[entry_point]]
+addr = 0x02382fb0
+mode = "arm"
+name = "auto_arm7_00002FB0"
+
+[[entry_point]]
+addr = 0x0238306c
+mode = "arm"
+name = "auto_arm7_0000306C"
+
+[[entry_point]]
+addr = 0x023830e0
+mode = "arm"
+name = "auto_arm7_000030E0"
+
+[[entry_point]]
+addr = 0x0238348c
+mode = "arm"
+name = "auto_arm7_0000348C"
+
+[[entry_point]]
+addr = 0x02383738
+mode = "arm"
+name = "auto_arm7_00003738"
+
+[[entry_point]]
+addr = 0x02383790
+mode = "arm"
+name = "auto_arm7_00003790"
+
+[[entry_point]]
+addr = 0x023837a0
+mode = "arm"
+name = "auto_arm7_000037A0"
+
+[[entry_point]]
+addr = 0x023837b0
+mode = "arm"
+name = "auto_arm7_000037B0"
+
+[[entry_point]]
+addr = 0x023837c0
+mode = "arm"
+name = "auto_arm7_000037C0"
+
+[[entry_point]]
+addr = 0x023837d0
+mode = "arm"
+name = "auto_arm7_000037D0"
+
+[[entry_point]]
+addr = 0x023837e0
+mode = "arm"
+name = "auto_arm7_000037E0"
+
+[[entry_point]]
+addr = 0x023837f0
+mode = "arm"
+name = "auto_arm7_000037F0"
+
+[[entry_point]]
+addr = 0x02383800
+mode = "arm"
+name = "auto_arm7_00003800"
+
+[[entry_point]]
+addr = 0x02383810
+mode = "arm"
+name = "auto_arm7_00003810"
+
+[[entry_point]]
+addr = 0x023838a4
+mode = "arm"
+name = "auto_arm7_000038A4"
+
+[[entry_point]]
+addr = 0x02383dbc
+mode = "arm"
+name = "auto_arm7_00003DBC"
+
+[[entry_point]]
+addr = 0x02383dc0
+mode = "arm"
+name = "auto_arm7_00003DC0"
+
+[[entry_point]]
+addr = 0x02383df8
+mode = "arm"
+name = "auto_arm7_00003DF8"
+
+[[entry_point]]
+addr = 0x023845cc
+mode = "arm"
+name = "auto_arm7_000045CC"
+
+[[entry_point]]
+addr = 0x02384644
+mode = "arm"
+name = "auto_arm7_00004644"
+
+[[entry_point]]
+addr = 0x023847c0
+mode = "arm"
+name = "auto_arm7_000047C0"
+
+[[entry_point]]
+addr = 0x023847e4
+mode = "arm"
+name = "auto_arm7_000047E4"
+
+[[entry_point]]
+addr = 0x02384848
+mode = "arm"
+name = "auto_arm7_00004848"
+
+[[entry_point]]
+addr = 0x023848b8
+mode = "arm"
+name = "auto_arm7_000048B8"
+
+[[entry_point]]
+addr = 0x02384e7c
+mode = "arm"
+name = "auto_arm7_00004E7C"
+
+[[entry_point]]
+addr = 0x02384ea6
+mode = "thumb"
+name = "auto_arm7_00004EA6"
+
+[[entry_point]]
+addr = 0x02385008
+mode = "arm"
+name = "auto_arm7_00005008"
+
+[[entry_point]]
+addr = 0x023851cc
+mode = "arm"
+name = "auto_arm7_000051CC"
+
+[[entry_point]]
+addr = 0x023852f8
+mode = "arm"
+name = "auto_arm7_000052F8"
+
+[[entry_point]]
+addr = 0x02385308
+mode = "arm"
+name = "auto_arm7_00005308"
+
+[[entry_point]]
+addr = 0x02385408
+mode = "arm"
+name = "auto_arm7_00005408"
+
+[[entry_point]]
+addr = 0x023857c4
+mode = "arm"
+name = "auto_arm7_000057C4"
+
+[[entry_point]]
+addr = 0x023857de
+mode = "thumb"
+name = "auto_arm7_000057DE"
+
+[[entry_point]]
+addr = 0x023857e2
+mode = "thumb"
+name = "auto_arm7_000057E2"
+
+[[entry_point]]
+addr = 0x023857ea
+mode = "thumb"
+name = "auto_arm7_000057EA"
+
+[[entry_point]]
+addr = 0x02385810
+mode = "arm"
+name = "auto_arm7_00005810"
+
+[[entry_point]]
+addr = 0x02385842
+mode = "thumb"
+name = "auto_arm7_00005842"
+
+[[entry_point]]
+addr = 0x02385846
+mode = "thumb"
+name = "auto_arm7_00005846"
+
+[[entry_point]]
+addr = 0x02385860
+mode = "arm"
+name = "auto_arm7_00005860"
+
+[[entry_point]]
+addr = 0x023859e8
+mode = "arm"
+name = "auto_arm7_000059E8"
+
+[[entry_point]]
+addr = 0x02385a64
+mode = "arm"
+name = "auto_arm7_00005A64"
+
+[[entry_point]]
+addr = 0x02385ae4
+mode = "arm"
+name = "auto_arm7_00005AE4"
+
+[[entry_point]]
+addr = 0x02385b40
+mode = "arm"
+name = "auto_arm7_00005B40"
+
+[[entry_point]]
+addr = 0x02385bd8
+mode = "arm"
+name = "auto_arm7_00005BD8"
+
+[[entry_point]]
+addr = 0x02385c84
+mode = "arm"
+name = "auto_arm7_00005C84"
+
+[[entry_point]]
+addr = 0x02385cbc
+mode = "arm"
+name = "auto_arm7_00005CBC"
+
+[[entry_point]]
+addr = 0x02385d00
+mode = "arm"
+name = "auto_arm7_00005D00"
+
+[[entry_point]]
+addr = 0x02385f3c
+mode = "arm"
+name = "auto_arm7_00005F3C"
+
+[[entry_point]]
+addr = 0x0238604c
+mode = "arm"
+name = "auto_arm7_0000604C"
+
+[[entry_point]]
+addr = 0x02386340
+mode = "arm"
+name = "auto_arm7_00006340"
+
+[[entry_point]]
+addr = 0x02386790
+mode = "arm"
+name = "auto_arm7_00006790"
+
+[[entry_point]]
+addr = 0x023867c8
+mode = "arm"
+name = "auto_arm7_000067C8"
+
+[[entry_point]]
+addr = 0x023867d8
+mode = "arm"
+name = "auto_arm7_000067D8"
+
+[[entry_point]]
+addr = 0x02386820
+mode = "arm"
+name = "auto_arm7_00006820"
+
+[[entry_point]]
+addr = 0x0238682c
+mode = "arm"
+name = "auto_arm7_0000682C"
+
+[[entry_point]]
+addr = 0x02386870
+mode = "arm"
+name = "auto_arm7_00006870"
+
+[[entry_point]]
+addr = 0x023868e8
+mode = "arm"
+name = "auto_arm7_000068E8"
+
+[[entry_point]]
+addr = 0x02386900
+mode = "arm"
+name = "auto_arm7_00006900"
+
+[[entry_point]]
+addr = 0x0238696c
+mode = "arm"
+name = "auto_arm7_0000696C"
+
+[[entry_point]]
+addr = 0x023869d0
+mode = "arm"
+name = "auto_arm7_000069D0"
+
+[[entry_point]]
+addr = 0x023869e0
+mode = "arm"
+name = "auto_arm7_000069E0"
+
+[[entry_point]]
+addr = 0x02386a44
+mode = "arm"
+name = "auto_arm7_00006A44"
+
+[[entry_point]]
+addr = 0x02386a60
+mode = "arm"
+name = "auto_arm7_00006A60"
+
+[[entry_point]]
+addr = 0x02386adc
+mode = "arm"
+name = "auto_arm7_00006ADC"
+
+[[entry_point]]
+addr = 0x02386af4
+mode = "arm"
+name = "auto_arm7_00006AF4"
+
+[[entry_point]]
+addr = 0x02386ba4
+mode = "arm"
+name = "auto_arm7_00006BA4"
+
+[[entry_point]]
+addr = 0x02386c54
+mode = "arm"
+name = "auto_arm7_00006C54"
+
+[[entry_point]]
+addr = 0x02386d0c
+mode = "arm"
+name = "auto_arm7_00006D0C"
+
+[[entry_point]]
+addr = 0x02386ddc
+mode = "arm"
+name = "auto_arm7_00006DDC"
+
+[[entry_point]]
+addr = 0x02386e10
+mode = "arm"
+name = "auto_arm7_00006E10"
+
+[[entry_point]]
+addr = 0x02386e16
+mode = "thumb"
+name = "auto_arm7_00006E16"
+
+[[entry_point]]
+addr = 0x02386e2a
+mode = "thumb"
+name = "auto_arm7_00006E2A"
+
+[[entry_point]]
+addr = 0x02386e7c
+mode = "arm"
+name = "auto_arm7_00006E7C"
+
+[[entry_point]]
+addr = 0x02386ef4
+mode = "arm"
+name = "auto_arm7_00006EF4"
+
+[[entry_point]]
+addr = 0x02386f00
+mode = "arm"
+name = "auto_arm7_00006F00"
+
+[[entry_point]]
+addr = 0x02387028
+mode = "arm"
+name = "auto_arm7_00007028"
+
+[[entry_point]]
+addr = 0x02387034
+mode = "arm"
+name = "auto_arm7_00007034"
+
+[[entry_point]]
+addr = 0x023870b4
+mode = "arm"
+name = "auto_arm7_000070B4"
+
+[[entry_point]]
+addr = 0x02387100
+mode = "arm"
+name = "auto_arm7_00007100"
+
+[[entry_point]]
+addr = 0x02387104
+mode = "arm"
+name = "auto_arm7_00007104"
+
+[[entry_point]]
+addr = 0x02387108
+mode = "arm"
+name = "auto_arm7_00007108"
+
+[[entry_point]]
+addr = 0x02387124
+mode = "arm"
+name = "auto_arm7_00007124"
+
+[[entry_point]]
+addr = 0x02387150
+mode = "arm"
+name = "auto_arm7_00007150"
+
+[[entry_point]]
+addr = 0x02387164
+mode = "arm"
+name = "auto_arm7_00007164"
+
+[[entry_point]]
+addr = 0x023871bc
+mode = "arm"
+name = "auto_arm7_000071BC"
+
+[[entry_point]]
+addr = 0x02387274
+mode = "arm"
+name = "auto_arm7_00007274"
+
+[[entry_point]]
+addr = 0x0238728c
+mode = "arm"
+name = "auto_arm7_0000728C"
+
+[[entry_point]]
+addr = 0x023872e4
+mode = "arm"
+name = "auto_arm7_000072E4"
+
+[[entry_point]]
+addr = 0x02387380
+mode = "arm"
+name = "auto_arm7_00007380"
+
+[[entry_point]]
+addr = 0x023873f0
+mode = "arm"
+name = "auto_arm7_000073F0"
+
+[[entry_point]]
+addr = 0x02387450
+mode = "arm"
+name = "auto_arm7_00007450"
+
+[[entry_point]]
+addr = 0x0238749c
+mode = "arm"
+name = "auto_arm7_0000749C"
+
+[[entry_point]]
+addr = 0x02387548
+mode = "arm"
+name = "auto_arm7_00007548"
+
+[[entry_point]]
+addr = 0x023875a8
+mode = "arm"
+name = "auto_arm7_000075A8"
+
+[[entry_point]]
+addr = 0x023875f8
+mode = "arm"
+name = "auto_arm7_000075F8"
+
+[[entry_point]]
+addr = 0x0238765c
+mode = "arm"
+name = "auto_arm7_0000765C"
+
+[[entry_point]]
+addr = 0x0238766c
+mode = "arm"
+name = "auto_arm7_0000766C"
+
+[[entry_point]]
+addr = 0x02387690
+mode = "arm"
+name = "auto_arm7_00007690"
+
+[[entry_point]]
+addr = 0x02387718
+mode = "arm"
+name = "auto_arm7_00007718"
+
+[[entry_point]]
+addr = 0x02387738
+mode = "arm"
+name = "auto_arm7_00007738"
+
+[[entry_point]]
+addr = 0x02387774
+mode = "arm"
+name = "auto_arm7_00007774"
+
+[[entry_point]]
+addr = 0x0238786c
+mode = "arm"
+name = "auto_arm7_0000786C"
+
+[[entry_point]]
+addr = 0x02387888
+mode = "thumb"
+name = "auto_arm7_00007888"
+
+[[entry_point]]
+addr = 0x023878a0
+mode = "thumb"
+name = "auto_arm7_000078A0"
+
+[[entry_point]]
+addr = 0x02387934
+mode = "arm"
+name = "auto_arm7_00007934"
+
+[[entry_point]]
+addr = 0x02387948
+mode = "arm"
+name = "auto_arm7_00007948"
+
+[[entry_point]]
+addr = 0x02387a80
+mode = "arm"
+name = "auto_arm7_00007A80"
+
+[[entry_point]]
+addr = 0x02387a90
+mode = "arm"
+name = "auto_arm7_00007A90"
+
+[[entry_point]]
+addr = 0x02387a9c
+mode = "arm"
+name = "auto_arm7_00007A9C"
+
+[[entry_point]]
+addr = 0x02387ab8
+mode = "arm"
+name = "auto_arm7_00007AB8"
+
+[[entry_point]]
+addr = 0x02387ac0
+mode = "arm"
+name = "auto_arm7_00007AC0"
+
+[[entry_point]]
+addr = 0x02387adc
+mode = "arm"
+name = "auto_arm7_00007ADC"
+
+[[entry_point]]
+addr = 0x02387ae6
+mode = "thumb"
+name = "auto_arm7_00007AE6"
+
+[[entry_point]]
+addr = 0x02387b00
+mode = "arm"
+name = "auto_arm7_00007B00"
+
+[[entry_point]]
+addr = 0x02387bb4
+mode = "arm"
+name = "auto_arm7_00007BB4"
+
+[[entry_point]]
+addr = 0x02387c00
+mode = "arm"
+name = "auto_arm7_00007C00"
+
+[[entry_point]]
+addr = 0x02387c54
+mode = "arm"
+name = "auto_arm7_00007C54"
+
+[[entry_point]]
+addr = 0x02387c90
+mode = "arm"
+name = "auto_arm7_00007C90"
+
+[[entry_point]]
+addr = 0x02387f9c
+mode = "arm"
+name = "auto_arm7_00007F9C"
+
+[[entry_point]]
+addr = 0x02388188
+mode = "arm"
+name = "auto_arm7_00008188"
+
+[[entry_point]]
+addr = 0x023881e8
+mode = "arm"
+name = "auto_arm7_000081E8"
+
+[[entry_point]]
+addr = 0x0238822c
+mode = "arm"
+name = "auto_arm7_0000822C"
+
+[[entry_point]]
+addr = 0x02388270
+mode = "arm"
+name = "auto_arm7_00008270"
+
+[[entry_point]]
+addr = 0x023882f0
+mode = "arm"
+name = "auto_arm7_000082F0"
+
+[[entry_point]]
+addr = 0x0238833e
+mode = "thumb"
+name = "auto_arm7_0000833E"
+
+[[entry_point]]
+addr = 0x02388ca4
+mode = "arm"
+name = "auto_arm7_00008CA4"
+
+[[entry_point]]
+addr = 0x02388eb0
+mode = "arm"
+name = "auto_arm7_00008EB0"
+
+[[entry_point]]
+addr = 0x02388ef4
+mode = "arm"
+name = "auto_arm7_00008EF4"
+
+[[entry_point]]
+addr = 0x02389034
+mode = "arm"
+name = "auto_arm7_00009034"
+
+[[entry_point]]
+addr = 0x0238909c
+mode = "arm"
+name = "auto_arm7_0000909C"
+
+[[entry_point]]
+addr = 0x023890dc
+mode = "arm"
+name = "auto_arm7_000090DC"
+
+[[entry_point]]
+addr = 0x02389130
+mode = "arm"
+name = "auto_arm7_00009130"
+
+[[entry_point]]
+addr = 0x02389150
+mode = "arm"
+name = "auto_arm7_00009150"
+
+[[entry_point]]
+addr = 0x0238917c
+mode = "arm"
+name = "auto_arm7_0000917C"
+
+[[entry_point]]
+addr = 0x0238923c
+mode = "arm"
+name = "auto_arm7_0000923C"
+
+[[entry_point]]
+addr = 0x02389278
+mode = "arm"
+name = "auto_arm7_00009278"
+
+[[entry_point]]
+addr = 0x023892e8
+mode = "arm"
+name = "auto_arm7_000092E8"
+
+[[entry_point]]
+addr = 0x02389398
+mode = "arm"
+name = "auto_arm7_00009398"
+
+[[entry_point]]
+addr = 0x023893ac
+mode = "arm"
+name = "auto_arm7_000093AC"
+
+[[entry_point]]
+addr = 0x023894a0
+mode = "arm"
+name = "auto_arm7_000094A0"
+
+[[entry_point]]
+addr = 0x02389568
+mode = "arm"
+name = "auto_arm7_00009568"
+
+[[entry_point]]
+addr = 0x023895a8
+mode = "arm"
+name = "auto_arm7_000095A8"
+
+[[entry_point]]
+addr = 0x02389608
+mode = "arm"
+name = "auto_arm7_00009608"
+
+[[entry_point]]
+addr = 0x02389658
+mode = "arm"
+name = "auto_arm7_00009658"
+
+[[entry_point]]
+addr = 0x023896a8
+mode = "arm"
+name = "auto_arm7_000096A8"
+
+[[entry_point]]
+addr = 0x023896e4
+mode = "arm"
+name = "auto_arm7_000096E4"
+
+[[entry_point]]
+addr = 0x02389788
+mode = "arm"
+name = "auto_arm7_00009788"
+
+[[entry_point]]
+addr = 0x023897d4
+mode = "arm"
+name = "auto_arm7_000097D4"
+
+[[entry_point]]
+addr = 0x02389834
+mode = "arm"
+name = "auto_arm7_00009834"
+
+[[entry_point]]
+addr = 0x023898d0
+mode = "arm"
+name = "auto_arm7_000098D0"
+
+[[entry_point]]
+addr = 0x02389948
+mode = "arm"
+name = "auto_arm7_00009948"
+
+[[entry_point]]
+addr = 0x023899e4
+mode = "arm"
+name = "auto_arm7_000099E4"
+
+[[entry_point]]
+addr = 0x02389ab0
+mode = "arm"
+name = "auto_arm7_00009AB0"
+
+[[entry_point]]
+addr = 0x02389b34
+mode = "arm"
+name = "auto_arm7_00009B34"
+
+[[entry_point]]
+addr = 0x02389b90
+mode = "arm"
+name = "auto_arm7_00009B90"
+
+[[entry_point]]
+addr = 0x02389bac
+mode = "arm"
+name = "auto_arm7_00009BAC"
+
+[[entry_point]]
+addr = 0x02389bcc
+mode = "arm"
+name = "auto_arm7_00009BCC"
+
+[[entry_point]]
+addr = 0x02389d20
+mode = "arm"
+name = "auto_arm7_00009D20"
+
+[[entry_point]]
+addr = 0x02389dc0
+mode = "arm"
+name = "auto_arm7_00009DC0"
+
+[[entry_point]]
+addr = 0x02389e2c
+mode = "arm"
+name = "auto_arm7_00009E2C"
+
+[[entry_point]]
+addr = 0x02389e6c
+mode = "arm"
+name = "auto_arm7_00009E6C"
+
+[[entry_point]]
+addr = 0x02389f94
+mode = "arm"
+name = "auto_arm7_00009F94"
+
+[[entry_point]]
+addr = 0x02389fdc
+mode = "arm"
+name = "auto_arm7_00009FDC"
+
+[[entry_point]]
+addr = 0x0238a160
+mode = "arm"
+name = "auto_arm7_0000A160"
+
+[[entry_point]]
+addr = 0x0238a200
+mode = "arm"
+name = "auto_arm7_0000A200"
+
+[[entry_point]]
+addr = 0x0238a21c
+mode = "arm"
+name = "auto_arm7_0000A21C"
+
+[[entry_point]]
+addr = 0x0238a23c
+mode = "arm"
+name = "auto_arm7_0000A23C"
+
+[[entry_point]]
+addr = 0x0238a26c
+mode = "arm"
+name = "auto_arm7_0000A26C"
+
+[[entry_point]]
+addr = 0x0238a2ac
+mode = "arm"
+name = "auto_arm7_0000A2AC"
+
+[[entry_point]]
+addr = 0x0238a374
+mode = "arm"
+name = "auto_arm7_0000A374"
+
+[[entry_point]]
+addr = 0x0238a3d0
+mode = "arm"
+name = "auto_arm7_0000A3D0"
+
+[[entry_point]]
+addr = 0x0238a3fc
+mode = "arm"
+name = "auto_arm7_0000A3FC"
+
+[[entry_point]]
+addr = 0x0238a468
+mode = "arm"
+name = "auto_arm7_0000A468"
+
+[[entry_point]]
+addr = 0x0238a52c
+mode = "arm"
+name = "auto_arm7_0000A52C"
+
+[[entry_point]]
+addr = 0x0238a620
+mode = "arm"
+name = "auto_arm7_0000A620"
+
+[[entry_point]]
+addr = 0x0238a668
+mode = "arm"
+name = "auto_arm7_0000A668"
+
+[[entry_point]]
+addr = 0x0238a6c0
+mode = "arm"
+name = "auto_arm7_0000A6C0"
+
+[[entry_point]]
+addr = 0x0238a720
+mode = "arm"
+name = "auto_arm7_0000A720"
+
+[[entry_point]]
+addr = 0x0238a774
+mode = "arm"
+name = "auto_arm7_0000A774"
+
+[[entry_point]]
+addr = 0x0238adb8
+mode = "arm"
+name = "auto_arm7_0000ADB8"
+
+[[entry_point]]
+addr = 0x0238add8
+mode = "thumb"
+name = "auto_arm7_0000ADD8"
+
+[[entry_point]]
+addr = 0x0238aedc
+mode = "arm"
+name = "auto_arm7_0000AEDC"
+
+[[entry_point]]
+addr = 0x0238afc8
+mode = "arm"
+name = "auto_arm7_0000AFC8"
+
+[[entry_point]]
+addr = 0x0238b018
+mode = "arm"
+name = "auto_arm7_0000B018"
+
+[[entry_point]]
+addr = 0x0238b0b8
+mode = "arm"
+name = "auto_arm7_0000B0B8"
+
+[[entry_point]]
+addr = 0x0238b188
+mode = "arm"
+name = "auto_arm7_0000B188"
+
+[[entry_point]]
+addr = 0x0238b258
+mode = "arm"
+name = "auto_arm7_0000B258"
+
+[[entry_point]]
+addr = 0x0238b2c0
+mode = "arm"
+name = "auto_arm7_0000B2C0"
+
+[[entry_point]]
+addr = 0x0238b36c
+mode = "arm"
+name = "auto_arm7_0000B36C"
+
+[[entry_point]]
+addr = 0x0238b4a8
+mode = "arm"
+name = "auto_arm7_0000B4A8"
+
+[[entry_point]]
+addr = 0x0238b538
+mode = "arm"
+name = "auto_arm7_0000B538"
+
+[[entry_point]]
+addr = 0x0238b550
+mode = "arm"
+name = "auto_arm7_0000B550"
+
+[[entry_point]]
+addr = 0x0238b630
+mode = "arm"
+name = "auto_arm7_0000B630"
+
+[[entry_point]]
+addr = 0x0238b640
+mode = "arm"
+name = "auto_arm7_0000B640"
+
+[[entry_point]]
+addr = 0x0238b6ac
+mode = "arm"
+name = "auto_arm7_0000B6AC"
+
+[[entry_point]]
+addr = 0x0238b6da
+mode = "thumb"
+name = "auto_arm7_0000B6DA"
+
+[[entry_point]]
+addr = 0x0238b6de
+mode = "thumb"
+name = "auto_arm7_0000B6DE"
+
+[[entry_point]]
+addr = 0x0238b6e6
+mode = "thumb"
+name = "auto_arm7_0000B6E6"
+
+[[entry_point]]
+addr = 0x0238b7ec
+mode = "arm"
+name = "auto_arm7_0000B7EC"
+
+[[entry_point]]
+addr = 0x0238bb74
+mode = "arm"
+name = "auto_arm7_0000BB74"
+
+[[entry_point]]
+addr = 0x0238bb88
+mode = "arm"
+name = "auto_arm7_0000BB88"
+
+[[entry_point]]
+addr = 0x0238bba4
+mode = "arm"
+name = "auto_arm7_0000BBA4"
+
+[[entry_point]]
+addr = 0x0238bbc0
+mode = "arm"
+name = "auto_arm7_0000BBC0"
+
+[[entry_point]]
+addr = 0x0238bbdc
+mode = "arm"
+name = "auto_arm7_0000BBDC"
+
+[[entry_point]]
+addr = 0x0238bbf8
+mode = "arm"
+name = "auto_arm7_0000BBF8"
+
+[[entry_point]]
+addr = 0x0238bc18
+mode = "arm"
+name = "auto_arm7_0000BC18"
+
+[[entry_point]]
+addr = 0x0238bc34
+mode = "arm"
+name = "auto_arm7_0000BC34"
+
+[[entry_point]]
+addr = 0x0238bc38
+mode = "arm"
+name = "auto_arm7_0000BC38"
+
+[[entry_point]]
+addr = 0x0238bc3c
+mode = "arm"
+name = "auto_arm7_0000BC3C"
+
+[[entry_point]]
+addr = 0x0238bc40
+mode = "arm"
+name = "auto_arm7_0000BC40"
+
+[[entry_point]]
+addr = 0x0238bc98
+mode = "arm"
+name = "auto_arm7_0000BC98"
+
+[[entry_point]]
+addr = 0x0238be74
+mode = "arm"
+name = "auto_arm7_0000BE74"
+
+[[entry_point]]
+addr = 0x0238bfc0
+mode = "arm"
+name = "auto_arm7_0000BFC0"
+
+[[entry_point]]
+addr = 0x0238c030
+mode = "arm"
+name = "auto_arm7_0000C030"
+
+[[entry_point]]
+addr = 0x0238c09c
+mode = "arm"
+name = "auto_arm7_0000C09C"
+
+[[entry_point]]
+addr = 0x0238c0c4
+mode = "arm"
+name = "auto_arm7_0000C0C4"
+
+[[entry_point]]
+addr = 0x0238c0c8
+mode = "arm"
+name = "auto_arm7_0000C0C8"
+
+[[entry_point]]
+addr = 0x0238c198
+mode = "arm"
+name = "auto_arm7_0000C198"
+
+[[entry_point]]
+addr = 0x0238c1f4
+mode = "arm"
+name = "auto_arm7_0000C1F4"
+
+[[entry_point]]
+addr = 0x0238c210
+mode = "arm"
+name = "auto_arm7_0000C210"
+
+[[entry_point]]
+addr = 0x0238c4d4
+mode = "arm"
+name = "auto_arm7_0000C4D4"
+
+[[entry_point]]
+addr = 0x0238c51c
+mode = "arm"
+name = "auto_arm7_0000C51C"
+
+[[entry_point]]
+addr = 0x0238c594
+mode = "arm"
+name = "auto_arm7_0000C594"
+
+[[entry_point]]
+addr = 0x0238c7c8
+mode = "arm"
+name = "auto_arm7_0000C7C8"
+
+[[entry_point]]
+addr = 0x0238c842
+mode = "thumb"
+name = "auto_arm7_0000C842"
+
+[[entry_point]]
+addr = 0x0238c8bc
+mode = "arm"
+name = "auto_arm7_0000C8BC"
+
+[[entry_point]]
+addr = 0x0238cb8c
+mode = "arm"
+name = "auto_arm7_0000CB8C"
+
+[[entry_point]]
+addr = 0x0238cddc
+mode = "arm"
+name = "auto_arm7_0000CDDC"
+
+[[entry_point]]
+addr = 0x0238cfd4
+mode = "arm"
+name = "auto_arm7_0000CFD4"
+
+[[entry_point]]
+addr = 0x0238d130
+mode = "arm"
+name = "auto_arm7_0000D130"
+
+[[entry_point]]
+addr = 0x0238d2b8
+mode = "arm"
+name = "auto_arm7_0000D2B8"
+
+[[entry_point]]
+addr = 0x0238d4c8
+mode = "arm"
+name = "auto_arm7_0000D4C8"
+
+[[entry_point]]
+addr = 0x0238d4f4
+mode = "arm"
+name = "auto_arm7_0000D4F4"
+
+[[entry_point]]
+addr = 0x0238d524
+mode = "arm"
+name = "auto_arm7_0000D524"
+
+[[entry_point]]
+addr = 0x0238d550
+mode = "arm"
+name = "auto_arm7_0000D550"
+
+[[entry_point]]
+addr = 0x0238d574
+mode = "arm"
+name = "auto_arm7_0000D574"
+
+[[entry_point]]
+addr = 0x0238d604
+mode = "arm"
+name = "auto_arm7_0000D604"
+
+[[entry_point]]
+addr = 0x0238d674
+mode = "arm"
+name = "auto_arm7_0000D674"
+
+[[entry_point]]
+addr = 0x0238d690
+mode = "arm"
+name = "auto_arm7_0000D690"
+
+[[entry_point]]
+addr = 0x0238d6f8
+mode = "arm"
+name = "auto_arm7_0000D6F8"
+
+[[entry_point]]
+addr = 0x0238d82c
+mode = "arm"
+name = "auto_arm7_0000D82C"
+
+[[entry_point]]
+addr = 0x0238d9f8
+mode = "arm"
+name = "auto_arm7_0000D9F8"
+
+[[entry_point]]
+addr = 0x0238da04
+mode = "arm"
+name = "auto_arm7_0000DA04"
+
+[[entry_point]]
+addr = 0x0238da14
+mode = "arm"
+name = "auto_arm7_0000DA14"
+
+[[entry_point]]
+addr = 0x0238da38
+mode = "arm"
+name = "auto_arm7_0000DA38"
+
+[[entry_point]]
+addr = 0x0238dc04
+mode = "arm"
+name = "auto_arm7_0000DC04"
+
+[[entry_point]]
+addr = 0x0238dc90
+mode = "arm"
+name = "auto_arm7_0000DC90"
+
+[[entry_point]]
+addr = 0x0238ddf8
+mode = "arm"
+name = "auto_arm7_0000DDF8"
+
+[[entry_point]]
+addr = 0x0238de34
+mode = "arm"
+name = "auto_arm7_0000DE34"
+
+[[entry_point]]
+addr = 0x0238e090
+mode = "arm"
+name = "auto_arm7_0000E090"
+
+[[entry_point]]
+addr = 0x0238e134
+mode = "arm"
+name = "auto_arm7_0000E134"
+
+[[entry_point]]
+addr = 0x0238e448
+mode = "arm"
+name = "auto_arm7_0000E448"
+
+[[entry_point]]
+addr = 0x0238e510
+mode = "arm"
+name = "auto_arm7_0000E510"
+
+[[entry_point]]
+addr = 0x0238e60c
+mode = "arm"
+name = "auto_arm7_0000E60C"
+
+[[entry_point]]
+addr = 0x0238e75c
+mode = "arm"
+name = "auto_arm7_0000E75C"
+
+[[entry_point]]
+addr = 0x0238e7a8
+mode = "arm"
+name = "auto_arm7_0000E7A8"
+
+[[entry_point]]
+addr = 0x0238e814
+mode = "arm"
+name = "auto_arm7_0000E814"
+
+[[entry_point]]
+addr = 0x0238eb48
+mode = "arm"
+name = "auto_arm7_0000EB48"
+
+[[entry_point]]
+addr = 0x0238ed28
+mode = "arm"
+name = "auto_arm7_0000ED28"
+
+[[entry_point]]
+addr = 0x0238ed54
+mode = "arm"
+name = "auto_arm7_0000ED54"
+
+[[entry_point]]
+addr = 0x0238ef18
+mode = "arm"
+name = "auto_arm7_0000EF18"
+
+[[entry_point]]
+addr = 0x0238ef28
+mode = "arm"
+name = "auto_arm7_0000EF28"
+
+[[entry_point]]
+addr = 0x0238f790
+mode = "arm"
+name = "auto_arm7_0000F790"
+
+[[entry_point]]
+addr = 0x0238f808
+mode = "arm"
+name = "auto_arm7_0000F808"
+
+[[entry_point]]
+addr = 0x0238f9ac
+mode = "arm"
+name = "auto_arm7_0000F9AC"
+
+[[entry_point]]
+addr = 0x0238fa08
+mode = "arm"
+name = "auto_arm7_0000FA08"
+
+[[entry_point]]
+addr = 0x0238fa54
+mode = "arm"
+name = "auto_arm7_0000FA54"
+
+[[entry_point]]
+addr = 0x0238fbf4
+mode = "arm"
+name = "auto_arm7_0000FBF4"
+
+[[entry_point]]
+addr = 0x0238fc64
+mode = "arm"
+name = "auto_arm7_0000FC64"
+
+[[entry_point]]
+addr = 0x0238fc98
+mode = "arm"
+name = "auto_arm7_0000FC98"
+
+[[entry_point]]
+addr = 0x0238fcf8
+mode = "arm"
+name = "auto_arm7_0000FCF8"
+
+[[entry_point]]
+addr = 0x0238fd58
+mode = "arm"
+name = "auto_arm7_0000FD58"
+
+[[entry_point]]
+addr = 0x0238fd80
+mode = "arm"
+name = "auto_arm7_0000FD80"
+
+[[entry_point]]
+addr = 0x0238fdbc
+mode = "arm"
+name = "auto_arm7_0000FDBC"
+
+[[entry_point]]
+addr = 0x0238fdf4
+mode = "arm"
+name = "auto_arm7_0000FDF4"
+
+[[entry_point]]
+addr = 0x0238fe20
+mode = "arm"
+name = "auto_arm7_0000FE20"
+
+[[entry_point]]
+addr = 0x0238fe3c
+mode = "arm"
+name = "auto_arm7_0000FE3C"
+
+[[entry_point]]
+addr = 0x0238ffc0
+mode = "arm"
+name = "auto_arm7_0000FFC0"
+
+[[entry_point]]
+addr = 0x02390070
+mode = "arm"
+name = "auto_arm7_00010070"
+
+[[entry_point]]
+addr = 0x023900ec
+mode = "arm"
+name = "auto_arm7_000100EC"
+
+[[entry_point]]
+addr = 0x02390154
+mode = "arm"
+name = "auto_arm7_00010154"
+
+[[entry_point]]
+addr = 0x023901d4
+mode = "arm"
+name = "auto_arm7_000101D4"
+
+[[entry_point]]
+addr = 0x02390398
+mode = "arm"
+name = "auto_arm7_00010398"
+
+[[entry_point]]
+addr = 0x023903cc
+mode = "arm"
+name = "auto_arm7_000103CC"
+
+[[entry_point]]
+addr = 0x02390624
+mode = "arm"
+name = "auto_arm7_00010624"
+
+[[entry_point]]
+addr = 0x023907a8
+mode = "arm"
+name = "auto_arm7_000107A8"
+
+[[entry_point]]
+addr = 0x023907dc
+mode = "arm"
+name = "auto_arm7_000107DC"
+
+[[entry_point]]
+addr = 0x02390810
+mode = "arm"
+name = "auto_arm7_00010810"
+
+[[entry_point]]
+addr = 0x023908e8
+mode = "arm"
+name = "auto_arm7_000108E8"
+
+[[entry_point]]
+addr = 0x023909c0
+mode = "arm"
+name = "auto_arm7_000109C0"
+
+[[entry_point]]
+addr = 0x02390ca0
+mode = "arm"
+name = "auto_arm7_00010CA0"
+
+[[entry_point]]
+addr = 0x02390d38
+mode = "arm"
+name = "auto_arm7_00010D38"
+
+[[entry_point]]
+addr = 0x02391018
+mode = "arm"
+name = "auto_arm7_00011018"
+
+[[entry_point]]
+addr = 0x023910a8
+mode = "arm"
+name = "auto_arm7_000110A8"
+
+[[entry_point]]
+addr = 0x023914b0
+mode = "arm"
+name = "auto_arm7_000114B0"
+
+[[entry_point]]
+addr = 0x02391500
+mode = "arm"
+name = "auto_arm7_00011500"
+
+[[entry_point]]
+addr = 0x02391644
+mode = "arm"
+name = "auto_arm7_00011644"
+
+[[entry_point]]
+addr = 0x02391694
+mode = "arm"
+name = "auto_arm7_00011694"
+
+[[entry_point]]
+addr = 0x02391698
+mode = "arm"
+name = "auto_arm7_00011698"
+
+[[entry_point]]
+addr = 0x023916d4
+mode = "arm"
+name = "auto_arm7_000116D4"
+
+[[entry_point]]
+addr = 0x0239185c
+mode = "arm"
+name = "auto_arm7_0001185C"
+
+[[entry_point]]
+addr = 0x023918f4
+mode = "arm"
+name = "auto_arm7_000118F4"
+
+[[entry_point]]
+addr = 0x023918f8
+mode = "arm"
+name = "auto_arm7_000118F8"
+
+[[entry_point]]
+addr = 0x023919b0
+mode = "arm"
+name = "auto_arm7_000119B0"
+
+[[entry_point]]
+addr = 0x02391a00
+mode = "arm"
+name = "auto_arm7_00011A00"
+
+[[entry_point]]
+addr = 0x02391a74
+mode = "arm"
+name = "auto_arm7_00011A74"
+
+[[entry_point]]
+addr = 0x02391a88
+mode = "arm"
+name = "auto_arm7_00011A88"
+
+[[entry_point]]
+addr = 0x02391aa0
+mode = "arm"
+name = "auto_arm7_00011AA0"
+
+[[entry_point]]
+addr = 0x02391ab8
+mode = "arm"
+name = "auto_arm7_00011AB8"
+
+[[entry_point]]
+addr = 0x02391ad0
+mode = "arm"
+name = "auto_arm7_00011AD0"
+
+[[entry_point]]
+addr = 0x02391ae4
+mode = "arm"
+name = "auto_arm7_00011AE4"
+
+[[entry_point]]
+addr = 0x02391afc
+mode = "arm"
+name = "auto_arm7_00011AFC"
+
+[[entry_point]]
+addr = 0x02391b14
+mode = "arm"
+name = "auto_arm7_00011B14"
+
+[[entry_point]]
+addr = 0x02391b2c
+mode = "arm"
+name = "auto_arm7_00011B2C"
+
+[[entry_point]]
+addr = 0x02391b40
+mode = "arm"
+name = "auto_arm7_00011B40"
+
+[[entry_point]]
+addr = 0x02391b58
+mode = "arm"
+name = "auto_arm7_00011B58"
+
+[[entry_point]]
+addr = 0x02391b70
+mode = "arm"
+name = "auto_arm7_00011B70"
+
+[[entry_point]]
+addr = 0x02391c04
+mode = "arm"
+name = "auto_arm7_00011C04"
+
+[[entry_point]]
+addr = 0x02391c64
+mode = "arm"
+name = "auto_arm7_00011C64"
+
+[[entry_point]]
+addr = 0x02391cc4
+mode = "arm"
+name = "auto_arm7_00011CC4"
+
+[[entry_point]]
+addr = 0x02391d24
+mode = "arm"
+name = "auto_arm7_00011D24"
+
+[[entry_point]]
+addr = 0x02391d90
+mode = "arm"
+name = "auto_arm7_00011D90"
+
+[[entry_point]]
+addr = 0x02391df0
+mode = "arm"
+name = "auto_arm7_00011DF0"
+
+[[entry_point]]
+addr = 0x02391e50
+mode = "arm"
+name = "auto_arm7_00011E50"
+
+[[entry_point]]
+addr = 0x02391eac
+mode = "arm"
+name = "auto_arm7_00011EAC"
+
+[[entry_point]]
+addr = 0x02391f08
+mode = "arm"
+name = "auto_arm7_00011F08"
+
+[[entry_point]]
+addr = 0x02391fa4
+mode = "arm"
+name = "auto_arm7_00011FA4"
+
+[[entry_point]]
+addr = 0x02392010
+mode = "arm"
+name = "auto_arm7_00012010"
+
+[[entry_point]]
+addr = 0x023920c8
+mode = "arm"
+name = "auto_arm7_000120C8"
+
+[[entry_point]]
+addr = 0x02392154
+mode = "arm"
+name = "auto_arm7_00012154"
+
+[[entry_point]]
+addr = 0x02392228
+mode = "arm"
+name = "auto_arm7_00012228"
+
+[[entry_point]]
+addr = 0x023922a8
+mode = "arm"
+name = "auto_arm7_000122A8"
+
+[[entry_point]]
+addr = 0x0239232c
+mode = "arm"
+name = "auto_arm7_0001232C"
+
+[[entry_point]]
+addr = 0x023923b0
+mode = "arm"
+name = "auto_arm7_000123B0"
+
+[[entry_point]]
+addr = 0x02392434
+mode = "arm"
+name = "auto_arm7_00012434"
+
+[[entry_point]]
+addr = 0x023924f0
+mode = "arm"
+name = "auto_arm7_000124F0"
+
+[[entry_point]]
+addr = 0x02392554
+mode = "arm"
+name = "auto_arm7_00012554"
+
+[[entry_point]]
+addr = 0x023925ac
+mode = "arm"
+name = "auto_arm7_000125AC"
+
+[[entry_point]]
+addr = 0x02392660
+mode = "arm"
+name = "auto_arm7_00012660"
+
+[[entry_point]]
+addr = 0x02392698
+mode = "arm"
+name = "auto_arm7_00012698"
+
+[[entry_point]]
+addr = 0x02392a2c
+mode = "arm"
+name = "auto_arm7_00012A2C"
+
+[[entry_point]]
+addr = 0x02392a68
+mode = "arm"
+name = "auto_arm7_00012A68"
+
+[[entry_point]]
+addr = 0x02392b0c
+mode = "arm"
+name = "auto_arm7_00012B0C"
+
+[[entry_point]]
+addr = 0x02392b48
+mode = "arm"
+name = "auto_arm7_00012B48"
+
+[[entry_point]]
+addr = 0x02392bfc
+mode = "arm"
+name = "auto_arm7_00012BFC"
+
+[[entry_point]]
+addr = 0x02392c40
+mode = "arm"
+name = "auto_arm7_00012C40"
+
+[[entry_point]]
+addr = 0x02392ef8
+mode = "arm"
+name = "auto_arm7_00012EF8"
+
+[[entry_point]]
+addr = 0x02392f34
+mode = "arm"
+name = "auto_arm7_00012F34"
+
+[[entry_point]]
+addr = 0x023930f4
+mode = "arm"
+name = "auto_arm7_000130F4"
+
+[[entry_point]]
+addr = 0x02393140
+mode = "arm"
+name = "auto_arm7_00013140"
+
+[[entry_point]]
+addr = 0x02393164
+mode = "arm"
+name = "auto_arm7_00013164"
+
+[[entry_point]]
+addr = 0x023935cc
+mode = "arm"
+name = "auto_arm7_000135CC"
+
+[[entry_point]]
+addr = 0x02393974
+mode = "arm"
+name = "auto_arm7_00013974"
+
+[[entry_point]]
+addr = 0x023939b0
+mode = "arm"
+name = "auto_arm7_000139B0"
+
+[[entry_point]]
+addr = 0x02393a94
+mode = "arm"
+name = "auto_arm7_00013A94"
+
+[[entry_point]]
+addr = 0x02393ad0
+mode = "arm"
+name = "auto_arm7_00013AD0"
+
+[[entry_point]]
+addr = 0x02394058
+mode = "arm"
+name = "auto_arm7_00014058"
+
+[[entry_point]]
+addr = 0x023940a4
+mode = "arm"
+name = "auto_arm7_000140A4"
+
+[[entry_point]]
+addr = 0x023940f0
+mode = "arm"
+name = "auto_arm7_000140F0"
+
+[[entry_point]]
+addr = 0x02394680
+mode = "arm"
+name = "auto_arm7_00014680"
+
+[[entry_point]]
+addr = 0x023946d8
+mode = "arm"
+name = "auto_arm7_000146D8"
+
+[[entry_point]]
+addr = 0x02394948
+mode = "arm"
+name = "auto_arm7_00014948"
+
+[[entry_point]]
+addr = 0x02394a0c
+mode = "thumb"
+name = "auto_arm7_00014A0C"
+
+[[entry_point]]
+addr = 0x02394a5c
+mode = "arm"
+name = "auto_arm7_00014A5C"
+
+[[entry_point]]
+addr = 0x02394a98
+mode = "arm"
+name = "auto_arm7_00014A98"
+
+[[entry_point]]
+addr = 0x02394b9c
+mode = "arm"
+name = "auto_arm7_00014B9C"
+
+[[entry_point]]
+addr = 0x02394c30
+mode = "arm"
+name = "auto_arm7_00014C30"
+
+[[entry_point]]
+addr = 0x02394d34
+mode = "arm"
+name = "auto_arm7_00014D34"
+
+[[entry_point]]
+addr = 0x02394d70
+mode = "arm"
+name = "auto_arm7_00014D70"
+
+[[entry_point]]
+addr = 0x02394e14
+mode = "arm"
+name = "auto_arm7_00014E14"
+
+[[entry_point]]
+addr = 0x02394e50
+mode = "arm"
+name = "auto_arm7_00014E50"
+
+[[entry_point]]
+addr = 0x02394f18
+mode = "arm"
+name = "auto_arm7_00014F18"
+
+[[entry_point]]
+addr = 0x02394fac
+mode = "arm"
+name = "auto_arm7_00014FAC"
+
+[[entry_point]]
+addr = 0x023950a8
+mode = "arm"
+name = "auto_arm7_000150A8"
+
+[[entry_point]]
+addr = 0x023950e4
+mode = "arm"
+name = "auto_arm7_000150E4"
+
+[[entry_point]]
+addr = 0x02395148
+mode = "arm"
+name = "auto_arm7_00015148"
+
+[[entry_point]]
+addr = 0x02395174
+mode = "arm"
+name = "auto_arm7_00015174"
+
+[[entry_point]]
+addr = 0x023951a0
+mode = "arm"
+name = "auto_arm7_000151A0"
+
+[[entry_point]]
+addr = 0x023951dc
+mode = "arm"
+name = "auto_arm7_000151DC"
+
+[[entry_point]]
+addr = 0x023952e8
+mode = "arm"
+name = "auto_arm7_000152E8"
+
+[[entry_point]]
+addr = 0x02395324
+mode = "arm"
+name = "auto_arm7_00015324"
+
+[[entry_point]]
+addr = 0x023954ec
+mode = "arm"
+name = "auto_arm7_000154EC"
+
+[[entry_point]]
+addr = 0x02395528
+mode = "arm"
+name = "auto_arm7_00015528"
+
+[[entry_point]]
+addr = 0x0239557c
+mode = "arm"
+name = "auto_arm7_0001557C"
+
+[[entry_point]]
+addr = 0x023955b8
+mode = "arm"
+name = "auto_arm7_000155B8"
+
+[[entry_point]]
+addr = 0x02395628
+mode = "arm"
+name = "auto_arm7_00015628"
+
+[[entry_point]]
+addr = 0x023956e0
+mode = "arm"
+name = "auto_arm7_000156E0"
+
+[[entry_point]]
+addr = 0x02395734
+mode = "arm"
+name = "auto_arm7_00015734"
+
+[[entry_point]]
+addr = 0x02395776
+mode = "thumb"
+name = "auto_arm7_00015776"
+
+[[entry_point]]
+addr = 0x023957bc
+mode = "arm"
+name = "auto_arm7_000157BC"
+
+[[entry_point]]
+addr = 0x023958ec
+mode = "arm"
+name = "auto_arm7_000158EC"
+
+[[entry_point]]
+addr = 0x02395944
+mode = "arm"
+name = "auto_arm7_00015944"
+
+[[entry_point]]
+addr = 0x023959e8
+mode = "arm"
+name = "auto_arm7_000159E8"
+
+[[entry_point]]
+addr = 0x02395a84
+mode = "arm"
+name = "auto_arm7_00015A84"
+
+[[entry_point]]
+addr = 0x02395b90
+mode = "arm"
+name = "auto_arm7_00015B90"
+
+[[entry_point]]
+addr = 0x02395be8
+mode = "arm"
+name = "auto_arm7_00015BE8"
+
+[[entry_point]]
+addr = 0x02395c70
+mode = "arm"
+name = "auto_arm7_00015C70"
+
+[[entry_point]]
+addr = 0x02395d20
+mode = "arm"
+name = "auto_arm7_00015D20"
+
+[[entry_point]]
+addr = 0x02395d48
+mode = "arm"
+name = "auto_arm7_00015D48"
+
+[[entry_point]]
+addr = 0x02395d84
+mode = "arm"
+name = "auto_arm7_00015D84"
+
+[[entry_point]]
+addr = 0x02395db8
+mode = "arm"
+name = "auto_arm7_00015DB8"
+
+[[entry_point]]
+addr = 0x02395df4
+mode = "arm"
+name = "auto_arm7_00015DF4"
+
+[[entry_point]]
+addr = 0x02395f58
+mode = "arm"
+name = "auto_arm7_00015F58"
+
+[[entry_point]]
+addr = 0x02395ff0
+mode = "arm"
+name = "auto_arm7_00015FF0"
+
+[[entry_point]]
+addr = 0x02395ff4
+mode = "arm"
+name = "auto_arm7_00015FF4"
+
+[[entry_point]]
+addr = 0x02396264
+mode = "arm"
+name = "auto_arm7_00016264"
+
+[[entry_point]]
+addr = 0x02396448
+mode = "arm"
+name = "auto_arm7_00016448"
+
+[[entry_point]]
+addr = 0x0239675c
+mode = "arm"
+name = "auto_arm7_0001675C"
+
+[[entry_point]]
+addr = 0x023968c4
+mode = "arm"
+name = "auto_arm7_000168C4"
+
+[[entry_point]]
+addr = 0x02396dec
+mode = "arm"
+name = "auto_arm7_00016DEC"
+
+[[entry_point]]
+addr = 0x02396ea0
+mode = "arm"
+name = "auto_arm7_00016EA0"
+
+[[entry_point]]
+addr = 0x02397030
+mode = "arm"
+name = "auto_arm7_00017030"
+
+[[entry_point]]
+addr = 0x023970f8
+mode = "arm"
+name = "auto_arm7_000170F8"
+
+[[entry_point]]
+addr = 0x023971cc
+mode = "arm"
+name = "auto_arm7_000171CC"
+
+[[entry_point]]
+addr = 0x02397268
+mode = "arm"
+name = "auto_arm7_00017268"
+
+[[entry_point]]
+addr = 0x02397318
+mode = "arm"
+name = "auto_arm7_00017318"
+
+[[entry_point]]
+addr = 0x0239746c
+mode = "arm"
+name = "auto_arm7_0001746C"
+
+[[entry_point]]
+addr = 0x023974d8
+mode = "arm"
+name = "auto_arm7_000174D8"
+
+[[entry_point]]
+addr = 0x02397548
+mode = "arm"
+name = "auto_arm7_00017548"
+
+[[entry_point]]
+addr = 0x02397580
+mode = "arm"
+name = "auto_arm7_00017580"
+
+[[entry_point]]
+addr = 0x023977a0
+mode = "arm"
+name = "auto_arm7_000177A0"
+
+[[entry_point]]
+addr = 0x02397850
+mode = "arm"
+name = "auto_arm7_00017850"
+
+[[entry_point]]
+addr = 0x02397908
+mode = "arm"
+name = "auto_arm7_00017908"
+
+[[entry_point]]
+addr = 0x02397970
+mode = "arm"
+name = "auto_arm7_00017970"
+
+[[entry_point]]
+addr = 0x023979ac
+mode = "arm"
+name = "auto_arm7_000179AC"
+
+[[entry_point]]
+addr = 0x02397a10
+mode = "arm"
+name = "auto_arm7_00017A10"
+
+[[entry_point]]
+addr = 0x02397a24
+mode = "arm"
+name = "auto_arm7_00017A24"
+
+[[entry_point]]
+addr = 0x02397c20
+mode = "arm"
+name = "auto_arm7_00017C20"
+
+[[entry_point]]
+addr = 0x02397d00
+mode = "arm"
+name = "auto_arm7_00017D00"
+
+[[entry_point]]
+addr = 0x02397d54
+mode = "arm"
+name = "auto_arm7_00017D54"
+
+[[entry_point]]
+addr = 0x02397eb0
+mode = "arm"
+name = "auto_arm7_00017EB0"
+
+[[entry_point]]
+addr = 0x02397f04
+mode = "arm"
+name = "auto_arm7_00017F04"
+
+[[entry_point]]
+addr = 0x02397fa8
+mode = "arm"
+name = "auto_arm7_00017FA8"
+
+[[entry_point]]
+addr = 0x02398030
+mode = "arm"
+name = "auto_arm7_00018030"
+
+[[entry_point]]
+addr = 0x02398074
+mode = "arm"
+name = "auto_arm7_00018074"
+
+[[entry_point]]
+addr = 0x02398174
+mode = "arm"
+name = "auto_arm7_00018174"
+
+[[entry_point]]
+addr = 0x023981c0
+mode = "arm"
+name = "auto_arm7_000181C0"
+
+[[entry_point]]
+addr = 0x02398204
+mode = "arm"
+name = "auto_arm7_00018204"
+
+[[entry_point]]
+addr = 0x02398310
+mode = "arm"
+name = "auto_arm7_00018310"
+
+[[entry_point]]
+addr = 0x02398348
+mode = "arm"
+name = "auto_arm7_00018348"
+
+[[entry_point]]
+addr = 0x023983e8
+mode = "arm"
+name = "auto_arm7_000183E8"
+
+[[entry_point]]
+addr = 0x02398424
+mode = "arm"
+name = "auto_arm7_00018424"
+
+[[entry_point]]
+addr = 0x02398490
+mode = "arm"
+name = "auto_arm7_00018490"
+
+[[entry_point]]
+addr = 0x02398514
+mode = "arm"
+name = "auto_arm7_00018514"
+
+[[entry_point]]
+addr = 0x02398538
+mode = "arm"
+name = "auto_arm7_00018538"
+
+[[entry_point]]
+addr = 0x023985ac
+mode = "arm"
+name = "auto_arm7_000185AC"
+
+[[entry_point]]
+addr = 0x02398614
+mode = "arm"
+name = "auto_arm7_00018614"
+
+[[entry_point]]
+addr = 0x02398694
+mode = "arm"
+name = "auto_arm7_00018694"
+
+[[entry_point]]
+addr = 0x023986b0
+mode = "arm"
+name = "auto_arm7_000186B0"
+
+[[entry_point]]
+addr = 0x02398a48
+mode = "arm"
+name = "auto_arm7_00018A48"
+
+[[entry_point]]
+addr = 0x02398ba0
+mode = "arm"
+name = "auto_arm7_00018BA0"
+
+[[entry_point]]
+addr = 0x02398c5c
+mode = "arm"
+name = "auto_arm7_00018C5C"
+
+[[entry_point]]
+addr = 0x02398c7c
+mode = "arm"
+name = "auto_arm7_00018C7C"
+
+[[entry_point]]
+addr = 0x02398cb8
+mode = "arm"
+name = "auto_arm7_00018CB8"
+
+[[entry_point]]
+addr = 0x02398d88
+mode = "arm"
+name = "auto_arm7_00018D88"
+
+[[entry_point]]
+addr = 0x02398f8c
+mode = "arm"
+name = "auto_arm7_00018F8C"
+
+[[entry_point]]
+addr = 0x02398fd0
+mode = "arm"
+name = "auto_arm7_00018FD0"
+
+[[entry_point]]
+addr = 0x0239906c
+mode = "arm"
+name = "auto_arm7_0001906C"
+
+[[entry_point]]
+addr = 0x023990e0
+mode = "arm"
+name = "auto_arm7_000190E0"
+
+[[entry_point]]
+addr = 0x02399124
+mode = "arm"
+name = "auto_arm7_00019124"
+
+[[entry_point]]
+addr = 0x023991d0
+mode = "arm"
+name = "auto_arm7_000191D0"
+
+[[entry_point]]
+addr = 0x0239921c
+mode = "arm"
+name = "auto_arm7_0001921C"
+
+[[entry_point]]
+addr = 0x02399410
+mode = "arm"
+name = "auto_arm7_00019410"
+
+[[entry_point]]
+addr = 0x02399424
+mode = "arm"
+name = "auto_arm7_00019424"
+
+[[entry_point]]
+addr = 0x023995a0
+mode = "arm"
+name = "auto_arm7_000195A0"
+
+[[entry_point]]
+addr = 0x02399788
+mode = "thumb"
+name = "auto_arm7_00019788"
+
+[[entry_point]]
+addr = 0x02399984
+mode = "arm"
+name = "auto_arm7_00019984"
+
+[[entry_point]]
+addr = 0x023999b8
+mode = "arm"
+name = "auto_arm7_000199B8"
+
+[[entry_point]]
+addr = 0x02399a64
+mode = "arm"
+name = "auto_arm7_00019A64"
+
+[[entry_point]]
+addr = 0x02399b80
+mode = "arm"
+name = "auto_arm7_00019B80"
+
+[[entry_point]]
+addr = 0x0239a9c4
+mode = "arm"
+name = "auto_arm7_0001A9C4"
+
+[[entry_point]]
+addr = 0x0239aa18
+mode = "arm"
+name = "auto_arm7_0001AA18"
+
+[[entry_point]]
+addr = 0x0239aa80
+mode = "arm"
+name = "auto_arm7_0001AA80"
+
+[[entry_point]]
+addr = 0x0239abdc
+mode = "arm"
+name = "auto_arm7_0001ABDC"
+
+[[entry_point]]
+addr = 0x0239ad2c
+mode = "arm"
+name = "auto_arm7_0001AD2C"
+
+[[entry_point]]
+addr = 0x0239ad64
+mode = "arm"
+name = "auto_arm7_0001AD64"
+
+[[entry_point]]
+addr = 0x0239ae64
+mode = "thumb"
+name = "auto_arm7_0001AE64"
+
+[[entry_point]]
+addr = 0x0239afdc
+mode = "arm"
+name = "auto_arm7_0001AFDC"
+
+[[entry_point]]
+addr = 0x0239b0b8
+mode = "arm"
+name = "auto_arm7_0001B0B8"
+
+[[entry_point]]
+addr = 0x0239b0f0
+mode = "arm"
+name = "auto_arm7_0001B0F0"
+
+[[entry_point]]
+addr = 0x0239b118
+mode = "arm"
+name = "auto_arm7_0001B118"
+
+[[entry_point]]
+addr = 0x0239b134
+mode = "arm"
+name = "auto_arm7_0001B134"
+
+[[entry_point]]
+addr = 0x0239b150
+mode = "arm"
+name = "auto_arm7_0001B150"
+
+[[entry_point]]
+addr = 0x0239b18c
+mode = "arm"
+name = "auto_arm7_0001B18C"
+
+[[entry_point]]
+addr = 0x0239b238
+mode = "arm"
+name = "auto_arm7_0001B238"
+
+[[entry_point]]
+addr = 0x0239b2e8
+mode = "arm"
+name = "auto_arm7_0001B2E8"
+
+[[entry_point]]
+addr = 0x0239b30c
+mode = "arm"
+name = "auto_arm7_0001B30C"
+
+[[entry_point]]
+addr = 0x0239b324
+mode = "arm"
+name = "auto_arm7_0001B324"
+
+[[entry_point]]
+addr = 0x0239b33c
+mode = "arm"
+name = "auto_arm7_0001B33C"
+
+[[entry_point]]
+addr = 0x0239b354
+mode = "arm"
+name = "auto_arm7_0001B354"
+
+[[entry_point]]
+addr = 0x0239b434
+mode = "arm"
+name = "auto_arm7_0001B434"
+
+[[entry_point]]
+addr = 0x0239b518
+mode = "arm"
+name = "auto_arm7_0001B518"
+
+[[entry_point]]
+addr = 0x0239b584
+mode = "arm"
+name = "auto_arm7_0001B584"
+
+[[entry_point]]
+addr = 0x0239b614
+mode = "arm"
+name = "auto_arm7_0001B614"
+
+[[entry_point]]
+addr = 0x0239b678
+mode = "arm"
+name = "auto_arm7_0001B678"
+
+[[entry_point]]
+addr = 0x0239b7c0
+mode = "arm"
+name = "auto_arm7_0001B7C0"
+
+[[entry_point]]
+addr = 0x0239b8d0
+mode = "arm"
+name = "auto_arm7_0001B8D0"
+
+[[entry_point]]
+addr = 0x0239b9c4
+mode = "arm"
+name = "auto_arm7_0001B9C4"
+
+[[entry_point]]
+addr = 0x0239ba6c
+mode = "arm"
+name = "auto_arm7_0001BA6C"
+
+[[entry_point]]
+addr = 0x0239bb98
+mode = "arm"
+name = "auto_arm7_0001BB98"
+
+[[entry_point]]
+addr = 0x0239bc00
+mode = "arm"
+name = "auto_arm7_0001BC00"
+
+[[entry_point]]
+addr = 0x0239bc7c
+mode = "arm"
+name = "auto_arm7_0001BC7C"
+
+[[entry_point]]
+addr = 0x0239bcf8
+mode = "arm"
+name = "auto_arm7_0001BCF8"
+
+[[entry_point]]
+addr = 0x0239bde8
+mode = "arm"
+name = "auto_arm7_0001BDE8"
+
+[[entry_point]]
+addr = 0x0239bee4
+mode = "arm"
+name = "auto_arm7_0001BEE4"
+
+[[entry_point]]
+addr = 0x0239bf60
+mode = "arm"
+name = "auto_arm7_0001BF60"
+
+[[entry_point]]
+addr = 0x0239bfdc
+mode = "arm"
+name = "auto_arm7_0001BFDC"
+
+[[entry_point]]
+addr = 0x0239c02c
+mode = "arm"
+name = "auto_arm7_0001C02C"
+
+[[entry_point]]
+addr = 0x0239c07c
+mode = "arm"
+name = "auto_arm7_0001C07C"
+
+[[entry_point]]
+addr = 0x0239c338
+mode = "arm"
+name = "auto_arm7_0001C338"
+
+[[entry_point]]
+addr = 0x0239c428
+mode = "arm"
+name = "auto_arm7_0001C428"
+
+[[entry_point]]
+addr = 0x0239c520
+mode = "arm"
+name = "auto_arm7_0001C520"
+
+[[entry_point]]
+addr = 0x0239c634
+mode = "arm"
+name = "auto_arm7_0001C634"
+
+[[entry_point]]
+addr = 0x0239c730
+mode = "arm"
+name = "auto_arm7_0001C730"
+
+[[entry_point]]
+addr = 0x0239c924
+mode = "arm"
+name = "auto_arm7_0001C924"
+
+[[entry_point]]
+addr = 0x0239ca04
+mode = "arm"
+name = "auto_arm7_0001CA04"
+
+[[entry_point]]
+addr = 0x0239cba8
+mode = "arm"
+name = "auto_arm7_0001CBA8"
+
+[[entry_point]]
+addr = 0x0239cca4
+mode = "arm"
+name = "auto_arm7_0001CCA4"
+
+[[entry_point]]
+addr = 0x0239cd6c
+mode = "arm"
+name = "auto_arm7_0001CD6C"
+
+[[entry_point]]
+addr = 0x0239ce4c
+mode = "arm"
+name = "auto_arm7_0001CE4C"
+
+[[entry_point]]
+addr = 0x0239cf78
+mode = "arm"
+name = "auto_arm7_0001CF78"
+
+[[entry_point]]
+addr = 0x0239d04c
+mode = "arm"
+name = "auto_arm7_0001D04C"
+
+[[entry_point]]
+addr = 0x0239d1f8
+mode = "arm"
+name = "auto_arm7_0001D1F8"
+
+[[entry_point]]
+addr = 0x0239d33c
+mode = "arm"
+name = "auto_arm7_0001D33C"
+
+[[entry_point]]
+addr = 0x0239d3e8
+mode = "arm"
+name = "auto_arm7_0001D3E8"
+
+[[entry_point]]
+addr = 0x0239d428
+mode = "arm"
+name = "auto_arm7_0001D428"
+
+[[entry_point]]
+addr = 0x0239d5d0
+mode = "arm"
+name = "auto_arm7_0001D5D0"
+
+[[entry_point]]
+addr = 0x0239d70c
+mode = "arm"
+name = "auto_arm7_0001D70C"
+
+[[entry_point]]
+addr = 0x0239d984
+mode = "arm"
+name = "auto_arm7_0001D984"
+
+[[entry_point]]
+addr = 0x0239d9bc
+mode = "arm"
+name = "auto_arm7_0001D9BC"
+
+[[entry_point]]
+addr = 0x0239daf4
+mode = "arm"
+name = "auto_arm7_0001DAF4"
+
+[[entry_point]]
+addr = 0x0239db64
+mode = "arm"
+name = "auto_arm7_0001DB64"
+
+[[entry_point]]
+addr = 0x0239dbb0
+mode = "arm"
+name = "auto_arm7_0001DBB0"
+
+[[entry_point]]
+addr = 0x0239dbf4
+mode = "arm"
+name = "auto_arm7_0001DBF4"
+
+[[entry_point]]
+addr = 0x0239dc70
+mode = "arm"
+name = "auto_arm7_0001DC70"
+
+[[entry_point]]
+addr = 0x0239dcb8
+mode = "arm"
+name = "auto_arm7_0001DCB8"
+
+[[entry_point]]
+addr = 0x0239dd00
+mode = "arm"
+name = "auto_arm7_0001DD00"
+
+[[entry_point]]
+addr = 0x0239dda0
+mode = "arm"
+name = "auto_arm7_0001DDA0"
+
+[[entry_point]]
+addr = 0x0239df60
+mode = "arm"
+name = "auto_arm7_0001DF60"
+
+[[entry_point]]
+addr = 0x0239e008
+mode = "arm"
+name = "auto_arm7_0001E008"
+
+[[entry_point]]
+addr = 0x0239e064
+mode = "arm"
+name = "auto_arm7_0001E064"
+
+[[entry_point]]
+addr = 0x0239e0c4
+mode = "arm"
+name = "auto_arm7_0001E0C4"
+
+[[entry_point]]
+addr = 0x0239e10c
+mode = "arm"
+name = "auto_arm7_0001E10C"
+
+[[entry_point]]
+addr = 0x0239e2a8
+mode = "arm"
+name = "auto_arm7_0001E2A8"
+
+[[entry_point]]
+addr = 0x0239e3f8
+mode = "arm"
+name = "auto_arm7_0001E3F8"
+
+[[entry_point]]
+addr = 0x0239e694
+mode = "arm"
+name = "auto_arm7_0001E694"
+
+[[entry_point]]
+addr = 0x0239e6f4
+mode = "arm"
+name = "auto_arm7_0001E6F4"
+
+[[entry_point]]
+addr = 0x0239e760
+mode = "arm"
+name = "auto_arm7_0001E760"
+
+[[entry_point]]
+addr = 0x0239e7a4
+mode = "arm"
+name = "auto_arm7_0001E7A4"
+
+[[entry_point]]
+addr = 0x0239e7e8
+mode = "arm"
+name = "auto_arm7_0001E7E8"
+
+[[entry_point]]
+addr = 0x0239e848
+mode = "arm"
+name = "auto_arm7_0001E848"
+
+[[entry_point]]
+addr = 0x0239e8ac
+mode = "arm"
+name = "auto_arm7_0001E8AC"
+
+[[entry_point]]
+addr = 0x0239e8f8
+mode = "arm"
+name = "auto_arm7_0001E8F8"
+
+[[entry_point]]
+addr = 0x0239e930
+mode = "arm"
+name = "auto_arm7_0001E930"
+
+[[entry_point]]
+addr = 0x0239e97c
+mode = "arm"
+name = "auto_arm7_0001E97C"
+
+[[entry_point]]
+addr = 0x0239e9e0
+mode = "arm"
+name = "auto_arm7_0001E9E0"
+
+[[entry_point]]
+addr = 0x0239eeb4
+mode = "arm"
+name = "auto_arm7_0001EEB4"
+
+[[entry_point]]
+addr = 0x0239f02c
+mode = "arm"
+name = "auto_arm7_0001F02C"
+
+[[entry_point]]
+addr = 0x0239f20c
+mode = "arm"
+name = "auto_arm7_0001F20C"
+
+[[entry_point]]
+addr = 0x0239f330
+mode = "arm"
+name = "auto_arm7_0001F330"
+
+[[entry_point]]
+addr = 0x0239f378
+mode = "arm"
+name = "auto_arm7_0001F378"
+
+[[entry_point]]
+addr = 0x0239f430
+mode = "arm"
+name = "auto_arm7_0001F430"
+
+[[entry_point]]
+addr = 0x0239f4a4
+mode = "arm"
+name = "auto_arm7_0001F4A4"
+
+[[entry_point]]
+addr = 0x0239f500
+mode = "arm"
+name = "auto_arm7_0001F500"
+
+[[entry_point]]
+addr = 0x0239f554
+mode = "arm"
+name = "auto_arm7_0001F554"
+
+[[entry_point]]
+addr = 0x0239f5d8
+mode = "arm"
+name = "auto_arm7_0001F5D8"
+
+[[entry_point]]
+addr = 0x0239f68c
+mode = "arm"
+name = "auto_arm7_0001F68C"
+
+[[entry_point]]
+addr = 0x0239f75c
+mode = "arm"
+name = "auto_arm7_0001F75C"
+
+[[entry_point]]
+addr = 0x0239f7ec
+mode = "arm"
+name = "auto_arm7_0001F7EC"
+
+[[entry_point]]
+addr = 0x0239f958
+mode = "arm"
+name = "auto_arm7_0001F958"
+
+[[entry_point]]
+addr = 0x0239fad0
+mode = "arm"
+name = "auto_arm7_0001FAD0"
+
+[[entry_point]]
+addr = 0x0239fb88
+mode = "arm"
+name = "auto_arm7_0001FB88"
+
+[[entry_point]]
+addr = 0x0239fc34
+mode = "arm"
+name = "auto_arm7_0001FC34"
+
+[[entry_point]]
+addr = 0x0239fcb8
+mode = "arm"
+name = "auto_arm7_0001FCB8"
+
+[[entry_point]]
+addr = 0x0239fdc4
+mode = "arm"
+name = "auto_arm7_0001FDC4"
+
+[[entry_point]]
+addr = 0x023a01a4
+mode = "arm"
+name = "auto_arm7_000201A4"
+
+[[entry_point]]
+addr = 0x023a0240
+mode = "arm"
+name = "auto_arm7_00020240"
+
+[[entry_point]]
+addr = 0x023a02b4
+mode = "arm"
+name = "auto_arm7_000202B4"
+
+[[entry_point]]
+addr = 0x023a02d4
+mode = "arm"
+name = "auto_arm7_000202D4"
+
+[[entry_point]]
+addr = 0x023a036c
+mode = "arm"
+name = "auto_arm7_0002036C"
+
+[[entry_point]]
+addr = 0x023a0454
+mode = "arm"
+name = "auto_arm7_00020454"
+
+[[entry_point]]
+addr = 0x023a04b8
+mode = "arm"
+name = "auto_arm7_000204B8"
+
+[[entry_point]]
+addr = 0x023a04e4
+mode = "thumb"
+name = "auto_arm7_000204E4"
+
+[[entry_point]]
+addr = 0x023a0594
+mode = "arm"
+name = "auto_arm7_00020594"
+
+[[entry_point]]
+addr = 0x023a0624
+mode = "arm"
+name = "auto_arm7_00020624"
+
+[[entry_point]]
+addr = 0x023a0694
+mode = "arm"
+name = "auto_arm7_00020694"
+
+[[entry_point]]
+addr = 0x023a0744
+mode = "arm"
+name = "auto_arm7_00020744"
+
+[[entry_point]]
+addr = 0x023a079c
+mode = "arm"
+name = "auto_arm7_0002079C"
+
+[[entry_point]]
+addr = 0x023a07e0
+mode = "arm"
+name = "auto_arm7_000207E0"
+
+[[entry_point]]
+addr = 0x023a0834
+mode = "arm"
+name = "auto_arm7_00020834"
+
+[[entry_point]]
+addr = 0x023a09c8
+mode = "arm"
+name = "auto_arm7_000209C8"
+
+[[entry_point]]
+addr = 0x023a0e98
+mode = "arm"
+name = "auto_arm7_00020E98"
+
+[[entry_point]]
+addr = 0x023a1030
+mode = "arm"
+name = "auto_arm7_00021030"
+
+[[entry_point]]
+addr = 0x023a117c
+mode = "arm"
+name = "auto_arm7_0002117C"
+
+[[entry_point]]
+addr = 0x023a123c
+mode = "arm"
+name = "auto_arm7_0002123C"
+
+[[entry_point]]
+addr = 0x023a1488
+mode = "arm"
+name = "auto_arm7_00021488"
+
+[[entry_point]]
+addr = 0x023a1500
+mode = "arm"
+name = "auto_arm7_00021500"
+
+[[entry_point]]
+addr = 0x023a1740
+mode = "arm"
+name = "auto_arm7_00021740"
+
+[[entry_point]]
+addr = 0x023a1990
+mode = "arm"
+name = "auto_arm7_00021990"
+
+[[entry_point]]
+addr = 0x023a1aac
+mode = "arm"
+name = "auto_arm7_00021AAC"
+
+[[entry_point]]
+addr = 0x023a1b34
+mode = "arm"
+name = "auto_arm7_00021B34"
+
+[[entry_point]]
+addr = 0x023a1ba8
+mode = "arm"
+name = "auto_arm7_00021BA8"
+
+[[entry_point]]
+addr = 0x023a1ef0
+mode = "arm"
+name = "auto_arm7_00021EF0"
+
+[[entry_point]]
+addr = 0x023a2288
+mode = "arm"
+name = "auto_arm7_00022288"
+
+[[entry_point]]
+addr = 0x023a228c
+mode = "arm"
+name = "auto_arm7_0002228C"
+
+[[entry_point]]
+addr = 0x023a22f4
+mode = "arm"
+name = "auto_arm7_000222F4"
+
+[[entry_point]]
+addr = 0x023a23b0
+mode = "arm"
+name = "auto_arm7_000223B0"
+
+[[entry_point]]
+addr = 0x023a2836
+mode = "arm"
+name = "auto_arm7_00022836"
+
+[[entry_point]]
+addr = 0x023a28bc
+mode = "arm"
+name = "auto_arm7_000228BC"
+
+[[entry_point]]
+addr = 0x023a2cb4
+mode = "arm"
+name = "auto_arm7_00022CB4"
+
+[[entry_point]]
+addr = 0x023a2d5c
+mode = "arm"
+name = "auto_arm7_00022D5C"
+
+[[entry_point]]
+addr = 0x023a2e88
+mode = "arm"
+name = "auto_arm7_00022E88"
+
+[[entry_point]]
+addr = 0x023a2ffc
+mode = "arm"
+name = "auto_arm7_00022FFC"
+
+[[entry_point]]
+addr = 0x023a3120
+mode = "arm"
+name = "auto_arm7_00023120"
+
+[[entry_point]]
+addr = 0x023a32c4
+mode = "arm"
+name = "auto_arm7_000232C4"
+
+[[entry_point]]
+addr = 0x023a33b4
+mode = "arm"
+name = "auto_arm7_000233B4"
+
+[[entry_point]]
+addr = 0x023a3410
+mode = "thumb"
+name = "auto_arm7_00023410"
+
+[[entry_point]]
+addr = 0x023a3aa8
+mode = "arm"
+name = "auto_arm7_00023AA8"
+
+[[entry_point]]
+addr = 0x023a3b8c
+mode = "arm"
+name = "auto_arm7_00023B8C"
+
+[[entry_point]]
+addr = 0x023a3d54
+mode = "arm"
+name = "auto_arm7_00023D54"
+
+[[entry_point]]
+addr = 0x023a3f0c
+mode = "arm"
+name = "auto_arm7_00023F0C"
+
+[[entry_point]]
+addr = 0x023a41f0
+mode = "arm"
+name = "auto_arm7_000241F0"
+
+[[entry_point]]
+addr = 0x023a4240
+mode = "arm"
+name = "auto_arm7_00024240"
+
+[[entry_point]]
+addr = 0x023a4278
+mode = "arm"
+name = "auto_arm7_00024278"
+
+[[entry_point]]
+addr = 0x023a4364
+mode = "thumb"
+name = "auto_arm7_00024364"
+
+[[entry_point]]
+addr = 0x023a44c8
+mode = "arm"
+name = "auto_arm7_000244C8"
+
+[[entry_point]]
+addr = 0x023a4664
+mode = "arm"
+name = "auto_arm7_00024664"
+
+[[entry_point]]
+addr = 0x023a469c
+mode = "arm"
+name = "auto_arm7_0002469C"
+
+[[entry_point]]
+addr = 0x023a46c8
+mode = "arm"
+name = "auto_arm7_000246C8"
+
+[[entry_point]]
+addr = 0x023a49a4
+mode = "arm"
+name = "auto_arm7_000249A4"
+
+[[entry_point]]
+addr = 0x023a4bb0
+mode = "arm"
+name = "auto_arm7_00024BB0"
+
+[[entry_point]]
+addr = 0x023a4c4c
+mode = "arm"
+name = "auto_arm7_00024C4C"
+
+[[entry_point]]
+addr = 0x023a4c8c
+mode = "arm"
+name = "auto_arm7_00024C8C"
+
+[[entry_point]]
+addr = 0x023a4ccc
+mode = "arm"
+name = "auto_arm7_00024CCC"
+
+[[entry_point]]
+addr = 0x023a4d0c
+mode = "arm"
+name = "auto_arm7_00024D0C"
+
+[[entry_point]]
+addr = 0x023a4dd0
+mode = "arm"
+name = "auto_arm7_00024DD0"
+
+[[entry_point]]
+addr = 0x023a4e94
+mode = "arm"
+name = "auto_arm7_00024E94"
+
+[[entry_point]]
+addr = 0x023a4fc0
+mode = "arm"
+name = "auto_arm7_00024FC0"
+
+[[entry_point]]
+addr = 0x023a50ec
+mode = "arm"
+name = "auto_arm7_000250EC"
+
+[[entry_point]]
+addr = 0x023a53bc
+mode = "arm"
+name = "auto_arm7_000253BC"
+
+[[entry_point]]
+addr = 0x023a53fc
+mode = "arm"
+name = "auto_arm7_000253FC"
+
+[[entry_point]]
+addr = 0x023a5650
+mode = "arm"
+name = "auto_arm7_00025650"
+
+[[entry_point]]
+addr = 0x023a56e0
+mode = "arm"
+name = "auto_arm7_000256E0"
+
+[[entry_point]]
+addr = 0x023a5b9c
+mode = "arm"
+name = "auto_arm7_00025B9C"
+
+[[entry_point]]
+addr = 0x023a5bdc
+mode = "arm"
+name = "auto_arm7_00025BDC"
+
+[[entry_point]]
+addr = 0x023a60b0
+mode = "arm"
+name = "auto_arm7_000260B0"
+
+[[entry_point]]
+addr = 0x023a60dc
+mode = "arm"
+name = "auto_arm7_000260DC"
+
+[[entry_point]]
+addr = 0x023a6108
+mode = "arm"
+name = "auto_arm7_00026108"
+
+[[entry_point]]
+addr = 0x023a6134
+mode = "arm"
+name = "auto_arm7_00026134"
+
+[[entry_point]]
+addr = 0x023a6210
+mode = "arm"
+name = "auto_arm7_00026210"
+
+[[entry_point]]
+addr = 0x023a625c
+mode = "arm"
+name = "auto_arm7_0002625C"
+
+[[entry_point]]
+addr = 0x023a62a8
+mode = "arm"
+name = "auto_arm7_000262A8"
+
+[[entry_point]]
+addr = 0x023a62f8
+mode = "arm"
+name = "auto_arm7_000262F8"
+
+[[entry_point]]
+addr = 0x023a6348
+mode = "arm"
+name = "auto_arm7_00026348"
+
+[[entry_point]]
+addr = 0x023a639c
+mode = "arm"
+name = "auto_arm7_0002639C"
+
+[[entry_point]]
+addr = 0x023a63f0
+mode = "arm"
+name = "auto_arm7_000263F0"
+
+[[entry_point]]
+addr = 0x023a641c
+mode = "arm"
+name = "auto_arm7_0002641C"
+
+[[entry_point]]
+addr = 0x023a6448
+mode = "arm"
+name = "auto_arm7_00026448"
+
+[[entry_point]]
+addr = 0x023a65cc
+mode = "arm"
+name = "auto_arm7_000265CC"
+
+[[entry_point]]
+addr = 0x023a68ce
+mode = "arm"
+name = "auto_arm7_000268CE"
+
+[[entry_point]]
+addr = 0x023a6c6c
+mode = "arm"
+name = "auto_arm7_00026C6C"
+
+[[entry_point]]
+addr = 0x023a6c94
+mode = "arm"
+name = "auto_arm7_00026C94"
+
+[[entry_point]]
+addr = 0x023a6cc4
+mode = "arm"
+name = "auto_arm7_00026CC4"
+
+[[entry_point]]
+addr = 0x023a6cf4
+mode = "arm"
+name = "auto_arm7_00026CF4"
+
+[[entry_point]]
+addr = 0x023a6d44
+mode = "arm"
+name = "auto_arm7_00026D44"
+
+[[entry_point]]
+addr = 0x023a6d9c
+mode = "arm"
+name = "auto_arm7_00026D9C"
+
+[[entry_point]]
+addr = 0x023a6e4c
+mode = "arm"
+name = "auto_arm7_00026E4C"
+
+[[jump_table]]
+addr = 0x02380fa8
+stride = 4
+count = 7
+format = "abs32"
+entries_mode = "auto"
+name = "arm7_jt_000"
+
+[[jump_table]]
+addr = 0x0238f61c
+stride = 4
+count = 13
+format = "abs32"
+entries_mode = "auto"
+name = "arm7_jt_001"
+
+[[jump_table]]
+addr = 0x02390380
+stride = 4
+count = 4
+format = "abs32"
+entries_mode = "auto"
+name = "arm7_jt_003"
+
+[[jump_table]]
+addr = 0x023a6838
+stride = 4
+count = 67
+format = "abs32"
+entries_mode = "auto"
+name = "arm7_jt_004"
+
