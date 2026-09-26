@@ -6,8 +6,8 @@ machine code is recompiled ahead-of-time to portable C via
 parallel manual x86-32 recompilation path built from decompiled subsystems.
 The recompiled game boots through the full intro and runs in-game stages.
 
-> Status and history: [`RECOMP_PROGRESS.md`](RECOMP_PROGRESS.md),
-> [`RECOMP_STATUS.md`](RECOMP_STATUS.md), and [`docs/HANDOFF.md`](docs/HANDOFF.md).
+> Status and history: [`RECOMP_PROGRESS.md`](RECOMP_PROGRESS.md)
+> and [`RECOMP_STATUS.md`](RECOMP_STATUS.md).
 > [`docs/re-analysis.md`](docs/re-analysis.md) is the chronological analysis notebook.
 
 ## What's in here

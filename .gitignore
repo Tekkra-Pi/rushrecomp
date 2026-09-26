@@ -85,3 +85,6 @@ ndsrecomp_title/generated/
 # Vendored tool installs
 tools/ghidra_11/
 tools/ghidra__install/
+
+# Internal handoff notes (not published)
+docs/HANDOFF.md
